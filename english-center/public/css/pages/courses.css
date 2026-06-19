@@ -1,0 +1,3 @@
+.course-meta { display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; font-size: 0.85rem; color: var(--color-text-light); margin: 0.75rem 0; }
+.course-meta span i { color: var(--color-gold); margin-right: 0.35rem; }
+.course-fee { font-weight: 700; color: var(--color-navy); font-size: 1.1rem; }

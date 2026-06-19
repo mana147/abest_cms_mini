@@ -1,0 +1,24 @@
+<% const activePage = 'documents'; %>
+<%- include('../partials/admin-header') %>
+
+<div class="admin-card" style="max-width:600px;">
+  <form action="/admin/documents" method="POST" enctype="multipart/form-data">
+    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+    <div class="mb-3">
+      <label class="form-label">Tiêu đề *</label>
+      <input type="text" name="title" class="form-control" required>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Mô tả</label>
+      <textarea name="description" class="form-control" rows="3"></textarea>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">File PDF *</label>
+      <input type="file" name="file" class="form-control" accept="application/pdf" required>
+    </div>
+    <button type="submit" class="btn-gold btn">Tải lên</button>
+    <a href="/admin/documents" class="btn btn-outline-secondary">Hủy</a>
+  </form>
+</div>
+
+<%- include('../partials/admin-footer') %>

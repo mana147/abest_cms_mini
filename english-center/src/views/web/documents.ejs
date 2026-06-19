@@ -1,0 +1,36 @@
+<%- include('../partials/header') %>
+
+<div class="page-banner">
+  <div class="container">
+    <h1><%= t.documents.title %></h1>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <% if (documents.length === 0) { %>
+      <div class="empty-state"><i class="bi bi-file-earmark-x"></i><%= t.documents.empty %></div>
+    <% } else { %>
+      <div class="row g-3">
+        <% documents.forEach(doc => { %>
+          <div class="col-md-6">
+            <div class="card-custom">
+              <div class="card-body d-flex align-items-center justify-content-between">
+                <div class="d-flex align-items-center gap-3">
+                  <i class="bi bi-file-earmark-pdf text-danger" style="font-size:2rem;"></i>
+                  <div>
+                    <h6 class="mb-0"><%= doc.title %></h6>
+                    <% if (doc.description) { %><p class="text-muted small mb-0"><%= doc.description %></p><% } %>
+                  </div>
+                </div>
+                <a href="/documents/<%= doc.id %>/download" class="btn-outline-navy btn btn-sm"><i class="bi bi-download"></i> <%= t.documents.download %></a>
+              </div>
+            </div>
+          </div>
+        <% }) %>
+      </div>
+    <% } %>
+  </div>
+</section>
+
+<%- include('../partials/footer') %>

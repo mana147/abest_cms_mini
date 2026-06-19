@@ -1,0 +1,94 @@
+{
+  "site": {
+    "name": "ABest English Center"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "courses": "Courses",
+    "teachers": "Teachers",
+    "schedule": "Schedule",
+    "posts": "News",
+    "gallery": "Gallery",
+    "contact": "Contact",
+    "documents": "Documents"
+  },
+  "home": {
+    "hero_title": "Master English with ABest",
+    "hero_subtitle": "A trusted English center — accompanying you on the journey to global language mastery",
+    "hero_cta": "Register for a trial",
+    "courses_title": "Featured Courses",
+    "courses_view_all": "View all courses",
+    "teachers_title": "Our Teachers",
+    "teachers_view_all": "View all teachers",
+    "testimonials_title": "What our students say",
+    "posts_title": "Latest News",
+    "posts_view_all": "View all news"
+  },
+  "courses": {
+    "title": "Courses",
+    "level": "Level",
+    "fee": "Fee",
+    "duration": "Duration",
+    "schedule": "Schedule",
+    "detail": "View details",
+    "apply": "Apply now",
+    "other_courses": "Other courses",
+    "empty": "No courses available"
+  },
+  "teachers": {
+    "title": "Teachers",
+    "qualification": "Qualification",
+    "experience": "Experience",
+    "empty": "No teachers available"
+  },
+  "schedule": {
+    "title": "Schedule",
+    "form_title": "Register for a trial class",
+    "full_name": "Full name",
+    "email": "Email",
+    "phone": "Phone number",
+    "course": "Course of interest",
+    "message": "Message",
+    "submit": "Submit",
+    "select_course": "-- Select a course --"
+  },
+  "posts": {
+    "title": "News",
+    "read_more": "Read more",
+    "empty": "No posts available"
+  },
+  "about": {
+    "title": "About Us"
+  },
+  "contact": {
+    "title": "Contact",
+    "subject": "Subject",
+    "submit": "Send message"
+  },
+  "gallery": {
+    "title": "Gallery",
+    "empty": "No images available"
+  },
+  "documents": {
+    "title": "Documents",
+    "download": "Download",
+    "empty": "No documents available"
+  },
+  "footer": {
+    "about_text": "ABest English Center — a trusted English center, accompanying students to master English.",
+    "quick_links": "Quick Links",
+    "contact_info": "Contact Info",
+    "address": "123 Nguyen Van Linh Street, District 7, Ho Chi Minh City",
+    "phone": "Hotline: 1900 1234",
+    "email": "Email: info@abest.edu.vn",
+    "copyright": "Copyright © ABest English Center"
+  },
+  "errors": {
+    "404_title": "Page Not Found",
+    "404_message": "The page you are looking for does not exist or has been removed",
+    "back_home": "Back to home",
+    "500_title": "Something went wrong",
+    "500_message": "Sorry, the system is experiencing an issue. Please try again later"
+  }
+}

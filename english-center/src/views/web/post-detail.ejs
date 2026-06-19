@@ -1,0 +1,27 @@
+<%- include('../partials/header') %>
+
+<div class="page-banner">
+  <div class="container">
+    <h1><%= lang === 'en' && post.title_en ? post.title_en : post.title %></h1>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <% if (post.thumbnail) { %>
+          <img src="<%= post.thumbnail %>" alt="<%= post.title %>" style="width:100%;border-radius:var(--radius);margin-bottom:1.5rem;">
+        <% } else { %>
+          <div class="placeholder-img placeholder-wide" style="border-radius:var(--radius);margin-bottom:1.5rem;"><i class="bi bi-newspaper"></i></div>
+        <% } %>
+        <div class="course-content">
+          <%- (lang === 'en' && post.content_en ? post.content_en : post.content || '').replace(/\n/g, '<br>') %>
+        </div>
+        <a href="/posts" class="btn-outline-navy btn mt-4"><i class="bi bi-arrow-left"></i> <%= t.posts.title %></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%- include('../partials/footer') %>

@@ -1,0 +1,35 @@
+<% const activePage = 'registrations'; %>
+<%- include('../partials/admin-header') %>
+
+<div class="admin-card">
+  <h5 class="mb-3">Danh sách đăng ký học</h5>
+  <% if (registrations.length === 0) { %>
+    <div class="empty-state"><i class="bi bi-card-list"></i>Chưa có đăng ký nào</div>
+  <% } else { %>
+    <div class="table-responsive">
+      <table class="table table-admin">
+        <thead><tr><th></th><th>Họ tên</th><th>SĐT</th><th>Khóa học</th><th>Ngày đăng ký</th><th></th></tr></thead>
+        <tbody>
+          <% registrations.forEach(r => { %>
+            <tr class="<%= r.is_read ? '' : 'fw-bold' %>">
+              <td><% if (!r.is_read) { %><span class="badge bg-gold" style="background:var(--color-gold);color:var(--color-navy-dark);">Mới</span><% } %></td>
+              <td><%= r.full_name %></td>
+              <td><%= r.phone %></td>
+              <td><%= r.course_title || '-' %></td>
+              <td><%= new Date(r.created_at).toLocaleString('vi-VN') %></td>
+              <td class="text-end">
+                <a href="/admin/registrations/<%= r.id %>" class="btn btn-sm btn-outline-navy"><i class="bi bi-eye"></i></a>
+                <form action="/admin/registrations/<%= r.id %>/delete" method="POST" class="d-inline" data-confirm="Xóa đăng ký này?">
+                  <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                  <button type="submit" class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button>
+                </form>
+              </td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
+  <% } %>
+</div>
+
+<%- include('../partials/admin-footer') %>

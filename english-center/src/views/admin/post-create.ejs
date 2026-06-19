@@ -1,0 +1,54 @@
+<% const activePage = 'posts'; %>
+<%- include('../partials/admin-header') %>
+
+<div class="admin-card">
+  <form action="/admin/posts" method="POST" enctype="multipart/form-data">
+    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+    <div class="row g-3">
+      <div class="col-md-8">
+        <div class="mb-3">
+          <label class="form-label">Tiêu đề (VI) *</label>
+          <input type="text" name="title" class="form-control" required>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Tiêu đề (EN)</label>
+          <input type="text" name="title_en" class="form-control">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Tóm tắt (VI)</label>
+          <textarea name="excerpt" class="form-control" rows="2"></textarea>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Tóm tắt (EN)</label>
+          <textarea name="excerpt_en" class="form-control" rows="2"></textarea>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Nội dung (VI)</label>
+          <textarea name="content" class="form-control" rows="8"></textarea>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Nội dung (EN)</label>
+          <textarea name="content_en" class="form-control" rows="8"></textarea>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="mb-3">
+          <label class="form-label">Ảnh đại diện</label>
+          <input type="file" name="thumbnail" class="form-control" accept="image/jpeg,image/png,image/webp" data-preview="thumbPreview">
+          <img id="thumbPreview" style="display:none;width:100%;margin-top:0.75rem;border-radius:var(--radius);">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Trạng thái</label>
+          <select name="status" class="form-select">
+            <option value="draft">Bản nháp</option>
+            <option value="published">Đăng công khai</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="btn-gold btn">Lưu bài viết</button>
+    <a href="/admin/posts" class="btn btn-outline-secondary">Hủy</a>
+  </form>
+</div>
+
+<%- include('../partials/admin-footer') %>

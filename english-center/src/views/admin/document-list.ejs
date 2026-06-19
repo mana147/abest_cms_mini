@@ -1,0 +1,36 @@
+<% const activePage = 'documents'; %>
+<%- include('../partials/admin-header') %>
+
+<div class="admin-card">
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h5 class="mb-0">Danh sách tài liệu</h5>
+    <a href="/admin/documents/create" class="btn-gold btn"><i class="bi bi-plus-lg"></i> Thêm tài liệu</a>
+  </div>
+  <% if (documents.length === 0) { %>
+    <div class="empty-state"><i class="bi bi-file-earmark-x"></i>Chưa có tài liệu nào</div>
+  <% } else { %>
+    <div class="table-responsive">
+      <table class="table table-admin">
+        <thead><tr><th>Tiêu đề</th><th>Mô tả</th><th>File</th><th></th></tr></thead>
+        <tbody>
+          <% documents.forEach(doc => { %>
+            <tr>
+              <td><%= doc.title %></td>
+              <td><%= doc.description || '-' %></td>
+              <td><i class="bi bi-file-earmark-pdf text-danger"></i> <%= doc.filename %></td>
+              <td class="text-end">
+                <a href="/documents/<%= doc.id %>/download" class="btn btn-sm btn-outline-navy"><i class="bi bi-download"></i></a>
+                <form action="/admin/documents/<%= doc.id %>/delete" method="POST" class="d-inline" data-confirm="Xóa tài liệu này?">
+                  <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                  <button type="submit" class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button>
+                </form>
+              </td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
+  <% } %>
+</div>
+
+<%- include('../partials/admin-footer') %>

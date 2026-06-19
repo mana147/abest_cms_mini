@@ -1,0 +1,18 @@
+<aside class="admin-sidebar" id="adminSidebar">
+  <div class="admin-sidebar-brand">
+    <img src="/images/logo.png" alt="logo" onerror="this.style.display='none'">
+    <span>ABest Admin</span>
+  </div>
+  <nav class="admin-sidebar-nav">
+    <a href="/admin" class="sidebar-link <%= activePage === 'dashboard' ? 'active' : '' %>">📊 Dashboard</a>
+    <a href="/admin/courses" class="sidebar-link <%= activePage === 'courses' ? 'active' : '' %>">📚 Khóa học</a>
+    <a href="/admin/teachers" class="sidebar-link <%= activePage === 'teachers' ? 'active' : '' %>">👩‍🏫 Giáo viên</a>
+    <a href="/admin/registrations" class="sidebar-link <%= activePage === 'registrations' ? 'active' : '' %>">📝 Đăng ký học</a>
+    <a href="/admin/testimonials" class="sidebar-link <%= activePage === 'testimonials' ? 'active' : '' %>">💬 Cảm nhận</a>
+    <a href="/admin/posts" class="sidebar-link <%= activePage === 'posts' ? 'active' : '' %>">📰 Tin tức</a>
+    <a href="/admin/documents" class="sidebar-link <%= activePage === 'documents' ? 'active' : '' %>">📄 Tài liệu</a>
+    <a href="/admin/gallery" class="sidebar-link <%= activePage === 'gallery' ? 'active' : '' %>">🖼️ Thư viện ảnh</a>
+    <a href="/admin/contacts" class="sidebar-link <%= activePage === 'contacts' ? 'active' : '' %>">📬 Liên hệ</a>
+    <a href="/admin/menus" class="sidebar-link <%= activePage === 'menus' ? 'active' : '' %>">📋 Quản lý Menu</a>
+  </nav>
+</aside>

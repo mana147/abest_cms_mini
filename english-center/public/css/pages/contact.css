@@ -1,0 +1,4 @@
+.contact-info-card { display: flex; gap: 1rem; align-items: flex-start; padding: 1.25rem 0; border-bottom: 1px solid var(--color-border); }
+.contact-info-card:last-child { border-bottom: none; }
+.contact-info-card i { color: var(--color-gold); font-size: 1.3rem; margin-top: 0.2rem; }
+.contact-form { background: #fff; border-radius: var(--radius); box-shadow: var(--shadow); padding: 2rem; }

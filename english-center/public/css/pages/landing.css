@@ -1,0 +1,43 @@
+.hero {
+  background: linear-gradient(120deg, var(--color-navy) 0%, var(--color-navy-dark) 100%);
+  color: #fff;
+  padding: 5rem 1.5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 80% 20%, rgba(212,175,55,0.25), transparent 60%);
+}
+.hero-inner { max-width: 760px; margin: 0 auto; position: relative; z-index: 1; }
+.hero h1 { color: #fff; font-size: 2.4rem; margin-bottom: 1rem; }
+.hero p { color: rgba(255,255,255,0.85); font-size: 1.1rem; margin-bottom: 2rem; }
+
+.course-card-thumb { position: relative; }
+.course-card-level {
+  position: absolute; top: 0.75rem; right: 0.75rem;
+}
+
+.teacher-card { text-align: center; padding: 1.75rem 1.25rem; }
+.teacher-card .placeholder-img { width: 110px; margin: 0 auto 1.25rem; }
+.teacher-card h5 { margin-bottom: 0.25rem; }
+.teacher-card .teacher-qualification { color: var(--color-text-light); font-size: 0.88rem; }
+
+.testimonial-slider { position: relative; max-width: 760px; margin: 0 auto; min-height: 220px; }
+.testimonial-slide {
+  display: none;
+  text-align: center;
+  padding: 0 1.5rem;
+}
+.testimonial-slide.active { display: block; }
+.testimonial-slide .stars { color: var(--color-gold); margin-bottom: 1rem; }
+.testimonial-slide p.quote { font-size: 1.15rem; font-style: italic; color: var(--color-text); margin-bottom: 1.25rem; }
+.testimonial-slide .placeholder-img { width: 64px; margin: 0 auto 0.75rem; }
+.testimonial-slide .student-name { font-weight: 700; color: var(--color-navy); }
+.testimonial-slide .student-course { color: var(--color-text-light); font-size: 0.85rem; }
+
+.post-card-thumb { aspect-ratio: 16/10; }
+.bg-alt { background: var(--color-bg-alt); }

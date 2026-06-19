@@ -1,0 +1,35 @@
+<% const activePage = 'contacts'; %>
+<%- include('../partials/admin-header') %>
+
+<div class="admin-card">
+  <h5 class="mb-3">Danh sách liên hệ</h5>
+  <% if (contacts.length === 0) { %>
+    <div class="empty-state"><i class="bi bi-chat-square-x"></i>Chưa có liên hệ nào</div>
+  <% } else { %>
+    <div class="table-responsive">
+      <table class="table table-admin">
+        <thead><tr><th></th><th>Họ tên</th><th>Email</th><th>Chủ đề</th><th>Ngày gửi</th><th></th></tr></thead>
+        <tbody>
+          <% contacts.forEach(c => { %>
+            <tr class="<%= c.is_read ? '' : 'fw-bold' %>">
+              <td><% if (!c.is_read) { %><span class="badge" style="background:var(--color-gold);color:var(--color-navy-dark);">Mới</span><% } %></td>
+              <td><%= c.full_name %></td>
+              <td><%= c.email || '-' %></td>
+              <td><%= c.subject || '-' %></td>
+              <td><%= new Date(c.created_at).toLocaleString('vi-VN') %></td>
+              <td class="text-end">
+                <a href="/admin/contacts/<%= c.id %>" class="btn btn-sm btn-outline-navy"><i class="bi bi-eye"></i></a>
+                <form action="/admin/contacts/<%= c.id %>/delete" method="POST" class="d-inline" data-confirm="Xóa liên hệ này?">
+                  <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                  <button type="submit" class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button>
+                </form>
+              </td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
+  <% } %>
+</div>
+
+<%- include('../partials/admin-footer') %>

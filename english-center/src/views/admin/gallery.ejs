@@ -1,0 +1,37 @@
+<% const activePage = 'gallery'; %>
+<%- include('../partials/admin-header') %>
+
+<div class="admin-card mb-4">
+  <h5 class="mb-3">Tải ảnh lên</h5>
+  <form action="/admin/gallery" method="POST" enctype="multipart/form-data">
+    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+    <div class="mb-3">
+      <input type="file" name="images" class="form-control" accept="image/jpeg,image/png,image/webp" multiple required>
+      <div class="form-text">Tối đa 20 ảnh, mỗi ảnh không quá 5MB.</div>
+    </div>
+    <button type="submit" class="btn-gold btn">Tải lên</button>
+  </form>
+</div>
+
+<div class="admin-card">
+  <h5 class="mb-3">Thư viện ảnh</h5>
+  <% if (images.length === 0) { %>
+    <div class="empty-state"><i class="bi bi-images"></i>Chưa có ảnh nào</div>
+  <% } else { %>
+    <div class="row g-3">
+      <% images.forEach(image => { %>
+        <div class="col-md-2 col-4">
+          <div class="position-relative">
+            <img src="<%= image.filepath %>" alt="" style="width:100%;aspect-ratio:1;object-fit:cover;border-radius:var(--radius);">
+            <form action="/admin/gallery/<%= image.id %>/delete" method="POST" class="position-absolute top-0 end-0 m-1" data-confirm="Xóa ảnh này?">
+              <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+              <button type="submit" class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></button>
+            </form>
+          </div>
+        </div>
+      <% }) %>
+    </div>
+  <% } %>
+</div>
+
+<%- include('../partials/admin-footer') %>

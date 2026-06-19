@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %> - Admin | ABest English Center</title>
+  <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/vendor/bootstrap-icons/bootstrap-icons.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="admin-body">
+  <div class="admin-wrapper">
+    <%- include('admin-sidebar', { activePage: typeof activePage !== 'undefined' ? activePage : '' }) %>
+    <div class="admin-main">
+      <header class="admin-topbar">
+        <button class="admin-sidebar-toggle" id="sidebarToggle"><i class="bi bi-list"></i></button>
+        <h1 class="admin-topbar-title"><%= title %></h1>
+        <div class="admin-topbar-user">
+          <span><i class="bi bi-person-circle"></i> <%= user.username %></span>
+          <form action="/admin/logout" method="POST" class="d-inline">
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+            <button type="submit" class="btn btn-sm btn-outline-navy">Đăng xuất</button>
+          </form>
+        </div>
+      </header>
+      <div class="admin-content">
+        <% if (success) { %>
+          <div class="alert alert-success alert-dismissible fade show" role="alert"><%= success %><button type="button" class="btn-close" data-bs-dismiss="alert"></button></div>
+        <% } %>
+        <% if (error) { %>
+          <div class="alert alert-danger alert-dismissible fade show" role="alert"><%= error %><button type="button" class="btn-close" data-bs-dismiss="alert"></button></div>
+        <% } %>

@@ -1,0 +1,52 @@
+<% const activePage = 'teachers'; %>
+<%- include('../partials/admin-header') %>
+
+<div class="admin-card">
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h5 class="mb-0">Danh sách giáo viên</h5>
+    <a href="/admin/teachers/create" class="btn-gold btn"><i class="bi bi-plus-lg"></i> Thêm giáo viên</a>
+  </div>
+  <% if (teachers.length === 0) { %>
+    <div class="empty-state"><i class="bi bi-person-x"></i>Chưa có giáo viên nào</div>
+  <% } else { %>
+    <div class="table-responsive">
+      <table class="table table-admin">
+        <thead>
+          <tr><th>Ảnh</th><th>Tên</th><th>Chuyên môn</th><th>Thứ tự</th><th>Trạng thái</th><th></th></tr>
+        </thead>
+        <tbody>
+          <% teachers.forEach(teacher => { %>
+            <tr>
+              <td>
+                <% if (teacher.photo) { %>
+                  <img src="<%= teacher.photo %>" class="thumb-sm" style="border-radius:50%;" alt="">
+                <% } else { %>
+                  <div class="thumb-sm placeholder-img placeholder-round"><i class="bi bi-person"></i></div>
+                <% } %>
+              </td>
+              <td><%= teacher.name %></td>
+              <td><%= teacher.qualification || '-' %></td>
+              <td><%= teacher.sort_order %></td>
+              <td>
+                <% if (teacher.status === 'active') { %>
+                  <span class="badge bg-success">Hoạt động</span>
+                <% } else { %>
+                  <span class="badge bg-secondary">Ngừng</span>
+                <% } %>
+              </td>
+              <td class="text-end">
+                <a href="/admin/teachers/<%= teacher.id %>/edit" class="btn btn-sm btn-outline-navy"><i class="bi bi-pencil"></i></a>
+                <form action="/admin/teachers/<%= teacher.id %>/delete" method="POST" class="d-inline" data-confirm="Xóa giáo viên này?">
+                  <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                  <button type="submit" class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button>
+                </form>
+              </td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
+  <% } %>
+</div>
+
+<%- include('../partials/admin-footer') %>

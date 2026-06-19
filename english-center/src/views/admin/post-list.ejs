@@ -1,0 +1,44 @@
+<% const activePage = 'posts'; %>
+<%- include('../partials/admin-header') %>
+
+<div class="admin-card">
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h5 class="mb-0">Danh sách tin tức</h5>
+    <a href="/admin/posts/create" class="btn-gold btn"><i class="bi bi-plus-lg"></i> Thêm bài viết</a>
+  </div>
+  <% if (posts.length === 0) { %>
+    <div class="empty-state"><i class="bi bi-newspaper"></i>Chưa có bài viết nào</div>
+  <% } else { %>
+    <div class="table-responsive">
+      <table class="table table-admin">
+        <thead><tr><th>Ảnh</th><th>Tiêu đề</th><th>Trạng thái</th><th></th></tr></thead>
+        <tbody>
+          <% posts.forEach(post => { %>
+            <tr>
+              <td>
+                <% if (post.thumbnail) { %>
+                  <img src="<%= post.thumbnail %>" class="thumb-sm" alt="">
+                <% } else { %>
+                  <div class="thumb-sm placeholder-img" style="aspect-ratio:1;"><i class="bi bi-newspaper"></i></div>
+                <% } %>
+              </td>
+              <td><%= post.title %></td>
+              <td>
+                <% if (post.status === 'published') { %><span class="badge bg-success">Đã đăng</span><% } else { %><span class="badge bg-secondary">Bản nháp</span><% } %>
+              </td>
+              <td class="text-end">
+                <a href="/admin/posts/<%= post.id %>/edit" class="btn btn-sm btn-outline-navy"><i class="bi bi-pencil"></i></a>
+                <form action="/admin/posts/<%= post.id %>/delete" method="POST" class="d-inline" data-confirm="Xóa bài viết này?">
+                  <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                  <button type="submit" class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button>
+                </form>
+              </td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
+  <% } %>
+</div>
+
+<%- include('../partials/admin-footer') %>

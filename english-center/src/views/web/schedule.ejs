@@ -1,0 +1,78 @@
+<%- include('../partials/header', { pageCss: 'schedule' }) %>
+
+<div class="page-banner">
+  <div class="container">
+    <h1><%= t.schedule.title %></h1>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-7">
+        <% if (courses.length === 0) { %>
+          <div class="empty-state"><i class="bi bi-calendar-x"></i><%= t.courses.empty %></div>
+        <% } else { %>
+          <table class="table schedule-table align-middle">
+            <thead>
+              <tr>
+                <th><%= t.courses.title %></th>
+                <th><%= t.courses.level %></th>
+                <th><%= t.courses.schedule %></th>
+                <th><%= t.courses.fee %></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <% courses.forEach(course => { %>
+                <tr>
+                  <td><%= lang === 'en' && course.title_en ? course.title_en : course.title %></td>
+                  <td><%= course.level %></td>
+                  <td><%= course.schedule %></td>
+                  <td><%= course.fee %></td>
+                  <td><a href="/khoa-hoc/<%= course.slug %>" class="btn-outline-navy btn btn-sm"><%= t.courses.detail %></a></td>
+                </tr>
+              <% }) %>
+            </tbody>
+          </table>
+        <% } %>
+      </div>
+      <div class="col-lg-5">
+        <div class="registration-form">
+          <h4 class="mb-3"><%= t.schedule.form_title %></h4>
+          <form action="/dang-ky" method="POST">
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+            <div class="mb-3">
+              <label class="form-label"><%= t.schedule.full_name %> *</label>
+              <input type="text" name="full_name" class="form-control" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label"><%= t.schedule.phone %> *</label>
+              <input type="text" name="phone" class="form-control" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label"><%= t.schedule.email %></label>
+              <input type="email" name="email" class="form-control">
+            </div>
+            <div class="mb-3">
+              <label class="form-label"><%= t.schedule.course %></label>
+              <select name="course_id" class="form-select">
+                <option value=""><%= t.schedule.select_course %></option>
+                <% courses.forEach(course => { %>
+                  <option value="<%= course.id %>"><%= lang === 'en' && course.title_en ? course.title_en : course.title %></option>
+                <% }) %>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label class="form-label"><%= t.schedule.message %></label>
+              <textarea name="message" class="form-control" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn-gold btn w-100"><%= t.schedule.submit %></button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%- include('../partials/footer') %>

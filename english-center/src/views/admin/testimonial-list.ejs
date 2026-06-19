@@ -1,0 +1,46 @@
+<% const activePage = 'testimonials'; %>
+<%- include('../partials/admin-header') %>
+
+<div class="admin-card">
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h5 class="mb-0">Danh sách cảm nhận</h5>
+    <a href="/admin/testimonials/create" class="btn-gold btn"><i class="bi bi-plus-lg"></i> Thêm cảm nhận</a>
+  </div>
+  <% if (testimonials.length === 0) { %>
+    <div class="empty-state"><i class="bi bi-chat-square-x"></i>Chưa có cảm nhận nào</div>
+  <% } else { %>
+    <div class="table-responsive">
+      <table class="table table-admin">
+        <thead><tr><th>Ảnh</th><th>Học viên</th><th>Nội dung</th><th>Đánh giá</th><th>Hiển thị</th><th></th></tr></thead>
+        <tbody>
+          <% testimonials.forEach(tm => { %>
+            <tr>
+              <td>
+                <% if (tm.avatar) { %>
+                  <img src="<%= tm.avatar %>" class="thumb-sm" style="border-radius:50%;" alt="">
+                <% } else { %>
+                  <div class="thumb-sm placeholder-img placeholder-round"><i class="bi bi-person"></i></div>
+                <% } %>
+              </td>
+              <td><%= tm.student_name %></td>
+              <td style="max-width:280px;"><%= tm.content.slice(0, 80) %><%= tm.content.length > 80 ? '...' : '' %></td>
+              <td><% for (let s = 0; s < tm.rating; s++) { %><i class="bi bi-star-fill text-gold"></i><% } %></td>
+              <td>
+                <% if (tm.is_visible) { %><span class="badge bg-success">Hiện</span><% } else { %><span class="badge bg-secondary">Ẩn</span><% } %>
+              </td>
+              <td class="text-end">
+                <a href="/admin/testimonials/<%= tm.id %>/edit" class="btn btn-sm btn-outline-navy"><i class="bi bi-pencil"></i></a>
+                <form action="/admin/testimonials/<%= tm.id %>/delete" method="POST" class="d-inline" data-confirm="Xóa cảm nhận này?">
+                  <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                  <button type="submit" class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button>
+                </form>
+              </td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
+  <% } %>
+</div>
+
+<%- include('../partials/admin-footer') %>

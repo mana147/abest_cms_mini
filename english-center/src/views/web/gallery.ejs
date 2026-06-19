@@ -1,0 +1,25 @@
+<%- include('../partials/header') %>
+
+<div class="page-banner">
+  <div class="container">
+    <h1><%= t.gallery.title %></h1>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <% if (images.length === 0) { %>
+      <div class="empty-state"><i class="bi bi-images"></i><%= t.gallery.empty %></div>
+    <% } else { %>
+      <div class="row g-3">
+        <% images.forEach(image => { %>
+          <div class="col-md-3 col-6">
+            <img src="<%= image.filepath %>" alt="<%= image.alt_text || '' %>" style="width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:var(--radius);">
+          </div>
+        <% }) %>
+      </div>
+    <% } %>
+  </div>
+</section>
+
+<%- include('../partials/footer') %>

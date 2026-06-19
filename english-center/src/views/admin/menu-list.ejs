@@ -1,0 +1,51 @@
+<%- include('../partials/admin-header') %>
+
+<div class="admin-card">
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h5 class="mb-0">Quản lý Menu</h5>
+    <a href="/admin/menus/create" class="btn-gold btn"><i class="bi bi-plus-lg"></i> Thêm menu</a>
+  </div>
+  <div class="table-responsive">
+    <table class="table table-admin">
+      <thead><tr><th>Thứ tự</th><th>Tên</th><th>Loại</th><th>Slug</th><th>Hiển thị</th><th></th></tr></thead>
+      <tbody>
+        <% menus.forEach((menu, idx) => { %>
+          <tr>
+            <td>
+              <form action="/admin/menus/<%= menu.id %>/move-up" method="POST" class="d-inline">
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                <button type="submit" class="btn btn-sm btn-light" <%= idx === 0 ? 'disabled' : '' %>><i class="bi bi-arrow-up"></i></button>
+              </form>
+              <form action="/admin/menus/<%= menu.id %>/move-down" method="POST" class="d-inline">
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                <button type="submit" class="btn btn-sm btn-light" <%= idx === menus.length - 1 ? 'disabled' : '' %>><i class="bi bi-arrow-down"></i></button>
+              </form>
+            </td>
+            <td><%= menu.name_vi %><% if (menu.type === 'system') { %> <span class="badge bg-secondary">Hệ thống</span><% } %></td>
+            <td><%= menu.type %></td>
+            <td><%= menu.slug %></td>
+            <td>
+              <form action="/admin/menus/<%= menu.id %>/toggle" method="POST">
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                <button type="submit" class="btn btn-sm <%= menu.is_visible ? 'btn-success' : 'btn-secondary' %>">
+                  <%= menu.is_visible ? 'Hiện' : 'Ẩn' %>
+                </button>
+              </form>
+            </td>
+            <td class="text-end">
+              <a href="/admin/menus/<%= menu.id %>/edit" class="btn btn-sm btn-outline-navy"><i class="bi bi-pencil"></i></a>
+              <% if (menu.type !== 'system') { %>
+                <form action="/admin/menus/<%= menu.id %>/delete" method="POST" class="d-inline" data-confirm="Xóa menu này?">
+                  <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                  <button type="submit" class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button>
+                </form>
+              <% } %>
+            </td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<%- include('../partials/admin-footer') %>

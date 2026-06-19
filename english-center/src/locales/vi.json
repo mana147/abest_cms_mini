@@ -1,0 +1,94 @@
+{
+  "site": {
+    "name": "ABest English Center"
+  },
+  "nav": {
+    "home": "Trang chủ",
+    "about": "Giới thiệu",
+    "courses": "Khóa học",
+    "teachers": "Giáo viên",
+    "schedule": "Lịch khai giảng",
+    "posts": "Tin tức",
+    "gallery": "Thư viện",
+    "contact": "Liên hệ",
+    "documents": "Tài liệu"
+  },
+  "home": {
+    "hero_title": "Chinh phục tiếng Anh cùng ABest",
+    "hero_subtitle": "Trung tâm Anh ngữ uy tín — đồng hành cùng bạn trên con đường chinh phục ngôn ngữ toàn cầu",
+    "hero_cta": "Đăng ký học thử",
+    "courses_title": "Khóa học nổi bật",
+    "courses_view_all": "Xem tất cả khóa học",
+    "teachers_title": "Đội ngũ giáo viên",
+    "teachers_view_all": "Xem tất cả giáo viên",
+    "testimonials_title": "Học viên nói gì về chúng tôi",
+    "posts_title": "Tin tức mới nhất",
+    "posts_view_all": "Xem tất cả tin tức"
+  },
+  "courses": {
+    "title": "Khóa học",
+    "level": "Trình độ",
+    "fee": "Học phí",
+    "duration": "Thời lượng",
+    "schedule": "Lịch học",
+    "detail": "Xem chi tiết",
+    "apply": "Đăng ký ngay",
+    "other_courses": "Khóa học khác",
+    "empty": "Chưa có khóa học nào"
+  },
+  "teachers": {
+    "title": "Giáo viên",
+    "qualification": "Trình độ chuyên môn",
+    "experience": "Kinh nghiệm",
+    "empty": "Chưa có giáo viên nào"
+  },
+  "schedule": {
+    "title": "Lịch khai giảng",
+    "form_title": "Đăng ký học thử",
+    "full_name": "Họ và tên",
+    "email": "Email",
+    "phone": "Số điện thoại",
+    "course": "Khóa học quan tâm",
+    "message": "Lời nhắn",
+    "submit": "Gửi đăng ký",
+    "select_course": "-- Chọn khóa học --"
+  },
+  "posts": {
+    "title": "Tin tức",
+    "read_more": "Đọc tiếp",
+    "empty": "Chưa có bài viết nào"
+  },
+  "about": {
+    "title": "Giới thiệu"
+  },
+  "contact": {
+    "title": "Liên hệ",
+    "subject": "Chủ đề",
+    "submit": "Gửi liên hệ"
+  },
+  "gallery": {
+    "title": "Thư viện ảnh",
+    "empty": "Chưa có ảnh nào"
+  },
+  "documents": {
+    "title": "Tài liệu",
+    "download": "Tải xuống",
+    "empty": "Chưa có tài liệu nào"
+  },
+  "footer": {
+    "about_text": "ABest English Center — Trung tâm Anh ngữ uy tín, đồng hành cùng học viên chinh phục tiếng Anh.",
+    "quick_links": "Liên kết nhanh",
+    "contact_info": "Thông tin liên hệ",
+    "address": "123 Đường Nguyễn Văn Linh, Quận 7, TP.HCM",
+    "phone": "Hotline: 1900 1234",
+    "email": "Email: info@abest.edu.vn",
+    "copyright": "Bản quyền © ABest English Center"
+  },
+  "errors": {
+    "404_title": "Không tìm thấy trang",
+    "404_message": "Trang bạn tìm kiếm không tồn tại hoặc đã bị xóa",
+    "back_home": "Về trang chủ",
+    "500_title": "Đã có lỗi xảy ra",
+    "500_message": "Xin lỗi, hệ thống đang gặp sự cố. Vui lòng thử lại sau"
+  }
+}

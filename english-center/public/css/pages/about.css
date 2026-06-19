@@ -1,0 +1,4 @@
+.about-block { padding: 3rem 0; }
+.about-stat { text-align: center; }
+.about-stat .value { font-family: var(--font-heading); font-size: 2.2rem; color: var(--color-gold); font-weight: 700; }
+.about-stat .label { color: var(--color-text-light); font-size: 0.9rem; }

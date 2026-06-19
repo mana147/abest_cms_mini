@@ -1,0 +1,101 @@
+<%- include('../partials/header', { pageCss: 'course-detail' }) %>
+
+<div class="page-banner">
+  <div class="container">
+    <h1><%= lang === 'en' && course.title_en ? course.title_en : course.title %></h1>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-8">
+        <% if (course.thumbnail) { %>
+          <img src="<%= course.thumbnail %>" alt="<%= course.title %>" style="width:100%;border-radius:var(--radius);margin-bottom:1.5rem;">
+        <% } else { %>
+          <div class="placeholder-img placeholder-wide" style="border-radius:var(--radius);margin-bottom:1.5rem;"><i class="bi bi-journal-bookmark"></i></div>
+        <% } %>
+        <div class="course-detail-info mb-4">
+          <div class="row">
+            <div class="col-6 col-md-3">
+              <dt><%= t.courses.level %></dt><dd><%= course.level || '-' %></dd>
+            </div>
+            <div class="col-6 col-md-3">
+              <dt><%= t.courses.fee %></dt><dd><%= course.fee || '-' %></dd>
+            </div>
+            <div class="col-6 col-md-3">
+              <dt><%= t.courses.duration %></dt><dd><%= course.duration || '-' %></dd>
+            </div>
+            <div class="col-6 col-md-3">
+              <dt><%= t.courses.schedule %></dt><dd><%= course.schedule || '-' %></dd>
+            </div>
+          </div>
+        </div>
+        <div class="course-content">
+          <%- (lang === 'en' && course.content_en ? course.content_en : course.content || '').replace(/\n/g, '<br>') %>
+        </div>
+        <button type="button" class="btn-gold btn btn-lg mt-4" data-bs-toggle="modal" data-bs-target="#applyModal"><%= t.courses.apply %></button>
+      </div>
+      <div class="col-lg-4">
+        <div class="admin-card">
+          <h5 class="mb-3"><%= t.courses.other_courses %></h5>
+          <% if (otherCourses.length === 0) { %>
+            <p class="text-muted small mb-0"><%= t.courses.empty %></p>
+          <% } %>
+          <% otherCourses.forEach(oc => { %>
+            <a href="/khoa-hoc/<%= oc.slug %>" class="sidebar-course-item text-decoration-none">
+              <% if (oc.thumbnail) { %>
+                <img src="<%= oc.thumbnail %>" alt="<%= oc.title %>" style="width:72px;height:54px;object-fit:cover;border-radius:6px;">
+              <% } else { %>
+                <div class="placeholder-img"><i class="bi bi-journal-bookmark"></i></div>
+              <% } %>
+              <div>
+                <div style="color:var(--color-navy);font-weight:600;font-size:0.92rem;"><%= lang === 'en' && oc.title_en ? oc.title_en : oc.title %></div>
+                <div class="text-muted small"><%= oc.level %></div>
+              </div>
+            </a>
+          <% }) %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Apply modal -->
+<div class="modal fade" id="applyModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form action="/dang-ky" method="POST">
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+        <input type="hidden" name="course_id" value="<%= course.id %>">
+        <div class="modal-header">
+          <h5 class="modal-title"><%= t.schedule.form_title %></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label class="form-label"><%= t.schedule.full_name %> *</label>
+            <input type="text" name="full_name" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label"><%= t.schedule.phone %> *</label>
+            <input type="text" name="phone" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label"><%= t.schedule.email %></label>
+            <input type="email" name="email" class="form-control">
+          </div>
+          <div class="mb-3">
+            <label class="form-label"><%= t.schedule.message %></label>
+            <textarea name="message" class="form-control" rows="3"></textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn-gold btn"><%= t.schedule.submit %></button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<%- include('../partials/footer') %>

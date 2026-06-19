@@ -1,0 +1,48 @@
+<%- include('../partials/header', { pageCss: 'about' }) %>
+
+<div class="page-banner">
+  <div class="container">
+    <h1><%= t.about.title %></h1>
+  </div>
+</div>
+
+<section class="section about-block">
+  <div class="container">
+    <div class="row g-4 align-items-center">
+      <div class="col-lg-6">
+        <div class="placeholder-img placeholder-wide" style="border-radius:var(--radius);"><i class="bi bi-building"></i></div>
+      </div>
+      <div class="col-lg-6">
+        <% if (lang === 'en') { %>
+          <h2>About ABest English Center</h2>
+          <p>ABest English Center is a trusted English training institution, dedicated to helping students of all ages master English with confidence — from everyday communication to international certificates like IELTS and TOEIC.</p>
+          <p>With a team of experienced, passionate teachers and a practical, student-centered curriculum, we are committed to bringing real progress to every learner.</p>
+        <% } else { %>
+          <h2>Về ABest English Center</h2>
+          <p>ABest English Center là trung tâm đào tạo tiếng Anh uy tín, đồng hành cùng học viên ở mọi lứa tuổi chinh phục tiếng Anh một cách tự tin — từ giao tiếp hàng ngày đến các chứng chỉ quốc tế như IELTS, TOEIC.</p>
+          <p>Với đội ngũ giáo viên giàu kinh nghiệm, tâm huyết cùng giáo trình thực tiễn, lấy học viên làm trung tâm, chúng tôi cam kết mang lại sự tiến bộ thực sự cho mỗi học viên.</p>
+        <% } %>
+      </div>
+    </div>
+    <div class="row g-4 mt-5">
+      <div class="col-md-3 col-6 about-stat">
+        <div class="value">10+</div>
+        <div class="label"><%= lang === 'en' ? 'Years of operation' : 'Năm hoạt động' %></div>
+      </div>
+      <div class="col-md-3 col-6 about-stat">
+        <div class="value">5,000+</div>
+        <div class="label"><%= lang === 'en' ? 'Students' : 'Học viên' %></div>
+      </div>
+      <div class="col-md-3 col-6 about-stat">
+        <div class="value">30+</div>
+        <div class="label"><%= lang === 'en' ? 'Teachers' : 'Giáo viên' %></div>
+      </div>
+      <div class="col-md-3 col-6 about-stat">
+        <div class="value">98%</div>
+        <div class="label"><%= lang === 'en' ? 'Satisfaction rate' : 'Hài lòng' %></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%- include('../partials/footer') %>

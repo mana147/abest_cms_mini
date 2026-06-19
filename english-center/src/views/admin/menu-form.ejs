@@ -1,0 +1,78 @@
+<%- include('../partials/admin-header') %>
+
+<div class="admin-card" style="max-width:700px;">
+  <form action="<%= menu ? '/admin/menus/' + menu.id : '/admin/menus' %>" method="POST">
+    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+    <div class="mb-3">
+      <label class="form-label">Tên menu (VI) *</label>
+      <input type="text" name="name_vi" class="form-control" value="<%= menu ? menu.name_vi : '' %>" required>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Tên menu (EN)</label>
+      <input type="text" name="name_en" class="form-control" value="<%= menu && menu.name_en ? menu.name_en : '' %>">
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Slug</label>
+      <input type="text" name="slug" class="form-control" value="<%= menu ? menu.slug : '' %>" <%= menu && menu.type === 'system' ? 'disabled' : '' %>>
+      <% if (menu && menu.type === 'system') { %><div class="form-text">Menu hệ thống không thể đổi slug.</div><% } %>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Loại menu</label>
+      <select name="type" id="menuType" class="form-select" <%= menu && menu.type === 'system' ? 'disabled' : '' %>>
+        <% if (menu && menu.type === 'system') { %>
+          <option value="system" selected>Hệ thống</option>
+        <% } else { %>
+          <option value="custom" <%= menu && menu.type === 'custom' ? 'selected' : '' %>>Liên kết tùy chỉnh</option>
+          <option value="single_post" <%= menu && menu.type === 'single_post' ? 'selected' : '' %>>Liên kết 1 bài viết</option>
+          <option value="post_list" <%= menu && menu.type === 'post_list' ? 'selected' : '' %>>Danh sách bài viết (dropdown)</option>
+        <% } %>
+      </select>
+    </div>
+    <div class="mb-3" id="urlField">
+      <label class="form-label">URL (cho liên kết tùy chỉnh)</label>
+      <input type="text" name="url" class="form-control" value="<%= menu && menu.url ? menu.url : '' %>">
+    </div>
+    <div class="mb-3" id="linkedPostField">
+      <label class="form-label">Bài viết liên kết</label>
+      <select name="linked_post_id" class="form-select">
+        <option value="">-- Chọn bài viết --</option>
+        <% posts.forEach(post => { %>
+          <option value="<%= post.id %>" <%= menu && menu.linked_post_id === post.id ? 'selected' : '' %>><%= post.title %></option>
+        <% }) %>
+      </select>
+    </div>
+    <div class="mb-3" id="postListField">
+      <label class="form-label">Chọn các bài viết hiển thị trong dropdown</label>
+      <select name="post_ids" class="form-select" multiple size="6">
+        <% posts.forEach(post => { %>
+          <option value="<%= post.id %>" <%= selectedPostIds.includes(post.id) ? 'selected' : '' %>><%= post.title %></option>
+        <% }) %>
+      </select>
+    </div>
+    <div class="form-check mb-3">
+      <input type="checkbox" name="is_visible" class="form-check-input" id="isVisible" <%= !menu || menu.is_visible ? 'checked' : '' %>>
+      <label class="form-check-label" for="isVisible">Hiển thị trên menu</label>
+    </div>
+    <button type="submit" class="btn-gold btn">Lưu menu</button>
+    <a href="/admin/menus" class="btn btn-outline-secondary">Hủy</a>
+  </form>
+</div>
+
+<script>
+  (function () {
+    var typeSelect = document.getElementById('menuType');
+    var urlField = document.getElementById('urlField');
+    var linkedPostField = document.getElementById('linkedPostField');
+    var postListField = document.getElementById('postListField');
+    function toggleFields() {
+      var type = typeSelect.value;
+      urlField.style.display = type === 'custom' ? '' : 'none';
+      linkedPostField.style.display = type === 'single_post' ? '' : 'none';
+      postListField.style.display = type === 'post_list' ? '' : 'none';
+    }
+    typeSelect.addEventListener('change', toggleFields);
+    toggleFields();
+  })();
+</script>
+
+<%- include('../partials/admin-footer') %>

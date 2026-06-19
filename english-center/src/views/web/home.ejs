@@ -1,0 +1,123 @@
+<%- include('../partials/header', { pageCss: 'landing' }) %>
+
+<section class="hero">
+  <div class="hero-inner">
+    <h1><%= t.home.hero_title %></h1>
+    <p><%= t.home.hero_subtitle %></p>
+    <a href="/lich-khai-giang" class="btn-gold btn btn-lg"><%= t.home.hero_cta %></a>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="section-title"><%= t.home.courses_title %></h2>
+    <% if (courses.length === 0) { %>
+      <div class="empty-state"><i class="bi bi-journal-x"></i><%= t.courses.empty %></div>
+    <% } else { %>
+      <div class="row g-4">
+        <% courses.forEach(course => { %>
+          <div class="col-md-4">
+            <div class="card-custom">
+              <div class="course-card-thumb">
+                <% if (course.thumbnail) { %>
+                  <img src="<%= course.thumbnail %>" alt="<%= course.title %>" style="width:100%;aspect-ratio:4/3;object-fit:cover;">
+                <% } else { %>
+                  <div class="placeholder-img"><i class="bi bi-journal-bookmark"></i></div>
+                <% } %>
+                <% if (course.level) { %><span class="badge-gold course-card-level"><%= course.level %></span><% } %>
+              </div>
+              <div class="card-body">
+                <h5><%= lang === 'en' && course.title_en ? course.title_en : course.title %></h5>
+                <p class="text-muted small"><%= lang === 'en' && course.description_en ? course.description_en : course.description %></p>
+                <a href="/khoa-hoc/<%= course.slug %>" class="btn-outline-navy btn btn-sm"><%= t.courses.detail %></a>
+              </div>
+            </div>
+          </div>
+        <% }) %>
+      </div>
+    <% } %>
+    <div class="text-center mt-4"><a href="/khoa-hoc" class="btn-navy btn"><%= t.home.courses_view_all %></a></div>
+  </div>
+</section>
+
+<section class="section bg-alt">
+  <div class="container">
+    <h2 class="section-title"><%= t.home.teachers_title %></h2>
+    <% if (teachers.length === 0) { %>
+      <div class="empty-state"><i class="bi bi-person-x"></i><%= t.teachers.empty %></div>
+    <% } else { %>
+      <div class="row g-4">
+        <% teachers.forEach(teacher => { %>
+          <div class="col-md-3 col-6">
+            <div class="teacher-card">
+              <% if (teacher.photo) { %>
+                <img src="<%= teacher.photo %>" alt="<%= teacher.name %>" class="placeholder-round" style="width:110px;height:110px;object-fit:cover;border-radius:50%;margin:0 auto 1.25rem;display:block;">
+              <% } else { %>
+                <div class="placeholder-img placeholder-round"><i class="bi bi-person"></i></div>
+              <% } %>
+              <h5><%= teacher.name %></h5>
+              <p class="teacher-qualification"><%= lang === 'en' && teacher.qualification_en ? teacher.qualification_en : teacher.qualification %></p>
+            </div>
+          </div>
+        <% }) %>
+      </div>
+    <% } %>
+    <div class="text-center mt-4"><a href="/giao-vien" class="btn-navy btn"><%= t.home.teachers_view_all %></a></div>
+  </div>
+</section>
+
+<% if (testimonials.length > 0) { %>
+<section class="section">
+  <div class="container">
+    <h2 class="section-title"><%= t.home.testimonials_title %></h2>
+    <div class="testimonial-slider">
+      <% testimonials.forEach((tm, i) => { %>
+        <div class="testimonial-slide <%= i === 0 ? 'active' : '' %>">
+          <div class="stars">
+            <% for (let s = 0; s < tm.rating; s++) { %><i class="bi bi-star-fill"></i><% } %>
+          </div>
+          <p class="quote">&ldquo;<%= lang === 'en' && tm.content_en ? tm.content_en : tm.content %>&rdquo;</p>
+          <% if (tm.avatar) { %>
+            <img src="<%= tm.avatar %>" alt="<%= tm.student_name %>" style="width:64px;height:64px;object-fit:cover;border-radius:50%;margin:0 auto 0.75rem;display:block;">
+          <% } else { %>
+            <div class="placeholder-img placeholder-round"><i class="bi bi-person"></i></div>
+          <% } %>
+          <div class="student-name"><%= tm.student_name %></div>
+          <% if (tm.course_name) { %><div class="student-course"><%= tm.course_name %></div><% } %>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+</section>
+<% } %>
+
+<section class="section bg-alt">
+  <div class="container">
+    <h2 class="section-title"><%= t.home.posts_title %></h2>
+    <% if (posts.length === 0) { %>
+      <div class="empty-state"><i class="bi bi-newspaper"></i><%= t.posts.empty %></div>
+    <% } else { %>
+      <div class="row g-4">
+        <% posts.forEach(post => { %>
+          <div class="col-md-4">
+            <div class="card-custom">
+              <% if (post.thumbnail) { %>
+                <img src="<%= post.thumbnail %>" alt="<%= post.title %>" class="post-card-thumb" style="width:100%;object-fit:cover;">
+              <% } else { %>
+                <div class="placeholder-img post-card-thumb"><i class="bi bi-newspaper"></i></div>
+              <% } %>
+              <div class="card-body">
+                <h5><%= lang === 'en' && post.title_en ? post.title_en : post.title %></h5>
+                <p class="text-muted small"><%= lang === 'en' && post.excerpt_en ? post.excerpt_en : post.excerpt %></p>
+                <a href="/posts/<%= post.slug %>" class="btn-outline-navy btn btn-sm"><%= t.posts.read_more %></a>
+              </div>
+            </div>
+          </div>
+        <% }) %>
+      </div>
+    <% } %>
+    <div class="text-center mt-4"><a href="/posts" class="btn-navy btn"><%= t.home.posts_view_all %></a></div>
+  </div>
+</section>
+
+<%- include('../partials/footer') %>

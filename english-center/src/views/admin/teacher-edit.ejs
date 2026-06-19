@@ -1,0 +1,61 @@
+<% const activePage = 'teachers'; %>
+<%- include('../partials/admin-header') %>
+
+<div class="admin-card">
+  <form action="/admin/teachers/<%= teacher.id %>" method="POST" enctype="multipart/form-data">
+    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+    <div class="row g-3">
+      <div class="col-md-8">
+        <div class="mb-3">
+          <label class="form-label">Họ tên *</label>
+          <input type="text" name="name" class="form-control" value="<%= teacher.name %>" required>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Chuyên môn (VI)</label>
+          <input type="text" name="qualification" class="form-control" value="<%= teacher.qualification || '' %>">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Chuyên môn (EN)</label>
+          <input type="text" name="qualification_en" class="form-control" value="<%= teacher.qualification_en || '' %>">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Kinh nghiệm</label>
+          <input type="text" name="experience" class="form-control" value="<%= teacher.experience || '' %>">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Giới thiệu (VI)</label>
+          <textarea name="bio" class="form-control" rows="4"><%= teacher.bio || '' %></textarea>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Giới thiệu (EN)</label>
+          <textarea name="bio_en" class="form-control" rows="4"><%= teacher.bio_en || '' %></textarea>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="mb-3">
+          <label class="form-label">Ảnh đại diện</label>
+          <% if (teacher.photo) { %>
+            <img src="<%= teacher.photo %>" style="width:100%;margin-bottom:0.75rem;border-radius:var(--radius);">
+          <% } %>
+          <input type="file" name="thumbnail" class="form-control" accept="image/jpeg,image/png,image/webp" data-preview="thumbPreview">
+          <img id="thumbPreview" style="display:none;width:100%;margin-top:0.75rem;border-radius:var(--radius);">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Thứ tự hiển thị</label>
+          <input type="number" name="sort_order" class="form-control" value="<%= teacher.sort_order %>">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Trạng thái</label>
+          <select name="status" class="form-select">
+            <option value="active" <%= teacher.status === 'active' ? 'selected' : '' %>>Hoạt động</option>
+            <option value="inactive" <%= teacher.status === 'inactive' ? 'selected' : '' %>>Ngừng</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="btn-gold btn">Lưu thay đổi</button>
+    <a href="/admin/teachers" class="btn btn-outline-secondary">Hủy</a>
+  </form>
+</div>
+
+<%- include('../partials/admin-footer') %>

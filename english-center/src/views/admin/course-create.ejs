@@ -1,0 +1,70 @@
+<% const activePage = 'courses'; %>
+<%- include('../partials/admin-header') %>
+
+<div class="admin-card">
+  <form action="/admin/courses" method="POST" enctype="multipart/form-data">
+    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+    <div class="row g-3">
+      <div class="col-md-8">
+        <div class="mb-3">
+          <label class="form-label">Tiêu đề (VI) *</label>
+          <input type="text" name="title" class="form-control" required>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Tiêu đề (EN)</label>
+          <input type="text" name="title_en" class="form-control">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Mô tả ngắn (VI)</label>
+          <textarea name="description" class="form-control" rows="2"></textarea>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Mô tả ngắn (EN)</label>
+          <textarea name="description_en" class="form-control" rows="2"></textarea>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Nội dung chi tiết (VI)</label>
+          <textarea name="content" class="form-control" rows="6"></textarea>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Nội dung chi tiết (EN)</label>
+          <textarea name="content_en" class="form-control" rows="6"></textarea>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="mb-3">
+          <label class="form-label">Ảnh đại diện</label>
+          <input type="file" name="thumbnail" class="form-control" accept="image/jpeg,image/png,image/webp" data-preview="thumbPreview">
+          <img id="thumbPreview" style="display:none;width:100%;margin-top:0.75rem;border-radius:var(--radius);">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Trình độ</label>
+          <input type="text" name="level" class="form-control" placeholder="Cơ bản / Trung cấp...">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Học phí</label>
+          <input type="text" name="fee" class="form-control">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Thời lượng</label>
+          <input type="text" name="duration" class="form-control">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Lịch học</label>
+          <input type="text" name="schedule" class="form-control">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Trạng thái</label>
+          <select name="status" class="form-select">
+            <option value="draft">Bản nháp</option>
+            <option value="published">Đăng công khai</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="btn-gold btn">Lưu khóa học</button>
+    <a href="/admin/courses" class="btn btn-outline-secondary">Hủy</a>
+  </form>
+</div>
+
+<%- include('../partials/admin-footer') %>

@@ -1,0 +1,51 @@
+<% const activePage = 'testimonials'; %>
+<%- include('../partials/admin-header') %>
+
+<div class="admin-card">
+  <form action="/admin/testimonials" method="POST" enctype="multipart/form-data">
+    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+    <div class="row g-3">
+      <div class="col-md-8">
+        <div class="mb-3">
+          <label class="form-label">Tên học viên *</label>
+          <input type="text" name="student_name" class="form-control" required>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Nội dung (VI) *</label>
+          <textarea name="content" class="form-control" rows="3" required></textarea>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Nội dung (EN)</label>
+          <textarea name="content_en" class="form-control" rows="3"></textarea>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Khóa học</label>
+          <input type="text" name="course_name" class="form-control">
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="mb-3">
+          <label class="form-label">Ảnh đại diện</label>
+          <input type="file" name="thumbnail" class="form-control" accept="image/jpeg,image/png,image/webp" data-preview="thumbPreview">
+          <img id="thumbPreview" style="display:none;width:100%;margin-top:0.75rem;border-radius:var(--radius);">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Đánh giá (1-5)</label>
+          <input type="number" name="rating" class="form-control" min="1" max="5" value="5">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Thứ tự hiển thị</label>
+          <input type="number" name="sort_order" class="form-control" value="0">
+        </div>
+        <div class="form-check mb-3">
+          <input type="checkbox" name="is_visible" class="form-check-input" id="isVisible" checked>
+          <label class="form-check-label" for="isVisible">Hiển thị công khai</label>
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="btn-gold btn">Lưu cảm nhận</button>
+    <a href="/admin/testimonials" class="btn btn-outline-secondary">Hủy</a>
+  </form>
+</div>
+
+<%- include('../partials/admin-footer') %>
