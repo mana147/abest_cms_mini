@@ -30,7 +30,10 @@
         </ul>
       </div>
     </div>
-    <div class="footer-bottom">&copy; <%= new Date().getFullYear() %> <%= t.footer.copyright %></div>
+    <div class="footer-bottom">
+      <div><%= t.footer.legal_info %></div>
+      &copy; <%= new Date().getFullYear() %> <%= t.footer.copyright %>
+    </div>
   </footer>
 
   <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

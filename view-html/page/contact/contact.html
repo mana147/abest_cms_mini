@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Fonts & Bootstrap 5 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Font Awesome 6 (free) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="../../components/header/header.css">
+    <link rel="stylesheet" href="../../components/footer/footer.css">
+    <title>Liên Hệ - IELTS ABEST</title>
+</head>
+
+<body>
+    <!-- ===== HEADER START ===== -->
+    <!-- HEADER -->
+    <header id="mainNav" class="fixed-top bg-white bg-opacity-90 backdrop-blur-sm border-bottom border-light">
+        <div class="container py-3 d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center gap-3">
+                <a href="../homepage/homepage.html" class="text-decoration-none d-flex align-items-center">
+                    <img src="../../access/image/hompage/logo.png" class="logo-header" />
+                </a>
+                <button class="btn btn-outline-secondary d-lg-none p-2" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#mobileMenu" aria-controls="mobileMenu" aria-expanded="false" aria-label="Mở menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav d-none d-lg-flex gap-4 fw-semibold small text-secondary mb-0">
+                    <li class="nav-item"><a href="../homepage/homepage.html"
+                            class="nav-link px-0 text-secondary hover-telos">Trang chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-0 text-secondary" href="../aboutUs/aboutUs.html" role="button">Về chúng
+                            tôi</a>
+                    </li>
+                    <li class="nav-item"><a href="../course/course.html" class="nav-link px-0 text-secondary">Khóa
+                            học</a>
+                    </li>
+                    <li class="nav-item"><a href="../blog/blog.html" class="nav-link px-0 text-secondary">Blog</a></li>
+                    <li class="nav-item"><a href="../contact/contact.html" class="nav-link px-0 text-warning">Liên
+                            hệ</a></li>
+                    <li class="nav-item"><a href="../homepage/homepage.html#registerTest" class="nav-link px-0 text-danger">Đăng ký Test</a></li>
+                </ul>
+            </div>
+            <div class="d-flex align-items-center gap-3">
+                <a href="#" class="btn btn-telos-purple rounded-3 fw-bold px-4 py-2 small">Đăng ký tư vấn</a>
+            </div>
+        </div>
+        <div class="collapse d-lg-none w-100 mobile-menu-wrap" id="mobileMenu">
+            <ul class="nav flex-column gap-2 px-3 pb-3 mobile-menu-collapse">
+                <li class="nav-item"><a href="../homepage/homepage.html" class="nav-link text-secondary">Trang chủ</a>
+                </li>
+                <li class="nav-item"><a href="../aboutUs/aboutUs.html" class="nav-link text-secondary">Về chúng tôi</a>
+                </li>
+                <li class="nav-item"><a href="../course/course.html" class="nav-link text-secondary">Khóa học</a></li>
+                <li class="nav-item"><a href="../blog/blog.html" class="nav-link text-secondary">Blog</a></li>
+                <li class="nav-item"><a href="../contact/contact.html" class="nav-link text-warning">Liên hệ</a></li>
+                <li class="nav-item"><a href="../homepage/homepage.html#registerTest" class="nav-link text-danger">Đăng ký Test</a></li>
+            </ul>
+        </div>
+        </div>
+    </header>
+    <!-- ===== HEADER END ===== -->
+
+    <main>
+
+        <!-- Hero Section -->
+        <section class="hero-gradient py-5 overflow-hidden scroll-reveal reveal-up">
+            <div class="container-custom text-center position-relative" style="z-index:10;">
+                <span
+                    class="badge bg-secondary-container text-on-secondary-container fs-caption fw-bold px-3 py-2 rounded-pill mb-3">LIÊN
+                    HỆ</span>
+                <h1 class="fs-display text-on-primary mb-3">Liên Hệ Với Chúng Tôi</h1>
+                <p class="fs-body-lg text-on-primary/80 max-w-2xl mx-auto">
+                    Đội ngũ IELTS ABEST luôn sẵn sàng lắng nghe và giải đáp mọi thắc mắc của bạn về lộ trình học tập, kỳ
+                    thi IELTS và các chương trình ưu đãi mới nhất.
+                </p>
+            </div>
+        </section>
+
+        <!-- Contact Content Grid -->
+        <section class="container-custom py-5">
+            <div class="row g-4">
+                <!-- Left Column: Form -->
+                <div class="col-lg-7">
+                    <div
+                        class="bg-surface-container-lowest p-4 p-md-5 rounded-4 shadow-sm border border-outline-variant/20 scroll-reveal">
+                        <h2 class="fs-headline-lg text-primary mb-3">Gửi Yêu Cầu Tư Vấn</h2>
+                        <p class="fs-body-md text-on-surface-variant mb-4">Hãy để lại thông tin, chúng tôi sẽ liên hệ
+                            lại trong vòng 24h làm việc.</p>
+                        <form onsubmit="event.preventDefault(); alert('Cảm ơn bạn đã gửi yêu cầu!');">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label-custom">Họ Và Tên</label>
+                                    <input class="form-control-custom" placeholder="Nguyễn Văn A" type="text">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label-custom">Số Điện Thoại</label>
+                                    <input class="form-control-custom" placeholder="090 123 4567" type="tel">
+                                </div>
+                            </div>
+                            <div class="mt-3">
+                                <label class="form-label-custom">Email</label>
+                                <input class="form-control-custom" placeholder="email@example.com" type="email">
+                            </div>
+                            <div class="mt-3">
+                                <label class="form-label-custom">Tin Nhắn Của Bạn</label>
+                                <textarea class="form-control-custom" placeholder="Bạn cần tư vấn về khóa học nào?..."
+                                    rows="4"></textarea>
+                            </div>
+                            <button
+                                class="btn btn-on-tertiary-container w-100 py-3 rounded-3 fs-headline-md mt-3 shadow-sm"
+                                type="submit">
+                                Gửi Yêu Cầu
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Right Column: Info & Channels -->
+                <div class="col-lg-5">
+                        <div class="d-flex flex-column gap-3 scroll-reveal">
+
+                        <!-- Contact Cards -->
+                        <div
+                            class="bg-primary p-4 rounded-4 text-on-primary shadow-lg position-relative overflow-hidden">
+                            <div class="position-absolute end-0 bottom-0 opacity-10"
+                                style="font-size:120px; line-height:1;">
+                                <i class="bi bi-headset"></i>
+                            </div>
+                            <h3 class="fs-headline-md mb-3 pb-2 border-bottom border-on-primary/20">Thông Tin Liên Hệ
+                            </h3>
+                            <div class="d-flex flex-column gap-3">
+                                <div class="d-flex gap-3 align-items-start">
+                                    <div class="bg-secondary-container p-2 rounded-3 text-on-secondary-container">
+                                        <i class="bi bi-telephone-fill"></i>
+                                    </div>
+                                    <div>
+                                        <p class="fw-bold opacity-75 mb-0 small text-uppercase">Hotline 24/7</p>
+                                        <p class="fs-headline-md mb-0">1900 8888</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex gap-3 align-items-start">
+                                    <div class="bg-secondary-container p-2 rounded-3 text-on-secondary-container">
+                                        <i class="bi bi-envelope-fill"></i>
+                                    </div>
+                                    <div>
+                                        <p class="fw-bold opacity-75 mb-0 small text-uppercase">Email Hỗ Trợ</p>
+                                        <p class="fs-body-lg mb-0">info@ieltsabest.edu.vn</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex gap-3 align-items-start">
+                                    <div class="bg-secondary-container p-2 rounded-3 text-on-secondary-container">
+                                        <i class="bi bi-clock-fill"></i>
+                                    </div>
+                                    <div>
+                                        <p class="fw-bold opacity-75 mb-0 small text-uppercase">Giờ Làm Việc</p>
+                                        <p class="fs-body-lg mb-0">Thứ 2 - Chủ Nhật: 08:00 - 21:00</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Direct Channels -->
+                        <div class="row g-2">
+                            <div class="col-6">
+                                <a class="d-flex flex-column align-items-center justify-content-center p-3 bg-surface-container-highest rounded-4 card-hover border border-outline-variant/30 text-decoration-none scroll-reveal"
+                                    href="#">
+                                    <div class="bg-blue-500 rounded-circle d-flex align-items-center justify-content-center mb-2"
+                                        style="width:48px;height:48px; color:#fff;">
+                                        <i class="fa-brands fa-whatsapp"></i>
+                                    </div>
+                                    <span class="fw-bold text-primary small">Zalo Me</span>
+                                </a>
+                            </div>
+                            <div class="col-6">
+                                <a class="d-flex flex-column align-items-center justify-content-center p-3 bg-surface-container-highest rounded-4 card-hover border border-outline-variant/30 text-decoration-none scroll-reveal"
+                                    href="#">
+                                    <div class="bg-blue-600 rounded-circle d-flex align-items-center justify-content-center mb-2"
+                                        style="width:48px;height:48px; color:#fff;">
+                                        <i class="fa-brands fa-facebook-messenger"></i>
+                                    </div>
+                                    <span class="fw-bold text-primary small">Messenger</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Support CTA -->
+                        <div class="bg-tertiary-fixed p-3 rounded-4 border border-tertiary-container/10 scroll-reveal">
+                            <h4 class="fs-headline-md text-primary mb-1">Cần hỗ trợ ngay?</h4>
+                            <p class="fs-body-md text-on-tertiary-fixed-variant mb-3">Chat trực tiếp với tư vấn viên của
+                                chúng tôi để được giải đáp thắc mắc về các khóa học luyện thi IELTS.</p>
+                            <button class="btn btn-primary-custom px-4 py-2 rounded-pill fw-bold">
+                                Kết nối ngay
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Branch Locations -->
+        <section class="bg-surface-container-low py-5">
+            <div class="container-custom">
+                <div class="text-center mb-4">
+                    <h2 class="fs-headline-lg text-primary mb-2">Hệ Thống Cơ Sở</h2>
+                    <p class="fs-body-lg text-on-surface-variant">Tìm kiếm trung tâm gần bạn nhất để trải nghiệm môi
+                        trường học tập chuyên nghiệp.</p>
+                </div>
+                <div class="row g-4">
+                    <!-- Branch Hanoi -->
+                    <div class="col-md-6">
+                        <div
+                            class="bg-surface-container-lowest rounded-4 overflow-hidden shadow-sm card-hover border border-outline-variant/20 location-card scroll-reveal">
+                            <div class="position-relative">
+                                <div class="location-img"
+                                    style="background-image: url('../../access/image/contact/address-HN.png');">
+                                </div>
+                                <span class="badge-location">Chi nhánh Hà Nội</span>
+                            </div>
+                            <div class="p-3">
+                                <div class="d-flex gap-3 align-items-start mb-3">
+                                    <i class="bi bi-geo-alt-fill text-primary fs-5 mt-1"></i>
+                                    <div>
+                                        <p class="fs-headline-md text-primary mb-0">IELTS ABEST Cầu Giấy</p>
+                                        <p class="fs-body-md text-on-surface-variant mb-0">Tòa nhà Diamond, Số 12 Khuất
+                                            Duy Tiến, Cầu Giấy, Hà Nội</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Branch HCMC -->
+                    <div class="col-md-6">
+                        <div
+                            class="bg-surface-container-lowest rounded-4 overflow-hidden shadow-sm card-hover border border-outline-variant/20 location-card scroll-reveal">
+                            <div class="position-relative">
+                                <div class="location-img"
+                                    style="background-image: url('../../access/image/contact/address-TPHCM.png');">
+                                </div>
+                                <span class="badge-location">Chi nhánh TP. HCM</span>
+                            </div>
+                            <div class="p-3">
+                                <div class="d-flex gap-3 align-items-start mb-3">
+                                    <i class="bi bi-geo-alt-fill text-primary fs-5 mt-1"></i>
+                                    <div>
+                                        <p class="fs-headline-md text-primary mb-0">IELTS ABEST Quận 1</p>
+                                        <p class="fs-body-md text-on-surface-variant mb-0">350 Võ Văn Kiệt, Phường Cô
+                                            Giang, Quận 1, TP. HCM</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter / CTA -->
+        <section class="py-5 bg-primary-container">
+            <div class="container-custom text-center scroll-reveal reveal-up">
+                <h3 class="fs-display text-secondary-container mb-3">Sẵn sàng chinh phục IELTS?</h3>
+                <p class="fs-body-lg text-on-primary/80 mb-4 max-w-xl mx-auto">Đăng ký kiểm tra trình độ miễn phí ngay
+                    hôm nay để nhận được lộ trình cá nhân hóa từ các chuyên gia.</p>
+                <div class="d-flex flex-column flex-sm-row justify-content-center gap-3">
+                    <button
+                        class="btn btn-on-tertiary-container px-5 py-3 rounded-3 fs-headline-md shadow-lg active-scale-95">
+                        Đăng Ký Test Miễn Phí
+                    </button>
+                    <button class="btn btn-outline-primary-custom px-5 py-3 rounded-3 fs-headline-md">
+                        Xem Các Khóa Học
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== FOOTER START ===== -->
+    <footer class="bg-white pt-5 pb-4 border-top">
+        <div class="container">
+            <div class="row g-4 pb-5">
+                <!-- Column 1: Brand -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="text-telos-purple fw-black display-6">
+                        IELTS <span class="text-telos-pink">ABEST</span>
+                    </div>
+                    <p class="text-secondary small mt-3">
+                        Bắt đầu chinh phục IELTS với lộ trình rõ ràng, giáo viên tư vấn cá nhân và tài liệu luyện thi
+                        chuyên sâu.
+                    </p>
+                    <button class="btn btn-telos-purple rounded-4 fw-bold px-4 py-2 small">
+                        Đăng ký ngay <i class="fas fa-arrow-right ms-1"></i>
+                    </button>
+                </div>
+
+                <!-- Column 2: Contact Info -->
+                <div class="col-md-6 col-lg-3">
+                    <h6 class="fw-black text-telos-purple text-uppercase small tracking-wider">
+                        Thông tin liên hệ
+                    </h6>
+                    <ul class="list-unstyled small text-secondary mt-3">
+                        <li class="d-flex gap-2 mb-2">
+                            <i class="fas fa-map-pin text-telos-pink mt-1"></i> Hà Nội
+                        </li>
+                        <li class="d-flex gap-2 mb-2">
+                            <i class="fas fa-phone-alt text-telos-pink"></i> 0988 123 456
+                        </li>
+                        <li class="d-flex gap-2">
+                            <i class="fas fa-envelope text-telos-pink"></i> info@ieltsabest.vn
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Quick Links -->
+                <div class="col-md-6 col-lg-2">
+                    <h6 class="fw-black text-telos-purple text-uppercase small tracking-wider">
+                        Links
+                    </h6>
+                    <ul class="list-unstyled small fw-bold mt-3">
+                        <li><a href="#" class="text-telos-pink footer-link">Giới thiệu</a></li>
+                        <li><a href="#" class="text-telos-pink footer-link">Khóa học</a></li>
+                        <li><a href="#" class="text-telos-pink footer-link">Lộ trình</a></li>
+                        <li><a href="#" class="text-telos-pink footer-link">Blog</a></li>
+                        <li><a href="#" class="text-telos-pink footer-link">Liên hệ</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Social & Cookie -->
+                <div class="col-md-6 col-lg-4">
+                    <h6 class="fw-black text-telos-purple text-uppercase small tracking-wider">
+                        Theo dõi IELTS ABEST
+                    </h6>
+                    <div class="d-flex gap-3 mt-3">
+                        <a href="#" class="social-icon" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="TikTok">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    </div>
+
+                    <!-- Cookie Box -->
+                    <div class="cookie-box mt-4 p-3">
+                        <p class="small text-secondary mb-1">
+                            <i class="fas fa-cookie-bite text-telos-pink me-1"></i>
+                            Cookie settings:
+                        </p>
+                        <p class="small text-secondary mb-2">
+                            Website Abest sử dụng cookie để cải thiện trải nghiệm.
+                            Xem thêm tại <a href="#" class="text-telos-pink">Chính sách bảo mật</a>.
+                        </p>
+                        <button class="btn btn-primary btn-sm w-100 fw-bold cookie-consent-btn">
+                            Đồng ý
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div
+                class="d-flex flex-wrap justify-content-between align-items-center pt-3 border-top small text-secondary text-uppercase fw-bold tracking-wider">
+                <div class="mb-2 mb-md-0">
+                    © 2026 IELTS ABEST. ALL RIGHTS RESERVED.
+                </div>
+                <div class="d-flex gap-4 footer-bottom-links">
+                    <a href="#" class="footer-bottom-link">Thông tin liên hệ</a>
+                    <a href="#" class="footer-bottom-link">Điều khoản sử dụng</a>
+                    <a href="#" class="footer-bottom-link">Chính sách bảo mật</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- ===== FOOTER END ===== -->
+</body>
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="contact.js"></script>
+<script src="../../components/header/header.js"></script>
+<script src="../../components/footer/footer.js"></script>
+
+</html>

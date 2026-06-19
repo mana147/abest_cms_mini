@@ -1,0 +1,231 @@
+/* ===== FOOTER STYLES ===== */
+body {
+    font-family: 'Hanken Grotesk', sans-serif;
+    background-color: #f9f9f9;
+    color: #1a1a2e;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Push footer to bottom */
+.content {
+    flex: 1;
+    padding: 40px 0;
+}
+
+/* Footer */
+footer {
+    background-color: #ffffff;
+    border-top: 1px solid #e9ecef;
+    padding-top: 2rem !important;
+    padding-bottom: 1rem !important;
+    margin-top: auto;
+}
+
+/* Footer colors */
+.text-telos-purple {
+    color: #241775;
+}
+
+.text-telos-pink {
+    color: #ff4b8b;
+}
+
+.bg-telos-purple {
+    background-color: #241775;
+}
+
+.bg-telos-pink {
+    background-color: #ff4b8b;
+}
+
+.btn-telos-purple {
+    background-color: #241775;
+    color: #fff;
+}
+
+.btn-telos-purple:hover {
+    background-color: #1a1154;
+    color: #fff;
+}
+
+/* Footer links */
+footer a {
+    text-decoration: none;
+    color: #241775;
+}
+
+.footer-link {
+    color: #ff4b8b;
+    transition: color 0.2s;
+}
+
+.footer-link:hover {
+    text-decoration: underline;
+    color: #e63e7a;
+}
+
+/* Cookie box */
+.cookie-box {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 16px;
+    border: 1px solid #e9ecef;
+}
+
+.cookie-box .btn-primary {
+    background-color: #0d6efd;
+    border: none;
+}
+
+.cookie-box .btn-primary:hover {
+    background-color: #0b5ed7;
+}
+
+/* Social icons */
+.social-icon {
+    width: 40px;
+    height: 40px;
+    background-color: #f8f9fa;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #241775;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    border: 1px solid #e9ecef;
+}
+
+.social-icon:hover {
+    background-color: #241775;
+    color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(36, 23, 117, 0.2);
+}
+
+.tracking-wider {
+    letter-spacing: 0.05em;
+}
+
+/* Footer bottom links */
+.footer-bottom-link {
+    color: #6c757d;
+    text-decoration: none;
+    transition: color 0.2s;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.75rem;
+}
+
+.footer-bottom-link:hover {
+    color: #241775;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 991.98px) {
+    footer .display-6 {
+        font-size: 1.3rem !important;
+    }
+
+    .cookie-box {
+        margin-top: 1rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+    footer .row.g-4 {
+        gap: 1.5rem !important;
+    }
+
+    .footer-bottom-links {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: center;
+        margin-top: 0.5rem;
+    }
+
+    .footer-bottom-links .gap-4 {
+        gap: 0.75rem !important;
+    }
+}
+
+@media (max-width: 575.98px) {
+    footer {
+        padding-top: 1.5rem !important;
+        padding-bottom: 0.75rem !important;
+    }
+
+    .cookie-box {
+        padding: 12px;
+    }
+
+    .social-icon {
+        width: 36px;
+        height: 36px;
+    }
+
+    .btn-telos-purple {
+        padding: 0.5rem 1rem !important;
+        font-size: 0.8rem !important;
+    }
+}
+
+/* Print styles */
+@media print {
+    footer {
+        display: none !important;
+    }
+}
+
+/* Animation for hover effects */
+.social-icon {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-telos-purple {
+    transition: all 0.2s ease;
+}
+
+.btn-telos-purple:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(36, 23, 117, 0.25);
+}
+
+/* Cookie notice animation */
+.cookie-box {
+    transition: all 0.3s ease;
+}
+
+.cookie-box:hover {
+    border-color: #241775;
+    box-shadow: 0 4px 12px rgba(36, 23, 117, 0.08);
+}
+
+/* Footer list styling */
+footer ul {
+    padding-left: 0;
+}
+
+footer ul li {
+    padding: 0.25rem 0;
+}
+
+/* Divider */
+footer .border-top {
+    border-color: #e9ecef !important;
+}
+
+/* Scroll reveal for footer */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scroll-reveal.reveal-active {
+    opacity: 1;
+    transform: translateY(0);
+}

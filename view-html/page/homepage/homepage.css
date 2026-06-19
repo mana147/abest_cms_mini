@@ -1,0 +1,1391 @@
+/* custom overrides + animations */
+body {
+    font-family: 'Hanken Grotesk', sans-serif;
+    background-color: #f9f9f9;
+    color: #1a1a2e;
+    padding-top: 80px;
+    scroll-behavior: smooth;
+}
+
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.75s ease-out, transform 0.75s ease-out;
+    will-change: opacity, transform;
+}
+
+.scroll-reveal.reveal-active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.scroll-reveal.delay-1 {
+    transition-delay: 0.15s;
+}
+
+.scroll-reveal.delay-2 {
+    transition-delay: 0.25s;
+}
+
+.bg-telos-purple {
+    background-color: #241775;
+}
+
+.bg-telos-pink {
+    background-color: #ff4b8b;
+}
+
+.bg-telos-yellow {
+    background-color: #ffcc00;
+}
+
+.text-telos-purple {
+    color: #241775;
+}
+
+.text-telos-pink {
+    color: #ff4b8b;
+}
+
+.text-telos-yellow {
+    color: #ffcc00;
+}
+
+.border-telos-purple {
+    border-color: #241775;
+}
+
+.btn-telos-purple {
+    background-color: #241775;
+    color: #fff;
+}
+
+.btn-telos-purple:hover {
+    background-color: #1a1154;
+    color: #fff;
+}
+
+.btn-telos-pink {
+    background-color: #ff4b8b;
+    color: #fff;
+}
+
+.btn-telos-pink:hover {
+    background-color: #e63e7a;
+    color: #fff;
+}
+
+.btn-telos-yellow {
+    background-color: #ffcc00;
+    color: #241775;
+}
+
+.btn-telos-yellow:hover {
+    background-color: #e6b800;
+    color: #241775;
+}
+
+.card-shadow {
+    box-shadow: 0 10px 30px -5px rgba(36, 23, 117, 0.1);
+}
+
+.floating-element {
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.hero-gradient {
+    background: linear-gradient(135deg, #241775 0%, #241775 40%, rgba(36, 23, 117, 0.6) 100%);
+}
+
+.bg-glass {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(4px);
+}
+
+.instructor-card .card-img-top {
+    filter: grayscale(1);
+    transition: 0.4s;
+    object-fit: contain;
+    height: 220px;
+}
+
+.instructor-card:hover .card-img-top {
+    filter: grayscale(0);
+}
+
+.method-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+@media (max-width: 767.98px) {
+    .method-image {
+        max-width: 90%;
+        margin: 0 auto;
+    }
+}
+
+.testimonial-icon {
+    font-size: 4rem;
+    line-height: 1;
+    opacity: 0.2;
+}
+
+footer a {
+    text-decoration: none;
+}
+
+.footer-link {
+    color: #ff4b8b;
+}
+
+.footer-link:hover {
+    text-decoration: underline;
+}
+
+.cookie-box {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 16px;
+}
+
+.btn-outline-telos {
+    border: 2px solid rgba(36, 23, 117, 0.2);
+    color: #241775;
+}
+
+.btn-outline-telos:hover {
+    border-color: #241775;
+    background: #241775;
+    color: #fff;
+}
+
+.snap-card {
+    min-width: 320px;
+}
+
+@media (max-width: 576px) {
+    .snap-card {
+        min-width: 280px;
+    }
+}
+
+.hero-section {
+    min-height: 560px;
+    padding: 4rem 0;
+    background-image: url('../../access/image/hompage/banner.png');
+    background-size: cover;
+    background-position: center;
+}
+
+@media (max-width: 991.98px) {
+    .hero-section {
+        min-height: 420px;
+        padding: 3rem 0;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .hero-section {
+        min-height: 350px;
+        padding: 2.5rem 0;
+    }
+}
+
+/* chỉ dùng cho phần đăng ký test, không ảnh hưởng toàn cục */
+#registerTest .form-control:focus {
+    border-color: #ff4b8b;
+    box-shadow: 0 0 0 0.25rem rgba(255, 75, 139, 0.25);
+    background-color: #fff;
+}
+
+#registerTest .btn-telos-pink {
+    transition: background 0.2s, transform 0.1s;
+}
+
+#registerTest .btn-telos-pink:hover {
+    background: #e63e7a !important;
+    transform: scale(1.01);
+}
+
+#registerTest .card {
+    border: none;
+    box-shadow: 0 20px 40px -10px rgba(36, 23, 117, 0.15);
+}
+
+/* custom hover class  */
+.hover-telos:hover {
+    color: #241775 !important;
+}
+
+.tracking-wider {
+    letter-spacing: 0.05em;
+}
+
+.max-w-xl {
+    max-width: 28rem;
+}
+
+.max-w-2xl {
+    max-width: 42rem;
+}
+
+.bg-telos-dark {
+    background-color: #1a1154;
+}
+
+.object-fit-contain {
+    object-fit: contain;
+}
+
+.object-fit-cover {
+    object-fit: cover;
+}
+
+/* Student Products */
+.student-product-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.student-product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px -10px rgba(36, 23, 117, 0.2) !important;
+}
+
+.student-product-card .badge.bg-light {
+    background-color: #f1f1f1 !important;
+    color: #555 !important;
+}
+
+.student-product-card .btn-telos-pink {
+    background-color: #ff4b8b;
+    color: #fff;
+    border: none;
+    transition: background 0.2s;
+}
+
+.student-product-card .btn-telos-pink:hover {
+    background-color: #e63e7a;
+    color: #fff;
+}
+
+.student-product-card .bg-telos-purple.bg-opacity-10 {
+    background-color: rgba(36, 23, 117, 0.08) !important;
+}
+
+.btn-outline-telos {
+    border: 2px solid rgba(36, 23, 117, 0.2);
+    color: #241775;
+    background: transparent;
+    transition: all 0.2s;
+}
+
+.btn-outline-telos:hover {
+    border-color: #241775;
+    background: #241775;
+    color: #fff;
+}
+
+.logo-header {
+    height: 100%;
+    width: auto;
+    max-width: 90px;
+    object-fit: contain;
+}
+
+.mobile-menu-wrap {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.08);
+    z-index: 30;
+}
+
+.mobile-menu-collapse {
+    margin: 0;
+    padding: 0.75rem 1rem 1rem;
+    list-style: none;
+    background: transparent;
+}
+
+.mobile-menu-collapse .nav-link {
+    padding: 0.75rem 0;
+    color: #241775;
+    font-weight: 600;
+}
+
+.mobile-menu-collapse .nav-link:hover {
+    color: #ff4b8b;
+}
+
+.mobile-menu-collapse .nav-item+.nav-item {
+    border-top: 1px solid rgba(36, 23, 117, 0.08);
+}
+
+/* ============ RESPONSIVE DESIGN ============ */
+
+/* Mobile First - Màn hình nhỏ (< 576px) */
+@media (max-width: 575.98px) {
+    body {
+        font-size: 14px;
+    }
+
+    .display-3 {
+        font-size: 1.75rem !important;
+    }
+
+    .display-4 {
+        font-size: 1.5rem !important;
+    }
+
+    .display-5 {
+        font-size: 1.3rem !important;
+    }
+
+    /* Header */
+    header .container {
+        padding-top: 0.75rem !important;
+        padding-bottom: 0.75rem !important;
+    }
+
+    .logo-header {
+        max-width: 80px;
+    }
+
+    /* Hero Section */
+    #registerTest .card {
+        box-shadow: none;
+        border: 1px solid #e0e0e0;
+    }
+
+    section {
+        padding: 2rem 0 !important;
+    }
+
+    .container {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+
+    /* Buttons */
+    .btn {
+        padding: 0.5rem 1rem !important;
+        font-size: 0.875rem !important;
+    }
+
+    .btn-lg {
+        padding: 0.6rem 1.2rem !important;
+        font-size: 0.9rem !important;
+    }
+
+    /* Text */
+    .fs-5 {
+        font-size: 0.95rem !important;
+    }
+
+    .fs-6 {
+        font-size: 0.85rem !important;
+    }
+
+    /* Cards */
+    .card {
+        margin-bottom: 1rem;
+    }
+
+    /* Hero content padding */
+    .hero-section .hero-content {
+        text-align: center;
+    }
+
+    .hero-section {
+        min-height: 420px;
+        padding-top: 80px;
+    }
+
+    .hero-section .hero-content .hero-text h1 {
+        font-size: 32px;
+        line-height: 40px;
+    }
+
+    .hero-section .hero-content .hero-text p {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    .hero-section .hero-content .hero-text .btn-secondary-custom,
+    .hero-section .hero-content .hero-text .btn-outline-custom {
+        padding: 12px 24px;
+        font-size: 12px;
+    }
+
+    .headline-xl {
+        font-size: 32px;
+        line-height: 40px;
+    }
+
+    .headline-lg {
+        font-size: 28px;
+        line-height: 36px;
+    }
+
+    .stats-section .stat-divider {
+        border-right: none;
+    }
+
+    .hero-gradient {
+        background: linear-gradient(135deg, #241775 0%, #241775 50%, rgba(36, 23, 117, 0.5) 100%);
+    }
+
+    /* Gap adjustments */
+    .g-5 {
+        gap: 1.5rem !important;
+    }
+
+    .gap-4 {
+        gap: 0.75rem !important;
+    }
+
+    /* Instructor cards */
+    .instructor-card .card-img-top {
+        height: 150px;
+    }
+
+    /* Student product cards */
+    .student-product-card .badge {
+        font-size: 0.7rem !important;
+    }
+
+    /* Testimonials */
+    .testimonial-icon {
+        font-size: 2rem;
+    }
+
+    /* Footer */
+    footer {
+        padding-top: 2rem !important;
+        padding-bottom: 1rem !important;
+    }
+
+    footer .display-6 {
+        font-size: 1.3rem !important;
+    }
+
+    /* Hide on mobile */
+    .d-none {
+        display: none !important;
+    }
+
+    .d-md-flex {
+        display: none !important;
+    }
+}
+
+/* Tablet (576px - 991px) */
+@media (min-width: 576px) and (max-width: 991.98px) {
+    .display-3 {
+        font-size: 2rem !important;
+    }
+
+    .display-4 {
+        font-size: 1.8rem !important;
+    }
+
+    section {
+        padding: 3rem 0 !important;
+    }
+
+    .logo-header {
+        max-width: 100px;
+    }
+
+    /* Gap adjustments */
+    .g-5 {
+        gap: 2rem !important;
+    }
+
+    /* Buttons responsive */
+    .btn {
+        padding: 0.6rem 1.2rem !important;
+        font-size: 0.95rem !important;
+    }
+
+    /* Cards */
+    .snap-card {
+        min-width: 300px;
+    }
+
+    /* Instructor cards */
+    .instructor-card .card-img-top {
+        height: 180px;
+    }
+
+    .hero-section {
+        min-height: 420px;
+        padding-top: 80px;
+    }
+
+    .hero-section .hero-content {
+        padding: 0 16px;
+    }
+
+    .hero-section .hero-content .hero-text {
+        margin-left: 0;
+    }
+
+    .hero-section .hero-content .hero-text h1 {
+        font-size: 32px;
+        line-height: 40px;
+    }
+
+    .hero-section .hero-content .hero-text p {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    .hero-section .hero-content .hero-text .btn-secondary-custom,
+    .hero-section .hero-content .hero-text .btn-outline-custom {
+        padding: 12px 24px;
+        font-size: 12px;
+    }
+
+    .headline-xl {
+        font-size: 32px;
+        line-height: 40px;
+    }
+
+    .headline-lg {
+        font-size: 28px;
+        line-height: 36px;
+    }
+
+    .stats-section .stat-divider {
+        border-right: none;
+    }
+}
+
+/* Desktop (992px+) */
+@media (min-width: 992px) {
+    section {
+        padding: 5rem 0 !important;
+    }
+
+    .display-3 {
+        font-size: 3rem !important;
+    }
+
+    .display-4 {
+        font-size: 2.5rem !important;
+    }
+
+    .logo-header {
+        max-width: 120px;
+    }
+
+    /* Buttons */
+    .btn {
+        padding: 0.75rem 1.5rem !important;
+        font-size: 1rem !important;
+    }
+
+    .btn-lg {
+        padding: 0.75rem 2rem !important;
+        font-size: 1.1rem !important;
+    }
+
+    .snap-card {
+        min-width: 320px;
+    }
+
+    .instructor-card .card-img-top {
+        height: 220px;
+    }
+}
+
+/* Large Desktop (1200px+) */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+
+    .max-w-xl {
+        max-width: 32rem;
+    }
+
+    .max-w-2xl {
+        max-width: 48rem;
+    }
+}
+
+/* Extra Large (1400px+) */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1320px;
+    }
+}
+
+/* Touch devices - Better button/link sizes */
+@media (hover: none) and (pointer: coarse) {
+
+    button,
+    .btn,
+    a {
+        min-height: 44px;
+        min-width: 44px;
+    }
+
+    .btn {
+        padding: 0.75rem 1.25rem !important;
+    }
+}
+
+/* Landscape orientation adjustments */
+@media (max-height: 500px) and (orientation: landscape) {
+    section {
+        padding: 1.5rem 0 !important;
+    }
+
+    .display-3 {
+        font-size: 1.5rem !important;
+    }
+
+    .py-5 {
+        padding-top: 1.5rem !important;
+        padding-bottom: 1.5rem !important;
+    }
+}
+
+/* Print styles */
+@media print {
+
+    header,
+    footer,
+    .d-print-none {
+        display: none !important;
+    }
+
+    body {
+        background: white;
+        color: black;
+    }
+}/* custom overrides + animations */
+body {
+    font-family: 'Hanken Grotesk', sans-serif;
+    background-color: #f9f9f9;
+    color: #1a1a2e;
+    padding-top: 80px;
+    scroll-behavior: smooth;
+}
+
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.75s ease-out, transform 0.75s ease-out;
+    will-change: opacity, transform;
+}
+
+.scroll-reveal.reveal-active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.scroll-reveal.delay-1 {
+    transition-delay: 0.15s;
+}
+
+.scroll-reveal.delay-2 {
+    transition-delay: 0.25s;
+}
+
+.bg-telos-purple {
+    background-color: #241775;
+}
+
+.bg-telos-pink {
+    background-color: #ff4b8b;
+}
+
+.bg-telos-yellow {
+    background-color: #ffcc00;
+}
+
+.text-telos-purple {
+    color: #241775;
+}
+
+.text-telos-pink {
+    color: #ff4b8b;
+}
+
+.text-telos-yellow {
+    color: #ffcc00;
+}
+
+.border-telos-purple {
+    border-color: #241775;
+}
+
+.btn-telos-purple {
+    background-color: #241775;
+    color: #fff;
+}
+
+.btn-telos-purple:hover {
+    background-color: #1a1154;
+    color: #fff;
+}
+
+.btn-telos-pink {
+    background-color: #ff4b8b;
+    color: #fff;
+}
+
+.btn-telos-pink:hover {
+    background-color: #e63e7a;
+    color: #fff;
+}
+
+.btn-telos-yellow {
+    background-color: #ffcc00;
+    color: #241775;
+}
+
+.btn-telos-yellow:hover {
+    background-color: #e6b800;
+    color: #241775;
+}
+
+.card-shadow {
+    box-shadow: 0 10px 30px -5px rgba(36, 23, 117, 0.1);
+}
+
+.floating-element {
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.hero-gradient {
+    background: linear-gradient(135deg, #241775 0%, #241775 40%, rgba(36, 23, 117, 0.6) 100%);
+}
+
+.bg-glass {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(4px);
+}
+
+.instructor-card .card-img-top {
+    filter: grayscale(1);
+    transition: 0.4s;
+    object-fit: contain;
+    height: 220px;
+}
+
+.instructor-card:hover .card-img-top {
+    filter: grayscale(0);
+}
+
+.method-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+@media (max-width: 767.98px) {
+    .method-image {
+        max-width: 90%;
+        margin: 0 auto;
+    }
+}
+
+.testimonial-icon {
+    font-size: 4rem;
+    line-height: 1;
+    opacity: 0.2;
+}
+
+footer a {
+    text-decoration: none;
+}
+
+.footer-link {
+    color: #ff4b8b;
+}
+
+.footer-link:hover {
+    text-decoration: underline;
+}
+
+.cookie-box {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 16px;
+}
+
+.btn-outline-telos {
+    border: 2px solid rgba(36, 23, 117, 0.2);
+    color: #241775;
+}
+
+.btn-outline-telos:hover {
+    border-color: #241775;
+    background: #241775;
+    color: #fff;
+}
+
+.snap-card {
+    min-width: 320px;
+}
+
+@media (max-width: 576px) {
+    .snap-card {
+        min-width: 280px;
+    }
+}
+
+.hero-section {
+    min-height: 560px;
+    padding: 4rem 0;
+    background-image: url('../../access/image/hompage/banner.png');
+    background-size: cover;
+    background-position: center;
+}
+
+@media (max-width: 991.98px) {
+    .hero-section {
+        min-height: 420px;
+        padding: 3rem 0;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .hero-section {
+        min-height: 350px;
+        padding: 2.5rem 0;
+    }
+}
+
+/* chỉ dùng cho phần đăng ký test, không ảnh hưởng toàn cục */
+#registerTest .form-control:focus {
+    border-color: #ff4b8b;
+    box-shadow: 0 0 0 0.25rem rgba(255, 75, 139, 0.25);
+    background-color: #fff;
+}
+
+#registerTest .btn-telos-pink {
+    transition: background 0.2s, transform 0.1s;
+}
+
+#registerTest .btn-telos-pink:hover {
+    background: #e63e7a !important;
+    transform: scale(1.01);
+}
+
+#registerTest .card {
+    border: none;
+    box-shadow: 0 20px 40px -10px rgba(36, 23, 117, 0.15);
+}
+
+/* custom hover class  */
+.hover-telos:hover {
+    color: #241775 !important;
+}
+
+.tracking-wider {
+    letter-spacing: 0.05em;
+}
+
+.max-w-xl {
+    max-width: 28rem;
+}
+
+.max-w-2xl {
+    max-width: 42rem;
+}
+
+.bg-telos-dark {
+    background-color: #1a1154;
+}
+
+.object-fit-contain {
+    object-fit: contain;
+}
+
+.object-fit-cover {
+    object-fit: cover;
+}
+
+/* Student Products */
+.student-product-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.student-product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px -10px rgba(36, 23, 117, 0.2) !important;
+}
+
+.student-product-card .badge.bg-light {
+    background-color: #f1f1f1 !important;
+    color: #555 !important;
+}
+
+.student-product-card .btn-telos-pink {
+    background-color: #ff4b8b;
+    color: #fff;
+    border: none;
+    transition: background 0.2s;
+}
+
+.student-product-card .btn-telos-pink:hover {
+    background-color: #e63e7a;
+    color: #fff;
+}
+
+.student-product-card .bg-telos-purple.bg-opacity-10 {
+    background-color: rgba(36, 23, 117, 0.08) !important;
+}
+
+.btn-outline-telos {
+    border: 2px solid rgba(36, 23, 117, 0.2);
+    color: #241775;
+    background: transparent;
+    transition: all 0.2s;
+}
+
+.btn-outline-telos:hover {
+    border-color: #241775;
+    background: #241775;
+    color: #fff;
+}
+
+.logo-header {
+    height: 100%;
+    width: auto;
+    max-width: 90px;
+    object-fit: contain;
+}
+
+.mobile-menu-wrap {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.08);
+    z-index: 30;
+}
+
+.mobile-menu-collapse {
+    margin: 0;
+    padding: 0.75rem 1rem 1rem;
+    list-style: none;
+    background: transparent;
+}
+
+.mobile-menu-collapse .nav-link {
+    padding: 0.75rem 0;
+    color: #241775;
+    font-weight: 600;
+}
+
+.mobile-menu-collapse .nav-link:hover {
+    color: #ff4b8b;
+}
+
+.mobile-menu-collapse .nav-item+.nav-item {
+    border-top: 1px solid rgba(36, 23, 117, 0.08);
+}
+
+/* ============ RESPONSIVE DESIGN ============ */
+
+/* Mobile First - Màn hình nhỏ (< 576px) */
+@media (max-width: 575.98px) {
+    body {
+        font-size: 14px;
+    }
+
+    .display-3 {
+        font-size: 1.75rem !important;
+    }
+
+    .display-4 {
+        font-size: 1.5rem !important;
+    }
+
+    .display-5 {
+        font-size: 1.3rem !important;
+    }
+
+    /* Header */
+    header .container {
+        padding-top: 0.75rem !important;
+        padding-bottom: 0.75rem !important;
+    }
+
+    .logo-header {
+        max-width: 80px;
+    }
+
+    /* Hero Section */
+    #registerTest .card {
+        box-shadow: none;
+        border: 1px solid #e0e0e0;
+    }
+
+    section {
+        padding: 2rem 0 !important;
+    }
+
+    .container {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+
+    /* Buttons */
+    .btn {
+        padding: 0.5rem 1rem !important;
+        font-size: 0.875rem !important;
+    }
+
+    .btn-lg {
+        padding: 0.6rem 1.2rem !important;
+        font-size: 0.9rem !important;
+    }
+
+    /* Text */
+    .fs-5 {
+        font-size: 0.95rem !important;
+    }
+
+    .fs-6 {
+        font-size: 0.85rem !important;
+    }
+
+    /* Cards */
+    .card {
+        margin-bottom: 1rem;
+    }
+
+    /* Hero content padding */
+    .hero-section .hero-content {
+        text-align: center;
+    }
+
+    .hero-section {
+        min-height: 420px;
+        padding-top: 80px;
+    }
+
+    .hero-section .hero-content .hero-text h1 {
+        font-size: 32px;
+        line-height: 40px;
+    }
+
+    .hero-section .hero-content .hero-text p {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    .hero-section .hero-content .hero-text .btn-secondary-custom,
+    .hero-section .hero-content .hero-text .btn-outline-custom {
+        padding: 12px 24px;
+        font-size: 12px;
+    }
+
+    .headline-xl {
+        font-size: 32px;
+        line-height: 40px;
+    }
+
+    .headline-lg {
+        font-size: 28px;
+        line-height: 36px;
+    }
+
+    .stats-section .stat-divider {
+        border-right: none;
+    }
+
+    .hero-gradient {
+        background: linear-gradient(135deg, #241775 0%, #241775 50%, rgba(36, 23, 117, 0.5) 100%);
+    }
+
+    /* Gap adjustments */
+    .g-5 {
+        gap: 1.5rem !important;
+    }
+
+    .gap-4 {
+        gap: 0.75rem !important;
+    }
+
+    /* Instructor cards */
+    .instructor-card .card-img-top {
+        height: 150px;
+    }
+
+    /* Student product cards */
+    .student-product-card .badge {
+        font-size: 0.7rem !important;
+    }
+
+    /* Testimonials */
+    .testimonial-icon {
+        font-size: 2rem;
+    }
+
+    /* Footer */
+    footer {
+        padding-top: 2rem !important;
+        padding-bottom: 1rem !important;
+    }
+
+    footer .display-6 {
+        font-size: 1.3rem !important;
+    }
+
+    /* Hide on mobile */
+    .d-none {
+        display: none !important;
+    }
+
+    .d-md-flex {
+        display: none !important;
+    }
+}
+
+/* Tablet (576px - 991px) */
+@media (min-width: 576px) and (max-width: 991.98px) {
+    .display-3 {
+        font-size: 2rem !important;
+    }
+
+    .display-4 {
+        font-size: 1.8rem !important;
+    }
+
+    section {
+        padding: 3rem 0 !important;
+    }
+
+    .logo-header {
+        max-width: 100px;
+    }
+
+    /* Gap adjustments */
+    .g-5 {
+        gap: 2rem !important;
+    }
+
+    /* Buttons responsive */
+    .btn {
+        padding: 0.6rem 1.2rem !important;
+        font-size: 0.95rem !important;
+    }
+
+    /* Cards */
+    .snap-card {
+        min-width: 300px;
+    }
+
+    /* Instructor cards */
+    .instructor-card .card-img-top {
+        height: 180px;
+    }
+
+    .hero-section {
+        min-height: 420px;
+        padding-top: 80px;
+    }
+
+    .hero-section .hero-content {
+        padding: 0 16px;
+    }
+
+    .hero-section .hero-content .hero-text {
+        margin-left: 0;
+    }
+
+    .hero-section .hero-content .hero-text h1 {
+        font-size: 32px;
+        line-height: 40px;
+    }
+
+    .hero-section .hero-content .hero-text p {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    .hero-section .hero-content .hero-text .btn-secondary-custom,
+    .hero-section .hero-content .hero-text .btn-outline-custom {
+        padding: 12px 24px;
+        font-size: 12px;
+    }
+
+    .headline-xl {
+        font-size: 32px;
+        line-height: 40px;
+    }
+
+    .headline-lg {
+        font-size: 28px;
+        line-height: 36px;
+    }
+
+    .stats-section .stat-divider {
+        border-right: none;
+    }
+}
+
+/* Desktop (992px+) */
+@media (min-width: 992px) {
+    section {
+        padding: 5rem 0 !important;
+    }
+
+    .display-3 {
+        font-size: 3rem !important;
+    }
+
+    .display-4 {
+        font-size: 2.5rem !important;
+    }
+
+    .logo-header {
+        max-width: 120px;
+    }
+
+    /* Buttons */
+    .btn {
+        padding: 0.75rem 1.5rem !important;
+        font-size: 1rem !important;
+    }
+
+    .btn-lg {
+        padding: 0.75rem 2rem !important;
+        font-size: 1.1rem !important;
+    }
+
+    .snap-card {
+        min-width: 320px;
+    }
+
+    .instructor-card .card-img-top {
+        height: 220px;
+    }
+}
+
+/* Large Desktop (1200px+) */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+
+    .max-w-xl {
+        max-width: 32rem;
+    }
+
+    .max-w-2xl {
+        max-width: 48rem;
+    }
+}
+
+/* Extra Large (1400px+) */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1320px;
+    }
+}
+
+/* Touch devices - Better button/link sizes */
+@media (hover: none) and (pointer: coarse) {
+
+    button,
+    .btn,
+    a {
+        min-height: 44px;
+        min-width: 44px;
+    }
+
+    .btn {
+        padding: 0.75rem 1.25rem !important;
+    }
+}
+
+/* Landscape orientation adjustments */
+@media (max-height: 500px) and (orientation: landscape) {
+    section {
+        padding: 1.5rem 0 !important;
+    }
+
+    .display-3 {
+        font-size: 1.5rem !important;
+    }
+
+    .py-5 {
+        padding-top: 1.5rem !important;
+        padding-bottom: 1.5rem !important;
+    }
+}
+
+/* Print styles */
+@media print {
+
+    header,
+    footer,
+    .d-print-none {
+        display: none !important;
+    }
+
+    body {
+        background: white;
+        color: black;
+    }
+}

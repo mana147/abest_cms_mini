@@ -1,0 +1,160 @@
+/* ===== HEADER STYLES ===== */
+body {
+    font-family: 'Hanken Grotesk', sans-serif;
+    padding-top: 80px;
+}
+
+.logo-header {
+    height: 100%;
+    width: auto;
+    max-width: 90px;
+    object-fit: contain;
+}
+
+/* Header container */
+header .container {
+    padding-top: 0.75rem !important;
+    padding-bottom: 0.75rem !important;
+}
+
+/* Mobile menu */
+.mobile-menu-wrap {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.08);
+    z-index: 30;
+}
+
+.mobile-menu-collapse {
+    margin: 0;
+    padding: 0.75rem 1rem 1rem;
+    list-style: none;
+    background: transparent;
+}
+
+.mobile-menu-collapse .nav-link {
+    padding: 0.75rem 0;
+    color: #241775;
+    font-weight: 600;
+}
+
+.mobile-menu-collapse .nav-link:hover {
+    color: #ff4b8b;
+}
+
+.mobile-menu-collapse .nav-item+.nav-item {
+    border-top: 1px solid rgba(36, 23, 117, 0.08);
+}
+
+/* Custom colors */
+.bg-telos-purple {
+    background-color: #241775;
+}
+
+.text-telos-purple {
+    color: #241775;
+}
+
+.btn-telos-purple {
+    background-color: #241775;
+    color: #fff;
+}
+
+.btn-telos-purple:hover {
+    background-color: #1a1154;
+    color: #fff;
+}
+
+.hover-telos:hover {
+    color: #241775 !important;
+}
+
+/* Backdrop blur */
+.backdrop-blur-sm {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+/* Desktop nav links */
+.nav-link {
+    font-weight: 600;
+    font-size: 0.875rem;
+}
+
+.nav-link.text-secondary {
+    color: #6c757d !important;
+}
+
+.nav-link.text-secondary:hover {
+    color: #241775 !important;
+}
+
+.nav-link.text-danger {
+    color: #dc3545 !important;
+    font-weight: 700;
+}
+
+.nav-link.text-danger:hover {
+    color: #b02a37 !important;
+}
+
+/* Dropdown */
+.dropdown-menu {
+    border-radius: 12px;
+    border: none;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    padding: 0.5rem 0;
+}
+
+.dropdown-item {
+    padding: 0.5rem 1.5rem;
+    font-weight: 500;
+    color: #1a1a2e;
+}
+
+.dropdown-item:hover {
+    background-color: #f8f4ff;
+    color: #241775;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (min-width: 992px) {
+    .logo-header {
+        max-width: 120px;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .logo-header {
+        max-width: 70px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .logo-header {
+        max-width: 60px;
+    }
+
+    header .container {
+        padding-top: 0.5rem !important;
+        padding-bottom: 0.5rem !important;
+    }
+}
+
+/* Touch devices - Better button/link sizes */
+@media (hover: none) and (pointer: coarse) {
+
+    button,
+    .btn,
+    a {
+        min-height: 44px;
+        min-width: 44px;
+    }
+}
+
+.nav-active{
+    color: yellow;
+}

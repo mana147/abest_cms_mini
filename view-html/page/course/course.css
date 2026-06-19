@@ -1,0 +1,419 @@
+/* Reset và biến màu */
+:root {
+    --primary: #100055;
+    --primary-container: #241775;
+    --primary-fixed-dim: #c6c0ff;
+    --secondary: #745b00;
+    --secondary-container: #fecb00;
+    --tertiary-container: #590027;
+    --on-tertiary-container: #ff4b8b;
+    --surface: #f9f9f9;
+    --surface-bright: #f9f9f9;
+    --surface-container-lowest: #ffffff;
+    --surface-container-low: #f3f3f3;
+    --surface-container: #eeeeee;
+    --surface-container-high: #e8e8e8;
+    --surface-container-highest: #e2e2e2;
+    --on-surface: #1a1c1c;
+    --on-surface-variant: #474551;
+    --outline: #787583;
+    --outline-variant: #c8c4d3;
+    --on-primary: #ffffff;
+    --on-secondary: #ffffff;
+    --on-tertiary: #ffffff;
+    --on-secondary-fixed: #241a00;
+    --on-secondary-container: #6e5700;
+    --text-primary: #100055;
+    --text-on-surface: #1a1c1c;
+    --text-body: #474551;
+}
+
+* {
+    font-family: 'Hanken Grotesk', sans-serif;
+}
+
+body {
+    background-color: #f9f9f9;
+    color: #1a1c1c;
+}
+
+.bg-surface {
+    background-color: var(--surface);
+}
+
+.bg-surface-container-lowest {
+    background-color: var(--surface-container-lowest);
+}
+
+.bg-primary-container {
+    background-color: var(--primary-container);
+}
+
+.bg-secondary-container {
+    background-color: var(--secondary-container);
+}
+
+.bg-tertiary-container {
+    background-color: var(--tertiary-container);
+}
+
+.bg-on-tertiary-container {
+    background-color: var(--on-tertiary-container);
+}
+
+.text-primary {
+    color: var(--primary) !important;
+}
+
+.text-primary-fixed-dim {
+    color: var(--primary-fixed-dim);
+}
+
+.text-secondary-container {
+    color: var(--secondary-container);
+}
+
+.text-surface-bright {
+    color: var(--surface-bright);
+}
+
+.text-on-surface {
+    color: var(--on-surface);
+}
+
+.text-on-surface-variant {
+    color: var(--on-surface-variant);
+}
+
+.text-on-tertiary-container {
+    color: var(--on-tertiary-container);
+}
+
+.text-on-secondary-container {
+    color: var(--on-secondary-container);
+}
+
+.text-outline {
+    color: var(--outline);
+}
+
+.text-on-secondary {
+    color: var(--on-secondary);
+}
+
+.text-on-primary {
+    color: var(--on-primary);
+}
+
+.text-on-tertiary {
+    color: var(--on-tertiary);
+}
+
+.text-on-secondary-fixed {
+    color: var(--on-secondary-fixed);
+}
+
+.border-outline-variant {
+    border-color: var(--outline-variant);
+}
+
+.border-secondary-container {
+    border-color: var(--secondary-container);
+}
+
+.btn-outline-primary-custom {
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    background: transparent;
+}
+
+.btn-outline-primary-custom:hover {
+    background: var(--primary);
+    color: #fff;
+}
+
+.btn-secondary-custom {
+    background: var(--secondary);
+    color: #fff;
+}
+
+.btn-secondary-custom:hover {
+    opacity: 0.9;
+    color: #fff;
+}
+
+.btn-tertiary-container {
+    background: var(--tertiary-container);
+    color: var(--on-tertiary-container);
+}
+
+.btn-tertiary-container:hover {
+    opacity: 0.9;
+    color: var(--on-tertiary-container);
+}
+
+.promotion-gradient {
+    background: linear-gradient(135deg, #241775 0%, #3a26a8 100%);
+}
+
+.glass-effect {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.course-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.course-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0px 12px 30px rgba(36, 23, 117, 0.12);
+}
+
+.faq-item[open] summary .expand-icon {
+    transform: rotate(180deg);
+}
+
+.expand-icon {
+    transition: transform 0.3s;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.material-symbols-outlined {
+    font-family: 'Material Symbols Outlined';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* fallback icon bằng bootstrap */
+.material-symbols-outlined {
+    font-family: 'Material Symbols Outlined', 'bootstrap-icons', sans-serif;
+}
+
+/* override cho những chỗ dùng icon */
+.icon-schedule::before {
+    content: "\f3e5";
+    font-family: 'bootstrap-icons';
+}
+
+.icon-search::before {
+    content: "\f52a";
+    font-family: 'bootstrap-icons';
+}
+
+.icon-calendar::before {
+    content: "\f3e5";
+    font-family: 'bootstrap-icons';
+}
+
+.icon-rocket::before {
+    content: "\f640";
+    font-family: 'bootstrap-icons';
+}
+
+.icon-support::before {
+    content: "\f460";
+    font-family: 'bootstrap-icons';
+}
+
+.icon-verified::before {
+    content: "\f431";
+    font-family: 'bootstrap-icons';
+}
+
+.icon-psychology::before {
+    content: "\f5a3";
+    font-family: 'bootstrap-icons';
+}
+
+.icon-school::before {
+    content: "\f3e1";
+    font-family: 'bootstrap-icons';
+}
+
+.icon-library::before {
+    content: "\f3e3";
+    font-family: 'bootstrap-icons';
+}
+
+.icon-star::before {
+    content: "\f588";
+    font-family: 'bootstrap-icons';
+}
+
+.icon-chat::before {
+    content: "\f27a";
+    font-family: 'bootstrap-icons';
+}
+
+.icon-expand::before {
+    content: "\f282";
+    font-family: 'bootstrap-icons';
+}
+
+/* Tùy chỉnh thêm để giữ đúng spacing */
+.container-custom {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+@media (min-width: 768px) {
+    .container-custom {
+        padding-left: 64px;
+        padding-right: 64px;
+    }
+}
+
+.shadow-card {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.sticky-top-72 {
+    position: sticky;
+    top: 72px;
+    z-index: 40;
+}
+
+.faq-item summary {
+    list-style: none;
+}
+
+.faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.rounded-2xl {
+    border-radius: 1rem;
+}
+
+.rounded-3xl {
+    border-radius: 1.5rem;
+}
+
+.rounded-4xl {
+    border-radius: 2rem;
+}
+
+.border-4 {
+    border-width: 4px;
+}
+
+/* Responsive điều chỉnh */
+@media (max-width: 575.98px) {
+    .display-5 {
+        font-size: 2.5rem !important;
+    }
+}
+
+.display-4-custom {
+    font-size: 3rem;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+}
+
+@media (min-width: 768px) {
+    .display-4-custom {
+        font-size: 3.5rem;
+    }
+}
+
+.fs-body-lg {
+    font-size: 1.125rem;
+    line-height: 1.6;
+}
+
+.fs-body-md {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.fs-label-bold {
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.fs-caption {
+    font-size: 0.75rem;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.fs-headline-md {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.bg-surface\/80 {
+    background-color: rgba(249, 249, 249, 0.8);
+}
+
+.bg-surface\/90 {
+    background-color: rgba(249, 249, 249, 0.9);
+}
+
+.border-b-2-primary {
+    border-bottom: 2px solid var(--primary);
+}
+
+.faq-item {
+    background: #fff;
+    border: 1px solid #c8c4d3;
+    border-radius: 0.75rem;
+    overflow: hidden;
+}
+
+.faq-item[open] .faq-answer {
+    border-top: 1px solid rgba(200, 196, 211, 0.3);
+    padding-top: 0.75rem;
+}
+
+/* SCROLL REVEAL: reveal classes for course page */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s cubic-bezier(.22,.9,.35,1), transform 0.7s cubic-bezier(.22,.9,.35,1);
+    will-change: opacity, transform;
+}
+.scroll-reveal.reveal-active {
+    opacity: 1;
+    transform: translateY(0);
+}
+.scroll-reveal.delay-1 { transition-delay: 0.12s; }
+.scroll-reveal.delay-2 { transition-delay: 0.22s; }
+.no-reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+
+
+.no-wrap {
+    white-space: nowrap;
+}

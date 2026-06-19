@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Ielts Abest - Chinh Phục IELTS, Mở Khóa Tương Lai</title>
+    <!-- Google Fonts & Bootstrap 5 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Font Awesome 6 (free) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="homepage.css">
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header class="fixed-top bg-white bg-opacity-90 backdrop-blur-sm border-bottom border-light">
+        <div class="container py-3 d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center gap-3">
+                <a href="../homepage/homepage.html" class="text-decoration-none d-flex align-items-center">
+                    <img src="../../access/image/hompage/logo.png" class="logo-header" />
+                </a>
+                <button class="btn btn-outline-secondary d-lg-none p-2" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#mobileMenu" aria-controls="mobileMenu" aria-expanded="false" aria-label="Mở menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav d-none d-lg-flex gap-4 fw-semibold small text-secondary mb-0">
+                    <li class="nav-item"><a href="../homepage/homepage.html" class="nav-link px-0 text-warning hover-telos">Trang chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-0 text-secondary" href="../aboutUs/aboutUs.html" role="button">Về chúng tôi</a>
+                    </li>
+                    <li class="nav-item"><a href="../course/course.html" class="nav-link px-0 text-secondary">Khóa học</a>
+                    </li>
+                    <li class="nav-item"><a href="../blog/blog.html" class="nav-link px-0 text-secondary">Blog</a></li>
+                    <li class="nav-item"><a href="../contact/contact.html" class="nav-link px-0 text-secondary">Liên hệ</a></li>
+                    <li class="nav-item"><a href="#registerTest" class="nav-link px-0 text-danger">Đăng ký Test</a></li>
+                </ul>
+            </div>
+            <div class="d-flex align-items-center gap-3">
+                <a href="#" class="btn btn-telos-purple rounded-3 fw-bold px-4 py-2 small">Đăng ký tư vấn</a>
+            </div>
+        </div>
+        <div class="collapse d-lg-none w-100 mobile-menu-wrap" id="mobileMenu">
+            <ul class="nav flex-column gap-2 px-3 pb-3 mobile-menu-collapse">
+                <li class="nav-item"><a href="../homepage/homepage.html" class="nav-link text-warning">Trang chủ</a></li>
+                <li class="nav-item"><a href="../aboutUs/aboutUs.html" class="nav-link text-secondary">Về chúng tôi</a></li>
+                <li class="nav-item"><a href="../course/course.html" class="nav-link text-secondary">Khóa học</a></li>
+                <li class="nav-item"><a href="../blog/blog.html" class="nav-link text-secondary">Blog</a></li>
+                <li class="nav-item"><a href="../contact/contact.html" class="nav-link text-secondary">Liên hệ</a></li>
+                <li class="nav-item"><a href="#registerTest" class="nav-link text-danger">Đăng ký Test</a></li>
+            </ul>
+        </div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="position-relative d-flex align-items-center overflow-hidden text-white hero-section scroll-reveal"
+        style="background-color: #241775;">
+        <div class="position-absolute top-0 start-0 w-100 h-100 z-0"
+            style="background: linear-gradient(90deg, #241775 30%, rgba(36,23,117,0.3) 100%);"></div>
+        <div class="container position-relative z-1 py-5">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-7" data-purpose="hero-content">
+                    <h1 class="display-3 fw-black lh-1 mb-4">
+                        Chinh Phục IELTS -<br />
+                        <span class="bg-white text-telos-purple px-4 py-2 d-inline-block mt-2"
+                            style="transform: rotate(-1deg);">Cùng Abest</span>
+                    </h1>
+                    <p class="fs-5 text-white-70 mb-5 max-w-lg" style="opacity: 0.9;">
+                        Lộ trình luyện thi IELTS cá nhân hóa, được xây dựng theo mục tiêu band điểm của bạn cùng đội ngũ
+                        giảng viên giàu kinh nghiệm và công cụ ôn luyện chuyên sâu.
+                    </p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="#roadmap" class="btn btn-telos-yellow fw-extrabold px-5 py-3 rounded-4 fs-6">Đăng ký
+                            thi thử miễn phí</a>
+                        <a href="#"
+                            class="btn bg-glass border border-white border-opacity-25 text-white px-5 py-3 rounded-4 fw-bold d-flex align-items-center gap-2">
+                            Xem lộ trình IELTS <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-5 d-none d-lg-block position-relative">
+                    <div class="position-absolute top-0 end-0 w-50 h-50 bg-telos-pink rounded-circle opacity-20 floating-element"
+                        style="transform: translate(30%, -30%);"></div>
+                    <div class="position-absolute bottom-0 start-0 w-25 h-25 bg-telos-yellow rounded-circle opacity-10">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- THINKING METHODOLOGY -->
+    <section class="py-5 py-lg-6 bg-white scroll-reveal" id="roadmap">
+        <div class="container py-5">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6" data-purpose="method-text">
+                    <h2 class="display-4 fw-black text-telos-purple mb-4">Phương pháp luyện thi<br />IELTS chuẩn quốc tế
+                    </h2>
+                    <p class="text-secondary fs-5 mb-4 lh-lg">
+                        Abest xây dựng chương trình luyện thi theo 4 kỹ năng nghe, nói, đọc, viết cùng chiến lược ôn
+                        luyện thực tế và phản hồi cá nhân để giúp bạn nhanh chóng đạt band điểm mong muốn.
+                    </p>
+                    <a href="#"
+                        class="btn btn-telos-pink text-white px-5 py-3 rounded-4 fw-bold d-inline-flex align-items-center gap-2">
+                        Xem chi tiết chương trình <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="col-lg-6">
+                    <img src="../../access/image/hompage/couses.png" class="img-fluid method-image"
+                        alt="IELTS Course" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURED COURSES -->
+    <section class="py-5 bg-light overflow-hidden scroll-reveal">
+        <div class="container py-4">
+            <div class="d-flex flex-wrap justify-content-between align-items-end mb-4 gap-3">
+                <div>
+                    <h2 class="display-4 fw-black text-telos-purple">Các Khóa Học IELTS Nổi Bật</h2>
+                    <p class="text-secondary max-w-xl">Tổng hợp những khóa học luyện thi phù hợp cho mọi trình độ, từ
+                        mới bắt đầu đến band 7.0+ với phương pháp luyện tập hiệu quả và mentor đồng hành.</p>
+                </div>
+                <div class="d-flex gap-2">
+                    <a href="#" class="btn btn-telos-pink text-white px-4 py-2 rounded-3 fw-bold small">Xem lộ trình</a>
+                    <a href="#" class="btn btn-outline-telos rounded-3 fw-bold small">Khóa học khác</a>
+                </div>
+            </div>
+            <div class="d-flex gap-4 overflow-auto pb-4 scrollbar-hide snap-x">
+                <!-- Speaking Boost -->
+                <div class="card snap-card border-0 rounded-4 card-shadow flex-shrink-0">
+                    <div class="position-relative overflow-hidden" style="height: 220px;">
+                        <img src="../../access/image/hompage/img-ielts-course.jpg"
+                            class="card-img-top h-100 object-fit-cover" alt="Speaking Boost"
+                            style="object-fit: cover;" />
+                        <div class="position-absolute bottom-0 start-0 w-100 h-50"
+                            style="background: linear-gradient(to top, rgba(36,23,117,0.6), transparent);"></div>
+                    </div>
+                    <div class="card-body p-4">
+                        <h5 class="card-title fw-black text-telos-purple">KHÓA LUYỆN NÓI IELTS SPEAKING BOOST</h5>
+                        <ul class="list-unstyled small text-secondary mt-3">
+                            <li class="d-flex align-items-center gap-2"><span class="bg-telos-pink rounded-circle"
+                                    style="width:6px;height:6px;"></span> 08 buổi luyện tập phản xạ</li>
+                            <li class="d-flex align-items-center gap-2"><span class="bg-telos-pink rounded-circle"
+                                    style="width:6px;height:6px;"></span> Học viên cải thiện +1.0 band</li>
+                        </ul>
+                        <button
+                            class="btn btn-telos-purple w-100 mt-3 rounded-4 fw-bold d-flex align-items-center justify-content-center gap-2">Xem
+                            Chi Tiết <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+                <!-- Writing Intensive -->
+                <div class="card snap-card border-0 rounded-4 card-shadow flex-shrink-0">
+                    <div class="position-relative overflow-hidden" style="height: 220px;">
+                        <img src="../../access/image/hompage/img-ielts-course.jpg"
+                            class="card-img-top h-100 object-fit-cover" alt="Writing Intensive"
+                            style="object-fit: cover;" />
+                        <div class="position-absolute bottom-0 start-0 w-100 h-50"
+                            style="background: linear-gradient(to top, rgba(36,23,117,0.6), transparent);"></div>
+                    </div>
+                    <div class="card-body p-4">
+                        <h5 class="card-title fw-black text-telos-purple">KHÓA LUYỆN VIẾT IELTS WRITING INTENSIVE</h5>
+                        <ul class="list-unstyled small text-secondary mt-3">
+                            <li class="d-flex align-items-center gap-2"><span class="bg-telos-pink rounded-circle"
+                                    style="width:6px;height:6px;"></span> 10 buổi tập trung kỹ thuật luận</li>
+                            <li class="d-flex align-items-center gap-2"><span class="bg-telos-pink rounded-circle"
+                                    style="width:6px;height:6px;"></span> 90% học viên đạt band 6.5+</li>
+                        </ul>
+                        <button
+                            class="btn btn-telos-purple w-100 mt-3 rounded-4 fw-bold d-flex align-items-center justify-content-center gap-2">Xem
+                            Chi Tiết <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+                <!-- Reading Mastery -->
+                <div class="card snap-card border-0 rounded-4 card-shadow flex-shrink-0">
+                    <div class="position-relative overflow-hidden" style="height: 220px;">
+                        <img src="../../access/image/hompage/img-ielts-course.jpg"
+                            class="card-img-top h-100 object-fit-cover" alt="Reading Mastery"
+                            style="object-fit: cover;" />
+                        <div class="position-absolute bottom-0 start-0 w-100 h-50"
+                            style="background: linear-gradient(to top, rgba(36,23,117,0.6), transparent);"></div>
+                    </div>
+                    <div class="card-body p-4">
+                        <h5 class="card-title fw-black text-telos-purple">IELTS READING MASTERY</h5>
+                        <ul class="list-unstyled small text-secondary mt-3">
+                            <li class="d-flex align-items-center gap-2"><span class="bg-telos-pink rounded-circle"
+                                    style="width:6px;height:6px;"></span> 06 buổi chiến thuật đọc nhanh</li>
+                            <li class="d-flex align-items-center gap-2"><span class="bg-telos-pink rounded-circle"
+                                    style="width:6px;height:6px;"></span> Tăng 20% tốc độ đọc hiểu</li>
+                        </ul>
+                        <button
+                            class="btn btn-telos-purple w-100 mt-3 rounded-4 fw-bold d-flex align-items-center justify-content-center gap-2">Xem
+                            Chi Tiết <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+                <!-- Grammar & Vocabulary -->
+                <div class="card snap-card border-0 rounded-4 card-shadow flex-shrink-0">
+                    <div class="position-relative overflow-hidden" style="height: 220px;">
+                        <img src="https://lh3.googleusercontent.com/aida/AP1WRLug4jDZTHl-FFgWKlS2QaX6WRfcDi8Cm8UtTHQ4bTxhLoZq9-pZjvcLQ7jT786Q5oCg_a7MiYnzrivtk00X3LIwp9ChbAL8JwgeOIKjqD7WMbiT3jinXwHBXXO0uqCnW3udPn3YefFkBH_BG9xPRg7Bsz7vzp0384lDcewtzsp84mOCJTN4FAKxj3Mym9Ka8LMnYtIjeGf1WM8YUJ749qAvjUPESnCMzQi9_Z7DcNw9oiqPaOcmtq6bRQ"
+                            class="card-img-top h-100 object-fit-cover" alt="Grammar & Vocabulary"
+                            style="object-fit: cover;" />
+                        <div class="position-absolute bottom-0 start-0 w-100 h-50"
+                            style="background: linear-gradient(to top, rgba(36,23,117,0.6), transparent);"></div>
+                    </div>
+                    <div class="card-body p-4">
+                        <h5 class="card-title fw-black text-telos-purple">GRAMMAR &amp; VOCABULARY FOR IELTS</h5>
+                        <ul class="list-unstyled small text-secondary mt-3">
+                            <li class="d-flex align-items-center gap-2"><span class="bg-telos-pink rounded-circle"
+                                    style="width:6px;height:6px;"></span> 08 buổi nâng cấp ngữ pháp và từ vựng</li>
+                            <li class="d-flex align-items-center gap-2"><span class="bg-telos-pink rounded-circle"
+                                    style="width:6px;height:6px;"></span> Phù hợp cho band 5.0 - 7.5</li>
+                        </ul>
+                        <button
+                            class="btn btn-telos-purple w-100 mt-3 rounded-4 fw-bold d-flex align-items-center justify-content-center gap-2">Xem
+                            Chi Tiết <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+                <!-- Band 7+ Prep -->
+                <div class="card snap-card border-0 rounded-4 card-shadow flex-shrink-0">
+                    <div class="position-relative overflow-hidden" style="height: 220px;">
+                        <img src="https://lh3.googleusercontent.com/aida/AP1WRLuJ9S6GF86CaaHvuzN7a2gcCZqfw9_9bC2-dUXyJERbP2wi3VatrbFOtGJ1CE7PYiMqbAOuXpLjbjNeSnSnncGsUAspueMp0T1LA7ZNjbkpWWGLU4_tDtL6Ng6XnABrEX2F5k0CCA817taB0VDc79P6zbU8moVqvFyn5q4PNpLOPG3HbLzxcTLVPPzE4s_HmMmadlJip0g8DE5ogSnWLntoSU5z3O1MWfDHWtVk4Dg_u9FlkAFWoyLiVQ"
+                            class="card-img-top h-100 object-fit-cover" alt="Band 7+ Prep" style="object-fit: cover;" />
+                        <div class="position-absolute bottom-0 start-0 w-100 h-50"
+                            style="background: linear-gradient(to top, rgba(36,23,117,0.6), transparent);"></div>
+                    </div>
+                    <div class="card-body p-4">
+                        <h5 class="card-title fw-black text-telos-purple">IELTS BAND 7.0+ PREP</h5>
+                        <ul class="list-unstyled small text-secondary mt-3">
+                            <li class="d-flex align-items-center gap-2"><span class="bg-telos-pink rounded-circle"
+                                    style="width:6px;height:6px;"></span> 08 buổi chiến lược tổng quát</li>
+                            <li class="d-flex align-items-center gap-2"><span class="bg-telos-pink rounded-circle"
+                                    style="width:6px;height:6px;"></span> Cam kết tiến bộ band điểm</li>
+                        </ul>
+                        <button
+                            class="btn btn-telos-purple w-100 mt-3 rounded-4 fw-bold d-flex align-items-center justify-content-center gap-2">Xem
+                            Chi Tiết <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INSTRUCTORS -->
+    <section class="py-5 bg-white scroll-reveal">
+        <div class="container py-4">
+            <div class="text-center mb-5 max-w-2xl mx-auto">
+                <h2 class="display-4 fw-black text-telos-purple">Đội Ngũ Giảng Viên Abest</h2>
+                <p class="text-secondary">Đội ngũ giảng viên IELTS giàu kinh nghiệm, từng luyện thi thành công cho hàng
+                    nghìn học viên và đồng hành cùng bạn trong mọi giai đoạn ôn luyện.</p>
+            </div>
+            <div class="row g-4">
+                <!-- Giảng viên 1 -->
+                <div class="col-md-6 col-lg-4">
+                    <div
+                        class="card instructor-card border-0 rounded-4 overflow-hidden text-white bg-telos-purple h-100">
+                        <div class="pt-4 px-4 text-center">
+                            <img src="../../access/image/hompage/feedback.png" class="img-fluid object-fit-contain"
+                                style="height:200px; width:auto;" alt="Giảng viên An" />
+                        </div>
+                        <div class="card-body bg-telos-dark p-4" style="background-color: #1a1154;">
+                            <h4 class="fw-black">Nguyễn An</h4>
+                            <p class="text-telos-yellow small fw-bold text-uppercase">IELTS Trainer</p>
+                            <ul class="list-unstyled small text-white-50 lh-lg">
+                                <li><span class="text-telos-pink">•</span> Chuyên gia luyện thi IELTS band 8.5+</li>
+                                <li><span class="text-telos-pink">•</span> Hơn 7 năm kinh nghiệm đồng hành cùng học viên
+                                </li>
+                            </ul>
+                            <div class="d-flex gap-2 mt-3">
+                                <button class="btn btn-telos-yellow flex-fill fw-black small py-2 rounded-3">Xem
+                                    Profile</button>
+                                <button class="btn btn-telos-pink flex-fill fw-black small py-2 rounded-3">Đăng ký lớp
+                                    An</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Giảng viên 2 -->
+                <div class="col-md-6 col-lg-4">
+                    <div
+                        class="card instructor-card border-0 rounded-4 overflow-hidden text-white bg-telos-purple h-100">
+                        <div class="pt-4 px-4 text-center">
+                            <img src="../../access/image/hompage/feedback.png" class="img-fluid object-fit-contain"
+                                style="height:200px; width:auto;" alt="Giảng viên Bình" />
+                        </div>
+                        <div class="card-body bg-telos-dark p-4" style="background-color: #1a1154;">
+                            <h4 class="fw-black">Hà Bình</h4>
+                            <p class="text-telos-yellow small fw-bold text-uppercase">IELTS Writing Coach</p>
+                            <ul class="list-unstyled small text-white-50 lh-lg">
+                                <li><span class="text-telos-pink">•</span> Chuyên gia Writing band 7.5+</li>
+                                <li><span class="text-telos-pink">•</span> Hướng dẫn cấu trúc luận và từ vựng học thuật
+                                </li>
+                            </ul>
+                            <div class="d-flex gap-2 mt-3">
+                                <button class="btn btn-telos-yellow flex-fill fw-black small py-2 rounded-3">Xem
+                                    Profile</button>
+                                <button class="btn btn-telos-pink flex-fill fw-black small py-2 rounded-3">Đăng ký lớp
+                                    Bình</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Giảng viên 3 -->
+                <div class="col-md-6 col-lg-4">
+                    <div
+                        class="card instructor-card border-0 rounded-4 overflow-hidden text-white bg-telos-purple h-100">
+                        <div class="pt-4 px-4 text-center">
+                            <img src="../../access/image/hompage/feedback.png" class="img-fluid object-fit-contain"
+                                style="height:200px; width:auto; " alt="Giảng viên Thư" />
+                        </div>
+                        <div class="card-body bg-telos-dark p-4" style="background-color: #1a1154;">
+                            <h4 class="fw-black">Minh Thư</h4>
+                            <p class="text-telos-yellow small fw-bold text-uppercase">IELTS Speaking &amp; Reading</p>
+                            <ul class="list-unstyled small text-white-50 lh-lg">
+                                <li><span class="text-telos-pink">•</span> 8 năm chuyên luyện Speaking &amp; Reading
+                                </li>
+                                <li><span class="text-telos-pink">•</span> Giúp học viên tự tin phản xạ và đọc hiểu
+                                    nhanh</li>
+                            </ul>
+                            <div class="d-flex gap-2 mt-3">
+                                <button class="btn btn-telos-yellow flex-fill fw-black small py-2 rounded-3">Xem
+                                    Profile</button>
+                                <button class="btn btn-telos-pink flex-fill fw-black small py-2 rounded-3">Đăng ký lớp
+                                    Thư</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BEGIN: Student Products -->
+    <section class="py-5 bg-telos-yellow scroll-reveal" id="studentProducts">
+        <div class="container py-4">
+            <!-- Tiêu đề -->
+            <div class="text-center mb-5">
+                <h2 class="display-4 fw-black text-telos-purple">Thành Tựu Học Viên Abest</h2>
+                <p class="text-telos-purple">Những kết quả nổi bật từ các học viên đã hoàn thành khóa học tại Abest</p>
+            </div>
+
+            <div class="row g-4">
+                <!-- Card sản phẩm 1 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 border-0 rounded-4 shadow-sm overflow-hidden student-product-card">
+                        <div class="card-body p-4 d-flex flex-column">
+                            <div class="d-flex align-items-center gap-3 mb-3">
+                                <div class="bg-telos-purple bg-opacity-10 rounded-3 p-3">
+                                    <i class="fas fa-book fs-2 text-telos-purple"></i>
+                                </div>
+                                <div>
+                                    <span class="badge bg-telos-pink text-white px-3 py-2 rounded-pill">Speaking</span>
+                                </div>
+                            </div>
+                            <h5 class="card-title fw-bold text-telos-purple">Bộ Tài Liệu Speaking Advanced</h5>
+                            <p class="text-secondary small mb-2">Hoàng Minh Anh - Band 8.0</p>
+                            <p class="text-secondary small mb-3">Tuyển tập các chủ đề Speaking part 1, 2, 3 với
+                                transcript và phân tích chi tiết dành cho band 7.5+.</p>
+                            <div class="mt-auto d-flex justify-content-between align-items-center">
+                                <div class="d-flex gap-2">
+                                    <span class="badge bg-light text-secondary border">Speaking</span>
+                                    <span class="badge bg-light text-secondary border">Band 8.0</span>
+                                </div>
+                                <a href="#" class="btn btn-telos-pink text-white btn-sm rounded-3 px-3 fw-bold">Xem thêm
+                                    <i class="fas fa-arrow-right ms-1"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card sản phẩm 2 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 border-0 rounded-4 shadow-sm overflow-hidden student-product-card">
+                        <div class="card-body p-4 d-flex flex-column">
+                            <div class="d-flex align-items-center gap-3 mb-3">
+                                <div class="bg-telos-purple bg-opacity-10 rounded-3 p-3">
+                                    <i class="fas fa-pen-fancy fs-2 text-telos-purple"></i>
+                                </div>
+                                <div>
+                                    <span class="badge bg-telos-pink text-white px-3 py-2 rounded-pill">Writing</span>
+                                </div>
+                            </div>
+                            <h5 class="card-title fw-bold text-telos-purple">Writing Task 1 & 2 Collection</h5>
+                            <p class="text-secondary small mb-2">Nguyễn Thảo - Band 7.5</p>
+                            <p class="text-secondary small mb-3">Bộ sưu tập các bài essays, letters, diagrams được chấm
+                                8.5/9.0 với nhận xét chi tiết từ giáo viên.</p>
+                            <div class="mt-auto d-flex justify-content-between align-items-center">
+                                <div class="d-flex gap-2">
+                                    <span class="badge bg-light text-secondary border">Writing</span>
+                                    <span class="badge bg-light text-secondary border">Band 7.5</span>
+                                </div>
+                                <a href="#" class="btn btn-telos-pink text-white btn-sm rounded-3 px-3 fw-bold">Xem thêm
+                                    <i class="fas fa-arrow-right ms-1"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card sản phẩm 3 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 border-0 rounded-4 shadow-sm overflow-hidden student-product-card">
+                        <div class="card-body p-4 d-flex flex-column">
+                            <div class="d-flex align-items-center gap-3 mb-3">
+                                <div class="bg-telos-purple bg-opacity-10 rounded-3 p-3">
+                                    <i class="fas fa-volume-up fs-2 text-telos-purple"></i>
+                                </div>
+                                <div>
+                                    <span class="badge bg-telos-pink text-white px-3 py-2 rounded-pill">Listening</span>
+                                </div>
+                            </div>
+                            <h5 class="card-title fw-bold text-telos-purple">Podcast Luyện Nghe IELTS</h5>
+                            <p class="text-secondary small mb-2">Lê Quang Hải - Band 8.5</p>
+                            <p class="text-secondary small mb-3">Series podcast 50 tập với các accent khác nhau, chủ đề
+                                đa dạng phù hợp luyện thi thực tế.</p>
+                            <div class="mt-auto d-flex justify-content-between align-items-center">
+                                <div class="d-flex gap-2">
+                                    <span class="badge bg-light text-secondary border">Listening</span>
+                                    <span class="badge bg-light text-secondary border">Podcast</span>
+                                </div>
+                                <a href="#" class="btn btn-telos-pink text-white btn-sm rounded-3 px-3 fw-bold">Xem thêm
+                                    <i class="fas fa-arrow-right ms-1"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Nút xem tất cả -->
+            <div class="text-center mt-5">
+                <a href="#"
+                    class="btn btn-outline-telos rounded-4 fw-bold px-5 py-2 d-inline-flex align-items-center gap-2">
+                    Xem tất cả thành tựu <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="py-5 bg-light scroll-reveal">
+        <div class="container py-4">
+            <h2 class="display-4 fw-black text-telos-purple text-center mb-5">Học Viên Nói Gì Về Abest?</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card border-0 rounded-4 card-shadow p-4 h-100 position-relative">
+                        <div class="position-absolute top-0 end-0 text-telos-yellow display-1 fw-light opacity-25 pe-3">
+                            "</div>
+                        <p class="text-secondary fst-italic lh-lg">"Abest giúp tôi tăng từ 5.5 lên 7.0 trong vòng 3
+                            tháng. Các buổi học vừa rõ ràng vừa thực tế, giáo viên luôn chỉnh sửa từng lỗi phát âm và
+                            viết bài."</p>
+                        <div class="d-flex align-items-center gap-3 pt-3 border-top">
+                            <img src="../../access/image/hompage/feedback.png" class="rounded-circle" width="48"
+                                height="48" alt="avatar" />
+                            <div>
+                                <p class="fw-bold text-telos-purple mb-0">Trần Nhật Minh</p><small
+                                    class="text-secondary">Học viên IELTS 7.0</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card border-0 rounded-4 card-shadow p-4 h-100 position-relative">
+                        <div class="position-absolute top-0 end-0 text-telos-yellow display-1 fw-light opacity-25 pe-3">
+                            "</div>
+                        <p class="text-secondary fst-italic lh-lg">"Thầy cô Abest luôn theo sát tiến độ, có bài tập về
+                            nhà cụ thể và feedback từng câu trả lời. Nhờ vậy kỹ năng đọc và viết tiến bộ nhanh hơn tôi
+                            tưởng."</p>
+                        <div class="d-flex align-items-center gap-3 pt-3 border-top">
+                            <img src="../../access/image/hompage/feedback.png" class="rounded-circle" width="48"
+                                height="48" alt="avatar" />
+                            <div>
+                                <p class="fw-bold text-telos-purple mb-0">Phạm Thị Lan</p><small
+                                    class="text-secondary">Học viên IELTS 6.5</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card border-0 rounded-4 card-shadow p-4 h-100 position-relative">
+                        <div class="position-absolute top-0 end-0 text-telos-yellow display-1 fw-light opacity-25 pe-3">
+                            "</div>
+                        <p class="text-secondary fst-italic lh-lg">"Khóa học tại Abest không chỉ giúp tôi luyện đề mà
+                            còn làm chủ thời gian làm bài và tư duy câu trả lời. Sau 2 tháng, tôi đạt 7.5 nghe và 7.0
+                            viết."</p>
+                        <div class="d-flex align-items-center gap-3 pt-3 border-top">
+                            <img src="../../access/image/hompage/feedback.png" class="rounded-circle" width="48"
+                                height="48" alt="avatar" />
+                            <div>
+                                <p class="fw-bold text-telos-purple mb-0">Nguyễn Thị Hằng</p><small
+                                    class="text-secondary">Học viên IELTS 7.5</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5">
+                <button
+                    class="btn btn-outline-telos rounded-4 fw-bold px-5 py-2 d-inline-flex align-items-center gap-2">
+                    Xem thêm đánh giá <i class="fas fa-chevron-down"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- REGISTER -->
+    <section class="py-5 bg-white scroll-reveal" id="registerTest">
+        <div class="container py-4">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-xl-7">
+                    <!-- card đăng ký -->
+                    <div class="card border-0 shadow-lg rounded-4 overflow-hidden">
+                        <div class="card-body p-4 p-md-5">
+                            <!-- tiêu đề -->
+                            <h2 class="display-5 fw-black text-telos-purple mb-2">Đăng ký Test Năng Lực</h2>
+                            <p class="text-secondary mb-4">Hãy để lại thông tin để được tư vấn và làm bài test năng lực
+                                UI/UX hoàn toàn miễn phí.</p>
+
+                            <!-- form -->
+                            <form id="registerTestForm">
+                                <!-- Họ tên -->
+                                <div class="mb-3">
+                                    <label for="fullNameTest" class="form-label fw-semibold text-telos-purple">Họ và
+                                        tên</label>
+                                    <input type="text" class="form-control form-control-lg rounded-3 border-0 bg-light"
+                                        id="fullNameTest" placeholder="Nhập họ và tên của bạn" required />
+                                </div>
+
+                                <!-- Email -->
+                                <div class="mb-3">
+                                    <label for="emailTest"
+                                        class="form-label fw-semibold text-telos-purple">Email</label>
+                                    <input type="email" class="form-control form-control-lg rounded-3 border-0 bg-light"
+                                        id="emailTest" placeholder="example@email.com" required />
+                                </div>
+
+                                <!-- Số điện thoại -->
+                                <div class="mb-4">
+                                    <label for="phoneTest" class="form-label fw-semibold text-telos-purple">Số điện
+                                        thoại</label>
+                                    <input type="tel" class="form-control form-control-lg rounded-3 border-0 bg-light"
+                                        id="phoneTest" placeholder="09xx xxxx xxx" required />
+                                </div>
+
+                                <!-- nút gửi -->
+                                <button type="submit"
+                                    class="btn btn-telos-pink text-white w-100 py-3 fw-bold rounded-4 fs-5 border-0 transition-all"
+                                    style="background: #ff4b8b;">
+                                    Gửi thông tin Đăng ký
+                                </button>
+                            </form>
+
+                            <!-- thông báo (ẩn mặc định) -->
+                            <div id="registerTestAlert" class="alert mt-3 d-none" role="alert"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-white pt-5 pb-4 border-top">
+        <div class="container">
+            <div class="row g-4 pb-5">
+                <div class="col-md-6 col-lg-3">
+                    <div class="text-telos-purple fw-black display-6">IELTS <span class="text-telos-pink">ABEST</span>
+                    </div>
+                    <p class="text-secondary small mt-3">Bắt đầu chinh phục IELTS với lộ trình rõ ràng, giáo viên tư vấn
+                        cá nhân và tài liệu luyện thi chuyên sâu.</p>
+                    <button class="btn btn-telos-purple rounded-4 fw-bold px-4 py-2 small">Đăng ký ngay <i
+                            class="fas fa-arrow-right ms-1"></i></button>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <h6 class="fw-black text-telos-purple text-uppercase small tracking-wider">Thông tin liên hệ</h6>
+                    <ul class="list-unstyled small text-secondary mt-3">
+                        <li class="d-flex gap-2 mb-2"><i class="fas fa-map-pin text-telos-pink mt-1"></i> Hà Nội</li>
+                        <li class="d-flex gap-2 mb-2"><i class="fas fa-phone-alt text-telos-pink"></i> 0988 123 456</li>
+                        <li class="d-flex gap-2"><i class="fas fa-envelope text-telos-pink"></i> info@ieltsabest.vn</li>
+                    </ul>
+                </div>
+                <div class="col-md-6 col-lg-2">
+                    <h6 class="fw-black text-telos-purple text-uppercase small">Links</h6>
+                    <ul class="list-unstyled small fw-bold mt-3">
+                        <li><a href="#" class="text-telos-pink footer-link">Giới thiệu</a></li>
+                        <li><a href="#" class="text-telos-pink footer-link">Khóa học</a></li>
+                        <li><a href="#" class="text-telos-pink footer-link">Lộ trình</a></li>
+                        <li><a href="#" class="text-telos-pink footer-link">Blog</a></li>
+                        <li><a href="#" class="text-telos-pink footer-link">Liên hệ</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <h6 class="fw-black text-telos-purple text-uppercase small">Theo dõi IELTS ABEST</h6>
+                    <div class="d-flex gap-3 mt-3">
+                        <a href="#"
+                            class="bg-light rounded-circle d-flex align-items-center justify-content-center text-telos-purple"
+                            style="width:40px;height:40px;"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"
+                            class="bg-light rounded-circle d-flex align-items-center justify-content-center text-telos-purple"
+                            style="width:40px;height:40px;"><i class="fab fa-instagram"></i></a>
+                        <a href="#"
+                            class="bg-light rounded-circle d-flex align-items-center justify-content-center text-telos-purple"
+                            style="width:40px;height:40px;"><i class="fab fa-youtube"></i></a>
+                    </div>
+                    <div class="cookie-box mt-4 p-3">
+                        <p class="small text-secondary mb-1">Cookie settings:</p>
+                        <p class="small text-secondary mb-2">Website Abest sử dụng cookie để cải thiện trải nghiệm.
+                            Xem thêm tại <a href="#" class="text-telos-pink">Chính sách bảo mật</a>.</p>
+                        <button class="btn btn-primary btn-sm w-100 fw-bold" style="background:#0d6efd;">Đồng ý</button>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="d-flex flex-wrap justify-content-between align-items-center pt-3 border-top small text-secondary text-uppercase fw-bold tracking-wider">
+                <div>© 2026 IELTS ABEST. ALL RIGHTS RESERVED.</div>
+                <div class="d-flex gap-4">
+                    <a href="#" class="text-secondary text-decoration-none hover-telos">Thông tin liên hệ</a>
+                    <a href="#" class="text-secondary text-decoration-none hover-telos">Điều khoản sử dụng</a>
+                    <a href="#" class="text-secondary text-decoration-none hover-telos">Chính sách bảo mật</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FLOATING CHAT -->
+    <!-- <div class="position-fixed bottom-0 end-0 p-4 z-3">
+        <button class="btn btn-primary rounded-circle d-flex align-items-center justify-content-center shadow-lg"
+            style="width:56px;height:56px; background:#0d6efd;">
+            <i class="fas fa-comment-dots fs-4"></i>
+        </button>
+    </div> -->
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="homepage.js"></script>
+</body>
+
+</html>
