@@ -6,6 +6,16 @@ document.addEventListener('DOMContentLoaded', () => {
     mobileToggle.addEventListener('click', () => navMenu.classList.toggle('open'));
   }
 
+  // Transparent header → solid background after scrolling past the top
+  const siteHeader = document.querySelector('.site-header');
+  if (siteHeader) {
+    const updateHeaderOnScroll = () => {
+      siteHeader.classList.toggle('scrolled', window.scrollY > 60);
+    };
+    updateHeaderOnScroll();
+    window.addEventListener('scroll', updateHeaderOnScroll, { passive: true });
+  }
+
   // Language dropdown toggle
   const langToggle = document.getElementById('langToggle');
   if (langToggle) {
