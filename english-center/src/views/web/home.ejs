@@ -1,13 +1,24 @@
 <%- include('../partials/header', { pageCss: 'landing' }) %>
 
-<section class="hero" style="background-image:url('/images/abest_hero_bg.jpg');">
+<section class="hero" style="background-image:url('/images/hero_bg_1.jpg');">
 
+    <div class="hero-inner">
+      <h1><%= t.home.hero_title1 %></h1> 
+      <h2><%= t.home.hero_title2 %></h2>
+      <p><%= t.home.hero_subtitle %></p>
+      <div class="hero-actions">
+        <a href="/lich-khai-giang" class="btn-gold btn btn-lg"><%= t.home.hero_cta %></a>
+        <a href="#roadmap" class="btn-glass btn btn-lg"><%= t.home.hero_cta2 %> <i class="bi bi-arrow-right"></i></a>
+      </div>
+    </div>
+      
 </section>
 
-<section class="section" style="background-image:url('/images/abest_bg_2.png');"   >
+<!-- <section class="section" style="background-image:url('/images/abest_bg_2.png');"   >
   <div class="container">
     <div class="hero-inner">
-      <h1><%= t.home.hero_title %></h1>
+      <h1><%= t.home.hero_title %></h1> 
+      <h2><%= t.home.hero_title2 %></h2>
       <p><%= t.home.hero_subtitle %></p>
     <div class="hero-actions">
       <a href="/lich-khai-giang" class="btn-gold btn btn-lg"><%= t.home.hero_cta %></a>
@@ -15,7 +26,7 @@
     </div>
     </div>
   </div>
-</section>
+</section> -->
 
 <section class="section method-section" id="roadmap">
   <div class="container">
@@ -103,7 +114,7 @@
   </div>
 </section>
 
-<section class="section bg-yellow">
+<section class="section"  style="background-image:url('/images/abest_bg_2.png');" >
   <div class="container">
     <h2 class="section-title"><%= t.home.products_title %></h2>
     <p class="section-subtitle"><%= t.home.products_subtitle %></p>

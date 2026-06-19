@@ -1,6 +1,6 @@
 {
   "site": {
-    "name": "ABest English Center"
+    "name": "Best IELTS"
   },
   "nav": {
     "home": "Home",
@@ -14,7 +14,8 @@
     "documents": "Documents"
   },
   "home": {
-    "hero_title": "Conquer IELTS – With ABest",
+    "hero_title1": "Hello everyone, we are",
+    "hero_title2": "ABest IELTS",
     "hero_subtitle": "A personalized IELTS prep roadmap built around your target band score, with experienced trainers and in-depth practice tools.",
     "hero_cta": "Register for a free mock test",
     "hero_cta2": "View the IELTS roadmap",

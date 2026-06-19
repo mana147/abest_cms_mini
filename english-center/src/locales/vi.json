@@ -1,6 +1,6 @@
 {
   "site": {
-    "name": "ABest English Center"
+    "name": "Best IELTS"
   },
   "nav": {
     "home": "Trang chủ",
@@ -14,7 +14,8 @@
     "documents": "Tài liệu"
   },
   "home": {
-    "hero_title": "Chinh Phục IELTS – Cùng ABest",
+    "hero_title1": "Chào các bạn , chúng tôi là",
+    "hero_title2": "ABest IELTS",
     "hero_subtitle": "Lộ trình luyện thi IELTS cá nhân hóa, xây dựng theo mục tiêu band điểm của bạn cùng đội ngũ giảng viên giàu kinh nghiệm và công cụ ôn luyện chuyên sâu.",
     "hero_cta": "Đăng ký thi thử miễn phí",
     "hero_cta2": "Xem lộ trình IELTS",
