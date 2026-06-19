@@ -14,16 +14,31 @@
     "documents": "Documents"
   },
   "home": {
-    "hero_title": "Master English with ABest",
-    "hero_subtitle": "A trusted English center — accompanying you on the journey to global language mastery",
-    "hero_cta": "Register for a trial",
+    "hero_title": "Conquer IELTS – With ABest",
+    "hero_subtitle": "A personalized IELTS prep roadmap built around your target band score, with experienced trainers and in-depth practice tools.",
+    "hero_cta": "Register for a free mock test",
+    "hero_cta2": "View the IELTS roadmap",
+    "method_title": "An international-standard IELTS exam method",
+    "method_text": "ABest builds its exam prep program around the 4 core skills — listening, speaking, reading, writing — combined with practical strategies and personal feedback to help you reach your target band score quickly.",
+    "method_cta": "View program details",
     "courses_title": "Featured Courses",
+    "courses_subtitle": "A full range of courses for every level — from beginner to advanced — with mentors guiding you all the way.",
     "courses_view_all": "View all courses",
     "teachers_title": "Our Teachers",
+    "teachers_subtitle": "An experienced teaching team that has guided thousands of students to exam success.",
     "teachers_view_all": "View all teachers",
+    "products_title": "ABest Student Achievements",
+    "products_subtitle": "Outstanding results from students who completed courses at ABest",
+    "products_cta": "View all achievements",
     "testimonials_title": "What our students say",
     "posts_title": "Latest News",
-    "posts_view_all": "View all news"
+    "posts_view_all": "View all news",
+    "register_title": "Register for a Placement Test",
+    "register_subtitle": "Leave your info to get free consultation and take a placement test, completely free.",
+    "register_submit": "Submit Registration"
+  },
+  "header": {
+    "cta": "Free consultation"
   },
   "courses": {
     "title": "Courses",
@@ -83,7 +98,10 @@
     "phone": "Hotline: 0965 928 996",
     "email": "Email: info@abest.edu.vn",
     "copyright": "Copyright © ABest English Center",
-    "legal_info": "IELTS ABEST Consulting and Education Development Joint Stock Company - Tax code: 0111458973"
+    "legal_info": "IELTS ABEST Consulting and Education Development Joint Stock Company - Tax code: 0111458973",
+    "follow_us": "Follow us",
+    "cookie_text": "ABest's website uses cookies to improve your experience.",
+    "cookie_accept": "Accept"
   },
   "errors": {
     "404_title": "Page Not Found",

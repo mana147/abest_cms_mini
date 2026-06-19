@@ -14,16 +14,31 @@
     "documents": "Tài liệu"
   },
   "home": {
-    "hero_title": "Chinh phục tiếng Anh cùng ABest",
-    "hero_subtitle": "Trung tâm Anh ngữ uy tín — đồng hành cùng bạn trên con đường chinh phục ngôn ngữ toàn cầu",
-    "hero_cta": "Đăng ký học thử",
+    "hero_title": "Chinh Phục IELTS – Cùng ABest",
+    "hero_subtitle": "Lộ trình luyện thi IELTS cá nhân hóa, xây dựng theo mục tiêu band điểm của bạn cùng đội ngũ giảng viên giàu kinh nghiệm và công cụ ôn luyện chuyên sâu.",
+    "hero_cta": "Đăng ký thi thử miễn phí",
+    "hero_cta2": "Xem lộ trình IELTS",
+    "method_title": "Phương pháp luyện thi IELTS chuẩn quốc tế",
+    "method_text": "ABest xây dựng chương trình luyện thi theo 4 kỹ năng nghe, nói, đọc, viết cùng chiến lược ôn luyện thực tế và phản hồi cá nhân để giúp bạn nhanh chóng đạt band điểm mong muốn.",
+    "method_cta": "Xem chi tiết chương trình",
     "courses_title": "Khóa học nổi bật",
+    "courses_subtitle": "Tổng hợp những khóa học luyện thi phù hợp cho mọi trình độ, từ mới bắt đầu đến nâng cao, cùng mentor đồng hành xuyên suốt.",
     "courses_view_all": "Xem tất cả khóa học",
     "teachers_title": "Đội ngũ giáo viên",
+    "teachers_subtitle": "Đội ngũ giảng viên giàu kinh nghiệm, từng đồng hành luyện thi thành công cho hàng nghìn học viên.",
     "teachers_view_all": "Xem tất cả giáo viên",
+    "products_title": "Thành Tựu Học Viên ABest",
+    "products_subtitle": "Những kết quả nổi bật từ các học viên đã hoàn thành khóa học tại ABest",
+    "products_cta": "Xem tất cả thành tựu",
     "testimonials_title": "Học viên nói gì về chúng tôi",
     "posts_title": "Tin tức mới nhất",
-    "posts_view_all": "Xem tất cả tin tức"
+    "posts_view_all": "Xem tất cả tin tức",
+    "register_title": "Đăng Ký Test Năng Lực",
+    "register_subtitle": "Hãy để lại thông tin để được tư vấn và làm bài test năng lực hoàn toàn miễn phí.",
+    "register_submit": "Gửi Thông Tin Đăng Ký"
+  },
+  "header": {
+    "cta": "Đăng ký tư vấn"
   },
   "courses": {
     "title": "Khóa học",
@@ -83,7 +98,10 @@
     "phone": "Hotline: 0965 928 996",
     "email": "Email: info@abest.edu.vn",
     "copyright": "Bản quyền © ABest English Center",
-    "legal_info": "Công ty Cổ phần Tư vấn và Phát triển Giáo dục IELTS ABest - MST: 0111458973"
+    "legal_info": "Công ty Cổ phần Tư vấn và Phát triển Giáo dục IELTS ABest - MST: 0111458973",
+    "follow_us": "Kết nối với chúng tôi",
+    "cookie_text": "Website ABest sử dụng cookie để cải thiện trải nghiệm của bạn.",
+    "cookie_accept": "Đồng ý"
   },
   "errors": {
     "404_title": "Không tìm thấy trang",

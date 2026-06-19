@@ -20,7 +20,7 @@ const { verifyCsrf } = require('../middlewares/csrfMiddleware');
 router.get('/', (req, res) => {
   res.render('web/home', {
     title: 'Trang chủ',
-    courses: CourseModel.getLatest(3),
+    courses: CourseModel.getLatest(5),
     teachers: TeacherModel.getActive().slice(0, 4),
     testimonials: TestimonialModel.getVisible(),
     posts: PostModel.getLatest(3),

@@ -6,10 +6,11 @@ const RegistrationController = {
     res.render('web/schedule', { title: 'Lịch khai giảng', courses: CourseModel.getPublished() });
   },
   store(req, res) {
-    const { full_name, email, phone, course_id, message } = req.body;
+    const { full_name, email, phone, course_id, message, redirect_to } = req.body;
+    const redirectPath = ['/lich-khai-giang', '/#registerTest'].includes(redirect_to) ? redirect_to : '/lich-khai-giang';
     if (!full_name?.trim() || !phone?.trim()) {
       req.session.error = 'Vui lòng nhập đầy đủ họ tên và số điện thoại';
-      return res.redirect('/lich-khai-giang');
+      return res.redirect(redirectPath);
     }
     try {
       RegistrationModel.create({
@@ -17,10 +18,10 @@ const RegistrationController = {
         course_id: course_id ? Number(course_id) : null, message: message || null,
       });
       req.session.success = 'Đăng ký thành công! Chúng tôi sẽ liên hệ với bạn sớm nhất.';
-      return res.redirect('/lich-khai-giang');
+      return res.redirect(redirectPath);
     } catch (e) {
       req.session.error = 'Có lỗi xảy ra, vui lòng thử lại';
-      return res.redirect('/lich-khai-giang');
+      return res.redirect(redirectPath);
     }
   },
 

@@ -7,11 +7,15 @@
           <span><%= t.site.name %></span>
         </div>
         <p><%= t.footer.about_text %></p>
-        <div class="footer-socials">
-          <a href="#"><i class="bi bi-facebook"></i></a>
-          <a href="#"><i class="bi bi-youtube"></i></a>
-          <a href="#"><i class="bi bi-instagram"></i></a>
-        </div>
+        <a href="/lich-khai-giang" class="btn-navy btn btn-sm"><%= t.home.hero_cta %></a>
+      </div>
+      <div class="footer-col">
+        <h5><%= t.footer.contact_info %></h5>
+        <ul class="footer-contact">
+          <li><i class="bi bi-geo-alt-fill"></i><span><%= t.footer.address %></span></li>
+          <li><i class="bi bi-telephone-fill"></i><span><%= t.footer.phone %></span></li>
+          <li><i class="bi bi-envelope-fill"></i><span><%= t.footer.email %></span></li>
+        </ul>
       </div>
       <div class="footer-col">
         <h5><%= t.footer.quick_links %></h5>
@@ -22,12 +26,16 @@
         </ul>
       </div>
       <div class="footer-col">
-        <h5><%= t.footer.contact_info %></h5>
-        <ul class="footer-contact">
-          <li><i class="bi bi-geo-alt-fill"></i><span><%= t.footer.address %></span></li>
-          <li><i class="bi bi-telephone-fill"></i><span><%= t.footer.phone %></span></li>
-          <li><i class="bi bi-envelope-fill"></i><span><%= t.footer.email %></span></li>
-        </ul>
+        <h5><%= t.footer.follow_us %></h5>
+        <div class="footer-socials">
+          <a href="#"><i class="bi bi-facebook"></i></a>
+          <a href="#"><i class="bi bi-instagram"></i></a>
+          <a href="#"><i class="bi bi-youtube"></i></a>
+        </div>
+        <div class="cookie-box" id="cookieConsent">
+          <p><%= t.footer.cookie_text %></p>
+          <button type="button" class="btn-navy btn btn-sm w-100" id="cookieAccept"><%= t.footer.cookie_accept %></button>
+        </div>
       </div>
     </div>
     <div class="footer-bottom">

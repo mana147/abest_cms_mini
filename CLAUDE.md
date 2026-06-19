@@ -68,6 +68,8 @@ english-center/
 │   ├── fonts/                    # Local fonts
 │   ├── images/
 │   │   ├── logo.png              # Logo trung tâm
+│   │   ├── homepage-hero-bg.png  # Background hero trang chủ
+│   │   ├── homepage-method.png   # Ảnh minh họa section "Phương pháp luyện thi"
 │   │   └── icons/                # SVG icons
 │   ├── js/
 │   │   ├── main.js               # Admin: auto-hide alerts, confirm delete, thumbnail preview
@@ -199,7 +201,7 @@ All tables defined in `src/config/db.js` → `initDatabase()` as `CREATE TABLE I
 |---------|-------|------------|---------------|--------------|
 | Courses | courseModel | courseController | `GET /khoa-hoc`, `GET /khoa-hoc/:slug` | Full CRUD `/admin/courses/*` |
 | Teachers | teacherModel | teacherController | `GET /giao-vien` | Full CRUD `/admin/teachers/*` |
-| Registration | registrationModel | registrationController | `GET /lich-khai-giang`, `POST /dang-ky` | View + delete `/admin/registrations/*` |
+| Registration | registrationModel | registrationController | `GET /lich-khai-giang`, `POST /dang-ky` (nhận thêm field tùy chọn `redirect_to`, whitelist `/lich-khai-giang` hoặc `/#registerTest`, để form đăng ký trên trang chủ quay lại đúng vị trí) | View + delete `/admin/registrations/*` |
 | Testimonials | testimonialModel | testimonialController | (hiển thị ở `home.ejs`) | Full CRUD `/admin/testimonials/*` |
 | Posts/News | postModel | postController | `GET /posts`, `GET /posts/:slug` | Full CRUD `/admin/posts/*` |
 | Gallery | galleryModel | galleryController | `GET /gallery` | Upload + delete only `/admin/gallery/*` |
@@ -208,7 +210,7 @@ All tables defined in `src/config/db.js` → `initDatabase()` as `CREATE TABLE I
 | Menus | menuModel, menuPostModel | menuController | `GET /menu/:slug` | Full CRUD + reorder + toggle `/admin/menus/*` |
 | Auth | userModel | authController | — | `GET/POST /admin/login`, `POST /admin/logout` |
 | i18n | — | — | `GET /lang/:lang` | — |
-| Home | (inline in web.js) | — | `GET /` (latest courses + teachers + testimonials + posts) | — |
+| Home | (inline in web.js) | — | `GET /` (hero + phương pháp luyện thi [static] + 5 khóa học mới nhất + giáo viên + thành tựu học viên [static, hardcode] + testimonials + tin tức + form đăng ký test) | — |
 | About | (inline in web.js) | — | `GET /about` (static page, bilingual) | — |
 
 > **Note:** `/about`, `/khoa-hoc`, `/giao-vien`, `/lich-khai-giang` là `system` menus trong DB — render qua `visibleMenus` trong `partials/header.ejs`. Admin chỉnh visibility/order tại `/admin/menus`.
@@ -322,6 +324,24 @@ const slug = makeUniqueSlug(slugify(title), (s) => Model.slugExists(s, excludeId
 ```
 user, success, error, lang, t, __(), visibleMenus, csrfToken
 ```
+
+### Bảng màu Public vs Admin
+
+`base.css` định nghĩa `:root` (--color-navy, --color-gold, ...) và được load bởi **cả** admin (`admin-header.ejs`, `login.ejs`) và public (`header.ejs`) — đây là bảng màu mặc định/admin (navy `#0d2c54` + gold `#d4af37`), **không sửa trực tiếp** nếu chỉ muốn đổi giao diện public.
+
+Các trang public (mọi `web/*.ejs`) load thêm `header.css` và `footer.css` sau `base.css`. `header.css` re-declare cùng tên custom property trong một block `:root` riêng để **override màu chỉ cho public pages** mà không ảnh hưởng admin:
+
+```css
+/* public/css/header.css */
+:root {
+  --color-navy: #2A2774;   /* tím — thương hiệu public hiện tại */
+  --color-gold: #FFC845;   /* vàng */
+  --color-pink: #F06292;   /* hồng — biến mới, chỉ dùng ở public */
+  ...
+}
+```
+
+Mọi class có sẵn dùng `var(--color-navy)`/`var(--color-gold)` trong `base.css` (`.btn-navy`, `.btn-gold`, `.card-custom`, `.badge-gold`, `h1-h6`, `.placeholder-img`...) tự động đổi màu trên public mà không cần sửa lại. Class mới `.btn-pink`/`.text-pink`/`.bg-pink` cũng đặt trong `header.css` vì chỉ public dùng. Nếu cần đổi màu admin, sửa `:root` trong `base.css`; nếu cần đổi màu public, sửa block override trong `header.css`.
 
 ### Page CSS Override (trang không có hero banner)
 

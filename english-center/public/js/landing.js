@@ -24,17 +24,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 4000);
   });
 
-  // Testimonial slider (simple auto-rotate)
-  const slider = document.querySelector('.testimonial-slider');
-  if (slider) {
-    const slides = slider.querySelectorAll('.testimonial-slide');
-    let current = 0;
-    if (slides.length > 1) {
-      setInterval(() => {
-        slides[current].classList.remove('active');
-        current = (current + 1) % slides.length;
-        slides[current].classList.add('active');
-      }, 5000);
+  // Cookie consent
+  const cookieBox = document.getElementById('cookieConsent');
+  const cookieAccept = document.getElementById('cookieAccept');
+  if (cookieBox && cookieAccept) {
+    if (localStorage.getItem('cookieConsent') === 'accepted') {
+      cookieBox.classList.add('is-hidden');
+    } else {
+      cookieAccept.addEventListener('click', () => {
+        localStorage.setItem('cookieConsent', 'accepted');
+        cookieBox.classList.add('is-hidden');
+      });
     }
   }
 });

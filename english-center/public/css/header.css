@@ -1,3 +1,31 @@
+/* Public pages only — header.css/footer.css are never loaded by admin views,
+   so redefining the same custom-property names here re-themes public pages
+   without touching base.css (admin keeps the original navy/gold). */
+:root {
+  --color-navy: #2A2774;
+  --color-navy-dark: #1F1D58;
+  --color-navy-light: #3D399E;
+  --color-gold: #FFC845;
+  --color-gold-light: #FFD873;
+  --color-pink: #F06292;
+  --color-pink-dark: #E0467A;
+  --color-text: #000000;
+  --color-border: #CCCCCC;
+}
+
+.btn-pink {
+  background: var(--color-pink);
+  border: 1px solid var(--color-pink);
+  color: #fff;
+  font-weight: 600;
+  border-radius: var(--radius);
+  padding: 0.65rem 1.5rem;
+  transition: all 0.2s ease;
+}
+.btn-pink:hover { background: var(--color-pink-dark); border-color: var(--color-pink-dark); color: #fff; }
+.text-pink { color: var(--color-pink); }
+.bg-pink { background: var(--color-pink); }
+
 .site-header {
   position: sticky;
   top: 0;
@@ -5,8 +33,8 @@
   width: 100%;
   z-index: 1000;
   background: var(--color-navy);
-  box-shadow: 0 2px 12px rgba(13,44,84,0.15);
-  padding: 0.75rem 0;
+  box-shadow: 0 2px 12px rgba(42,39,116,0.25);
+  padding: 0.85rem 0;
 }
 
 .header-inner {
@@ -19,13 +47,15 @@
 }
 
 .site-logo { display: flex; align-items: center; gap: 0.6rem; }
-.site-logo img { height: 40px; width: 40px; object-fit: contain; border-radius: 6px; }
+.site-logo img { height: 52px; width: 52px; object-fit: contain; border-radius: 6px; }
 .site-logo-text {
   font-family: var(--font-heading);
   font-weight: 700;
-  font-size: 1.25rem;
+  font-size: 1.3rem;
   color: #fff;
 }
+
+.header-cta { display: flex; align-items: center; }
 
 .nav-menu {
   display: flex;
@@ -108,4 +138,13 @@
   .nav-dropdown { position: static; box-shadow: none; background: rgba(255,255,255,0.06); margin-top: 0.5rem; }
   .nav-dropdown li a { color: #fff !important; }
   .mobile-toggle { display: block; }
+}
+
+@media (max-width: 767px) {
+  .header-cta { display: none; }
+}
+
+@media (max-width: 575px) {
+  .site-logo img { height: 40px; width: 40px; }
+  .site-logo-text { display: none; }
 }
