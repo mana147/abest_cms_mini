@@ -20,14 +20,14 @@
   background-color: var(--color-navy);
   background-size: cover;
   background-position: center;
-  height: 819px;
+  height: 100vh;
   color: #fff;
-  padding: 2rem 0 8rem;
+  padding: 2rem 0;
   text-align: center;
   overflow: hidden;
   min-height: 520px;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
 }
 
 /* .hero::before {
@@ -44,6 +44,30 @@
   z-index: 1;
 }
 
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-inner h1,
+.hero-inner h2,
+.hero-inner p,
+.hero-inner .hero-actions {
+  opacity: 0;
+  animation: heroFadeUp 0.7s ease forwards;
+}
+
+.hero-inner h1 { animation-delay: 0.1s; }
+.hero-inner h2 { animation-delay: 0.25s; }
+.hero-inner p { animation-delay: 0.4s; }
+.hero-inner .hero-actions { animation-delay: 0.55s; }
+
 .hero h1 {
   color: #F06292;
   font-size: 64px;
@@ -52,8 +76,19 @@
 
 .hero h2 {
   color: #FFC845;
-  font-size: 64px;
-  margin-bottom: 1rem;
+  font-size: 70px;
+  display: inline-block;
+  padding: 0.5rem 2rem;
+  border: 1px solid #ffffff;
+   background:
+    linear-gradient(to right, #fff 10px, transparent 10px) top left / 16px 2px no-repeat,
+    linear-gradient(to bottom, #fff 10px, transparent 10px) top left / 2px 16px no-repeat,
+    linear-gradient(to left, #fff 10px, transparent 10px) top right / 16px 2px no-repeat,
+    linear-gradient(to bottom, #fff 10px, transparent 10px) top right / 2px 16px no-repeat,
+    linear-gradient(to right, #fff 10px, transparent 10px) bottom left / 16px 2px no-repeat,
+    linear-gradient(to top, #fff 10px, transparent 10px) bottom left / 2px 16px no-repeat,
+    linear-gradient(to left, #fff 10px , transparent 10px) bottom right / 16px 2px no-repeat,
+    linear-gradient(to top, #fff 10px, transparent 10px) bottom right / 2px 16px no-repeat;
 }
 
 .hero p {
