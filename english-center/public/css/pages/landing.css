@@ -81,14 +81,14 @@
   padding: 0.5rem 2rem;
   border: 1px solid #ffffff;
    background:
-    linear-gradient(to right, #fff 10px, transparent 10px) top left / 16px 2px no-repeat,
-    linear-gradient(to bottom, #fff 10px, transparent 10px) top left / 2px 16px no-repeat,
-    linear-gradient(to left, #fff 10px, transparent 10px) top right / 16px 2px no-repeat,
-    linear-gradient(to bottom, #fff 10px, transparent 10px) top right / 2px 16px no-repeat,
-    linear-gradient(to right, #fff 10px, transparent 10px) bottom left / 16px 2px no-repeat,
-    linear-gradient(to top, #fff 10px, transparent 10px) bottom left / 2px 16px no-repeat,
-    linear-gradient(to left, #fff 10px , transparent 10px) bottom right / 16px 2px no-repeat,
-    linear-gradient(to top, #fff 10px, transparent 10px) bottom right / 2px 16px no-repeat;
+    linear-gradient(to right, #fff 10px, transparent 10px) top left / 10px 10px no-repeat,
+    linear-gradient(to bottom, #fff 10px, transparent 10px) top left / 10px 10px no-repeat,
+    linear-gradient(to left, #fff 10px, transparent 10px) top right / 10px 10px no-repeat,
+    linear-gradient(to bottom, #fff 10px, transparent 10px) top right / 10px 10px no-repeat,
+    linear-gradient(to right, #fff 10px, transparent 10px) bottom left / 10px 10px no-repeat,
+    linear-gradient(to top, #fff 10px, transparent 10px) bottom left / 10px 10px no-repeat,
+    linear-gradient(to left, #fff 10px , transparent 10px) bottom right / 10px 10px no-repeat,
+    linear-gradient(to top, #fff 10px, transparent 10px) bottom right / 10px 10px no-repeat;
 }
 
 .hero p {

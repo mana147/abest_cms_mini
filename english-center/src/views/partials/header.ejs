@@ -1,64 +1,88 @@
 <!DOCTYPE html>
 <html lang="<%= lang %>">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><%= title %> - <%= t.site.name %></title>
+  <title>
+    <%= title %> - <%= t.site.name %>
+  </title>
   <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="/vendor/bootstrap-icons/bootstrap-icons.css">
   <link rel="stylesheet" href="/vendor/font-awesome/css/all.min.css">
   <link rel="stylesheet" href="/css/base.css">
   <link rel="stylesheet" href="/css/header.css">
   <link rel="stylesheet" href="/css/footer.css">
-  <% if (typeof pageCss !== 'undefined' && pageCss) { %>
-  <link rel="stylesheet" href="/css/pages/<%= pageCss %>.css">
-  <% } %>
+  <% if (typeof pageCss !=='undefined' && pageCss) { %>
+    <link rel="stylesheet" href="/css/pages/<%= pageCss %>.css">
+    <% } %>
 </head>
+
 <body>
   <header class="site-header">
     <div class="header-inner">
       <a href="/" class="site-logo">
         <img src="/images/logo.png" alt="<%= t.site.name %>" onerror="this.style.display='none'">
-        <span class="site-logo-text"><%= t.site.name %></span>
+        <span class="site-logo-text">
+          <%= t.site.name %>
+        </span>
       </a>
       <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
         <i class="bi bi-list"></i>
       </button>
       <ul class="nav-menu" id="navMenu">
-        <% visibleMenus.forEach(menu => { %>
-          <% const menuName = lang === 'en' && menu.name_en ? menu.name_en : menu.name_vi; %>
-          <% if (menu.type === 'post_list') { %>
-            <li>
-              <a href="#"><%= menuName %> <i class="bi bi-chevron-down" style="font-size:0.7rem;"></i></a>
-              <ul class="nav-dropdown">
-                <% (menu.children || []).forEach(post => { %>
-                  <li><a href="/posts/<%= post.slug %>"><%= lang === 'en' && post.title_en ? post.title_en : post.title %></a></li>
-                <% }) %>
-              </ul>
-            </li>
-          <% } else { %>
-            <li><a href="<%= menu.url || '/menu/' + menu.slug %>"><%= menuName %></a></li>
-          <% } %>
-        <% }) %>
+        <% visibleMenus.forEach(menu=> { %>
+          <% const menuName=lang==='en' && menu.name_en ? menu.name_en : menu.name_vi; %>
+            <% if (menu.type==='post_list' ) { %>
+              <li>
+                <a href="#">
+                  <%= menuName %> <i class="bi bi-chevron-down" style="font-size:0.7rem;"></i>
+                </a>
+                <ul class="nav-dropdown">
+                  <% (menu.children || []).forEach(post=> { %>
+                    <li><a href="/posts/<%= post.slug %>">
+                        <%= lang==='en' && post.title_en ? post.title_en : post.title %>
+                      </a></li>
+                    <% }) %>
+                </ul>
+              </li>
+              <% } else { %>
+                <li><a href="<%= menu.url || '/menu/' + menu.slug %>">
+                    <%= menuName %>
+                  </a></li>
+                <% } %>
+                  <% }) %>
       </ul>
       <div class="header-right">
-        <div class="header-language" id="langToggle">
-          <span><%= lang === 'en' ? 'EN' : 'VI' %> <i class="bi bi-chevron-down dropdown-icon" style="font-size:0.7rem;"></i></span>
+        <!-- <div class="header-language" id="langToggle">
+          <span>
+            <%= lang==='en' ? 'EN' : 'VI' %> <i class="bi bi-chevron-down dropdown-icon" style="font-size:0.7rem;"></i>
+          </span>
           <div class="header-language-menu">
             <a href="/lang/vi">Tiếng Việt</a>
             <a href="/lang/en">English</a>
           </div>
-        </div>
+        </div> -->
         <div class="header-cta">
-          <a href="/lich-khai-giang" class="btn-gold btn btn-sm"><%= t.header.cta %></a>
+          <a href="/lich-khai-giang" class="btn-gold btn btn-sm">
+            <%= t.header.cta %>
+          </a>
         </div>
       </div>
     </div>
   </header>
   <main>
     <% if (success) { %>
-      <div class="flash-container"><div class="alert alert-success alert-dismissible fade show" role="alert"><%= success %><button type="button" class="btn-close" data-bs-dismiss="alert"></button></div></div>
-    <% } %>
-    <% if (error) { %>
-      <div class="flash-container"><div class="alert alert-danger alert-dismissible fade show" role="alert"><%= error %><button type="button" class="btn-close" data-bs-dismiss="alert"></button></div></div>
-    <% } %>
+      <div class="flash-container">
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+          <%= success %><button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+      </div>
+      <% } %>
+        <% if (error) { %>
+          <div class="flash-container">
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+              <%= error %><button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+          </div>
+          <% } %>
