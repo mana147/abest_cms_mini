@@ -16,6 +16,25 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', updateHeaderOnScroll, { passive: true });
   }
 
+  // Featured courses carousel controls
+  const coursesTrack = document.querySelector('[data-courses-track]');
+  if (coursesTrack) {
+    document.querySelectorAll('[data-course-scroll]').forEach((button) => {
+      button.addEventListener('click', () => {
+        const direction = button.getAttribute('data-course-scroll') === 'prev' ? -1 : 1;
+        const firstCard = coursesTrack.querySelector('.snap-card');
+        const cardWidth = firstCard ? firstCard.getBoundingClientRect().width : coursesTrack.clientWidth;
+        const maxScroll = coursesTrack.scrollWidth - coursesTrack.clientWidth;
+        const nextPosition = Math.max(0, Math.min(coursesTrack.scrollLeft + direction * (cardWidth + 24), maxScroll));
+        coursesTrack.style.scrollSnapType = 'none';
+        coursesTrack.scrollTo({ left: nextPosition, behavior: 'auto' });
+        requestAnimationFrame(() => {
+          coursesTrack.style.scrollSnapType = '';
+        });
+      });
+    });
+  }
+
   // Language dropdown toggle
   const langToggle = document.getElementById('langToggle');
   if (langToggle) {

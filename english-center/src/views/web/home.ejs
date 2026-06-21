@@ -46,37 +46,54 @@
 
 <section class="section bg-alt" id="courses">
   <div class="container">
-    <h2 class="section-title"><%= t.home.courses_title %></h2>
-    <p class="section-subtitle"><%= t.home.courses_subtitle %></p>
-    <% if (courses.length === 0) { %>
-      <div class="empty-state"><i class="bi bi-journal-x"></i><%= t.courses.empty %></div>
-    <% } else { %>
-      <div class="courses-scroll">
-        <% courses.forEach(course => { %>
-          <div class="snap-card">
-            <div class="card-custom h-100">
-              <div class="course-card-thumb">
-                <% if (course.thumbnail) { %>
-                  <img src="<%= course.thumbnail %>" alt="<%= course.title %>" style="width:100%;height:220px;object-fit:cover;">
-                <% } else { %>
-                  <div class="placeholder-img" style="aspect-ratio:auto;height:220px;"><i class="bi bi-journal-bookmark"></i></div>
-                <% } %>
-                <% if (course.level) { %><span class="badge-gold course-card-level"><%= course.level %></span><% } %>
-              </div>
-              <div class="card-body">
-                <h5><%= lang === 'en' && course.title_en ? course.title_en : course.title %></h5>
-                <ul class="course-meta-list">
-                  <% if (course.duration) { %><li><i class="bi bi-clock"></i> <%= course.duration %></li><% } %>
-                  <% if (course.fee) { %><li><i class="bi bi-tag"></i> <%= course.fee %></li><% } %>
-                </ul>
-                <a href="/khoa-hoc/<%= course.slug %>" class="btn-navy btn btn-sm w-100"><%= t.courses.detail %></a>
-              </div>
-            </div>
+    <div class="featured-courses-layout">
+      <div class="featured-courses-intro">
+        <h2 class="section-title"><%= t.home.courses_title %></h2>
+        <p class="section-subtitle"><%= t.home.courses_subtitle %></p>
+        <a href="/khoa-hoc" class="btn-pink btn featured-courses-cta"><%= t.home.courses_view_all %> <i class="bi bi-arrow-right"></i></a>
+        <% if (courses.length > 1) { %>
+          <div class="featured-courses-nav" aria-label="<%= t.home.courses_title %>">
+            <button type="button" class="course-scroll-btn" data-course-scroll="prev" aria-label="Previous courses">
+              <i class="bi bi-arrow-left"></i>
+            </button>
+            <button type="button" class="course-scroll-btn" data-course-scroll="next" aria-label="Next courses">
+              <i class="bi bi-arrow-right"></i>
+            </button>
           </div>
-        <% }) %>
+        <% } %>
       </div>
-    <% } %>
-    <div class="text-center mt-4"><a href="/khoa-hoc" class="btn-outline-navy btn"><%= t.home.courses_view_all %></a></div>
+
+      <div class="featured-courses-showcase">
+        <% if (courses.length === 0) { %>
+          <div class="empty-state"><i class="bi bi-journal-x"></i><%= t.courses.empty %></div>
+        <% } else { %>
+          <div class="courses-scroll featured-courses-scroll" data-courses-track>
+            <% courses.forEach(course => { %>
+              <div class="snap-card">
+                <div class="card-custom featured-course-card h-100">
+                  <div class="course-card-thumb">
+                    <% if (course.thumbnail) { %>
+                      <img src="<%= course.thumbnail %>" alt="<%= course.title %>">
+                    <% } else { %>
+                      <div class="placeholder-img"><i class="bi bi-journal-bookmark"></i></div>
+                    <% } %>
+                    <% if (course.level) { %><span class="badge-gold course-card-level"><%= course.level %></span><% } %>
+                  </div>
+                  <div class="card-body">
+                    <h5><%= lang === 'en' && course.title_en ? course.title_en : course.title %></h5>
+                    <ul class="course-meta-list">
+                      <% if (course.duration) { %><li><i class="bi bi-stars"></i> <%= course.duration %></li><% } %>
+                      <% if (course.fee) { %><li><i class="bi bi-stars"></i> <%= course.fee %></li><% } %>
+                    </ul>
+                    <a href="/khoa-hoc/<%= course.slug %>" class="btn-navy btn btn-sm w-100"><%= t.courses.detail %> <i class="bi bi-arrow-right"></i></a>
+                  </div>
+                </div>
+              </div>
+            <% }) %>
+            </div>
+        <% } %>
+      </div>
+    </div>
   </div>
 </section>
 
