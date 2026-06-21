@@ -234,8 +234,8 @@
 
 #courses .featured-courses-layout {
   display: grid;
-  grid-template-columns: minmax(250px, 0.62fr) minmax(0, 2fr);
-  gap: clamp(2rem, 4vw, 4rem);
+  grid-template-columns: minmax(190px, 0.46fr) minmax(0, 2.25fr);
+  gap: clamp(1rem, 2.4vw, 2.5rem);
   align-items: stretch;
 }
 
@@ -249,7 +249,7 @@
 
 #courses .section-title {
   color: var(--color-navy);
-  font-size: clamp(2.75rem, 4.8vw, 4.2rem);
+  font-size: clamp(2.45rem, 4.3vw, 3.8rem);
   line-height: 0.92;
   letter-spacing: 0;
   text-align: left;
@@ -263,7 +263,7 @@
 
 #courses .section-subtitle {
   color: #000;
-  font-size: clamp(1.05rem, 1.55vw, 1.3rem);
+  font-size: clamp(0.95rem, 1.25vw, 1.15rem);
   font-weight: 500;
   line-height: 1.45;
   text-align: left;
@@ -323,7 +323,7 @@
 }
 
 #courses .snap-card {
-  flex: 0 0 clamp(320px, 32vw, 450px);
+  flex: 0 0 calc((100% - 3rem) / 3);
   scroll-snap-align: start;
 }
 
@@ -334,7 +334,7 @@
   box-shadow: none;
   display: flex;
   flex-direction: column;
-  min-height: 610px;
+  min-height: 560px;
 }
 
 #courses .featured-course-card:hover {
@@ -379,7 +379,7 @@
 
 #courses .featured-course-card h5 {
   color: var(--color-navy);
-  font-size: clamp(1.35rem, 2vw, 1.7rem);
+  font-size: clamp(1.1rem, 1.45vw, 1.35rem);
   line-height: 1.05;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -394,7 +394,7 @@
   flex-direction: column;
   gap: 0.35rem;
   color: #222;
-  font-size: 1rem;
+  font-size: 0.9rem;
   line-height: 1.35;
 }
 
