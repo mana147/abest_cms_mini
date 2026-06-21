@@ -98,35 +98,55 @@
 
 <section class="section" id="teachers">
   <div class="container">
-    <h2 class="section-title"><%= t.home.teachers_title %></h2>
-    <p class="section-subtitle"><%= t.home.teachers_subtitle %></p>
+    <div class="teachers-heading">
+      <h2 class="section-title"><%= t.home.teachers_title %></h2>
+      <p class="section-subtitle"><%= t.home.teachers_subtitle %></p>
+    </div>
     <% if (teachers.length === 0) { %>
       <div class="empty-state"><i class="bi bi-person-x"></i><%= t.teachers.empty %></div>
     <% } else { %>
-      <div class="row g-4">
-        <% teachers.forEach(teacher => { %>
-          <div class="col-md-6 col-lg-3">
-            <div class="instructor-card">
-              <div class="instructor-photo">
-                <% if (teacher.photo) { %>
-                  <img src="<%= teacher.photo %>" alt="<%= teacher.name %>">
-                <% } else { %>
-                  <div class="placeholder-img placeholder-round"><i class="bi bi-person"></i></div>
-                <% } %>
-              </div>
-              <div class="instructor-body">
-                <h5><%= teacher.name %></h5>
-                <p class="instructor-role"><%= lang === 'en' && teacher.qualification_en ? teacher.qualification_en : teacher.qualification %></p>
-                <% const bio = lang === 'en' && teacher.bio_en ? teacher.bio_en : teacher.bio; %>
-                <% if (bio) { %><p class="instructor-bio"><%= bio.length > 90 ? bio.slice(0, 90) + '…' : bio %></p><% } %>
-                <a href="/lich-khai-giang" class="btn-pink btn btn-sm w-100"><%= t.home.hero_cta %></a>
-              </div>
+      <% const teacherFallbackPhotos = [
+        '/uploads/images/1782055790592-73d228a677d6ea54.jpg',
+        '/uploads/images/1782055859434-e5e77a19622a2c69.jpg',
+        '/uploads/images/1782055808057-c17d71b1d60c0b5a.jpg',
+        '/uploads/images/1782055745224-43fdd910a88a7c76.jpg'
+      ]; %>
+      <div class="teachers-grid">
+        <% teachers.forEach((teacher, index) => { %>
+          <% const teacherRole = lang === 'en' && teacher.qualification_en ? teacher.qualification_en : teacher.qualification; %>
+          <% const teacherBio = lang === 'en' && teacher.bio_en ? teacher.bio_en : teacher.bio; %>
+          <% const teacherPhoto = teacher.photo || teacherFallbackPhotos[index % teacherFallbackPhotos.length]; %>
+          <article class="teacher-feature-card">
+            <div class="teacher-card-content">
+              <h3><%= teacher.name %></h3>
+              <% if (teacherRole) { %><p class="teacher-role"><%= teacherRole %></p><% } %>
+              <ul class="teacher-highlights">
+                <% if (teacher.experience) { %><li><i class="bi bi-check-circle"></i><span><%= teacher.experience %></span></li><% } %>
+                <% if (teacherBio) { %><li><i class="bi bi-check-circle"></i><span><%= teacherBio %></span></li><% } %>
+              </ul>
             </div>
-          </div>
+            <div class="teacher-card-photo">
+              <% if (teacherPhoto) { %>
+                <img src="<%= teacherPhoto %>" alt="<%= teacher.name %>">
+              <% } else { %>
+                <div class="placeholder-img"><i class="bi bi-person"></i></div>
+              <% } %>
+            </div>
+            <div class="teacher-card-actions">
+              <a href="/giao-vien" class="teacher-profile-btn">
+                <%= lang === 'en' ? 'View profile' : 'Xem profile' %> <i class="bi bi-box-arrow-up-right"></i>
+              </a>
+              <span class="teacher-status-pill"><%= lang === 'en' ? 'Teaching at ABest' : 'Đang giảng dạy tại ABest' %></span>
+            </div>
+          </article>
         <% }) %>
       </div>
     <% } %>
-    <div class="text-center mt-4"><a href="/giao-vien" class="btn-navy btn"><%= t.home.teachers_view_all %></a></div>
+    <div class="teachers-more">
+      <a href="/giao-vien" class="btn-outline-navy btn">
+        <%= t.home.teachers_view_all %> <i class="bi bi-arrow-down"></i>
+      </a>
+    </div>
   </div>
 </section>
 
