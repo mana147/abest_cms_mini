@@ -175,9 +175,30 @@
 }
 
 /* Methodology */
+.method-section {
+  background: #fff;
+  overflow: hidden;
+}
+
+.method-layout {
+  min-height: 430px;
+}
+
 .method-section .method-title {
-  color: var(--color-navy);
-  margin-bottom: 1rem;
+  color: #2a2774;
+  font-size: clamp(2.75rem, 5vw, 4.4rem);
+  line-height: 0.95;
+  margin-bottom: 1.5rem;
+  max-width: 520px;
+}
+
+.method-text {
+  color: #161616;
+  font-size: clamp(1.05rem, 1.8vw, 1.35rem);
+  font-weight: 500;
+  line-height: 1.45;
+  margin-bottom: 2rem;
+  max-width: 620px;
 }
 
 .method-image {
@@ -186,6 +207,24 @@
   display: block;
   border-radius: var(--radius);
   margin: 0 auto;
+}
+
+@media (max-width: 991.98px) {
+  .method-section {
+    text-align: center;
+  }
+
+  .method-section .method-title,
+  .method-text {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .method-layout {
+    min-height: 0;
+  }
 }
 
 /* Featured courses — horizontal snap-scroll */
