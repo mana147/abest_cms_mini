@@ -85,7 +85,8 @@
   "contact": {
     "title": "Liên hệ",
     "subject": "Chủ đề",
-    "submit": "Gửi liên hệ"
+    "submit": "Gửi liên hệ",
+    "map_title": "Bản đồ"
   },
   "gallery": {
     "title": "Thư viện ảnh",

@@ -172,18 +172,6 @@
                             <%= courseDescription %>
                           </p>
                         <% } %>
-                        <ul class="course-meta-list">
-                          <% if (course.duration) { %>
-                            <li><i class="bi bi-stars"></i>
-                              <%= course.duration %>
-                            </li>
-                          <% } %>
-                          <% if (course.schedule) { %>
-                            <li><i class="bi bi-calendar3"></i>
-                              <%= course.schedule %>
-                            </li>
-                          <% } %>
-                        </ul>
                         <a href="/khoa-hoc/<%= course.slug %>" class="btn-navy btn btn-sm w-100">
                           <%= t.courses.detail %> <i class="bi bi-arrow-right"></i>
                         </a>

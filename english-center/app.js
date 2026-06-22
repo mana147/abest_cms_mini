@@ -39,7 +39,7 @@ app.use(helmet({
       fontSrc: ["'self'", 'data:'],
       imgSrc: ["'self'", 'data:', 'https://i.ytimg.com'],
       connectSrc: ["'self'", 'https://www.youtube.com', 'https://www.google.com'],
-      frameSrc: ["'self'", 'https://www.youtube.com'],
+      frameSrc: ["'self'", 'https://www.youtube.com', 'https://www.google.com'],
       objectSrc: ["'none'"],
       baseUri: ["'self'"],
       formAction: ["'self'"],

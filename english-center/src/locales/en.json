@@ -80,7 +80,8 @@
   "contact": {
     "title": "Contact",
     "subject": "Subject",
-    "submit": "Send message"
+    "submit": "Send message",
+    "map_title": "Location map"
   },
   "gallery": {
     "title": "Gallery",
