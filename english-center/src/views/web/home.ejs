@@ -1,288 +1,421 @@
 <%- include('../partials/header', { pageCss: 'landing' }) %>
 
-<!-- hero -->
-<section class="hero">
+  <!-- hero -->
+  <section class="hero">
     <div class="hero-inner">
-      <h1><%= t.home.hero_title1 %></h1> 
-      <h2><%= t.home.hero_title2 %></h2>
-      <p><%= t.home.hero_subtitle %></p>
+      <h1>
+        <%= t.home.hero_title1 %>
+      </h1>
+      <h3 class="gold-shine">
+        <%= t.home.hero_title2 %>
+      </h3>
+      <p>
+        <%= t.home.hero_subtitle %>
+      </p>
       <div class="hero-actions">
-        <a href="https://lms.abest.edu.vn/" class="btn-gold btn btn-lg"><%= t.home.hero_cta %></a>
-        <a href="#roadmap" class="btn-glass btn btn-lg"><%= t.home.hero_cta2 %> <i class="bi bi-arrow-right"></i></a>
+        <a href="https://lms.abest.edu.vn/" class="btn-gold btn btn-lg">
+          <%= t.home.hero_cta %>.  🎓
+        </a>
+        <a href="#roadmap" class="btn-glass btn btn-lg">
+          <%= t.home.hero_cta2 %> <i class="bi bi-arrow-right"></i>
+        </a>
       </div>
     </div>
-      
-</section>
 
-<!-- roadmap -->
-<section class="section method-section" id="roadmap">
-  <div class="container">
-    <div class="row align-items-center g-5 method-layout">
-      <div class="col-lg-6">
-        <h2 class="method-title"><%= t.home.method_title %></h2>
-        <p class="method-text"><%= t.home.method_text %></p>
-        <a href="/khoa-hoc" class="btn-pink btn d-inline-flex align-items-center gap-2"><%= t.home.method_cta %> <i class="bi bi-compass"></i></a>
-      </div>
-      <div class="col-lg-6">
-        <img src="/images/Abest_DECODE_01.png" alt="D.E.C.O.D.E framework" class="method-image">
+  </section>
+
+  <!-- roadmap -->
+  <section class="section method-section" id="roadmap">
+    <div class="container">
+      <div class="row align-items-center g-5 method-layout">
+        <div class="col-lg-6">
+          <h2 class="method-title">
+            <%= t.home.method_title %>
+          </h2>
+          <p class="method-text">
+            <%= t.home.method_text %>
+          </p>
+          <a href="/khoa-hoc" class="btn-pink btn d-inline-flex align-items-center gap-2">
+            <%= t.home.method_cta %> <i class="bi bi-compass"></i>
+          </a>
+        </div>
+        <div class="col-lg-6">
+          <img src="/images/Abest_DECODE_01.png" alt="D.E.C.O.D.E framework" class="method-image">
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- courses -->
-<section class="section bg-alt" id="courses">
-  <div class="container">
-    <div class="featured-courses-layout">
-      <div class="featured-courses-intro">
-        <h2 class="section-title"><%= t.home.courses_title %></h2>
-        <p class="section-subtitle"><%= t.home.courses_subtitle %></p>
-        <a href="/khoa-hoc" class="btn-pink btn featured-courses-cta"><%= t.home.courses_view_all %> <i class="bi bi-arrow-right"></i></a>
-        <% if (courses.length > 1) { %>
-          <div class="featured-courses-nav" aria-label="<%= t.home.courses_title %>">
-            <button type="button" class="course-scroll-btn" data-course-scroll="prev" aria-label="Previous courses">
-              <i class="bi bi-arrow-left"></i>
-            </button>
-            <button type="button" class="course-scroll-btn" data-course-scroll="next" aria-label="Next courses">
-              <i class="bi bi-arrow-right"></i>
-            </button>
-          </div>
-        <% } %>
+  <!-- courses -->
+  <section class="section bg-alt" id="courses">
+    <div class="container">
+      <div class="featured-courses-layout">
+        <div class="featured-courses-intro">
+          <h2 class="section-title">
+            <%= t.home.courses_title %>
+          </h2>
+          <p class="section-subtitle">
+            <%= t.home.courses_subtitle %>
+          </p>
+          <a href="/khoa-hoc" class="btn-pink btn featured-courses-cta">
+            <%= t.home.courses_view_all %> <i class="bi bi-arrow-right"></i>
+          </a>
+          <% if (courses.length> 1) { %>
+            <div class="featured-courses-nav" aria-label="<%= t.home.courses_title %>">
+              <button type="button" class="course-scroll-btn" data-course-scroll="prev" aria-label="Previous courses">
+                <i class="bi bi-arrow-left"></i>
+              </button>
+              <button type="button" class="course-scroll-btn" data-course-scroll="next" aria-label="Next courses">
+                <i class="bi bi-arrow-right"></i>
+              </button>
+            </div>
+            <% } %>
+        </div>
+
+        <div class="featured-courses-showcase">
+          <% if (courses.length===0) { %>
+            <div class="empty-state"><i class="bi bi-journal-x"></i>
+              <%= t.courses.empty %>
+            </div>
+            <% } else { %>
+              <div class="courses-scroll featured-courses-scroll" data-courses-track>
+                <% courses.forEach(course=> { %>
+                  <div class="snap-card">
+                    <div class="card-custom featured-course-card h-100">
+                      <div class="course-card-thumb">
+                        <% if (course.thumbnail) { %>
+                          <img src="<%= course.thumbnail %>" alt="<%= course.title %>">
+                          <% } else { %>
+                            <div class="placeholder-img"><i class="bi bi-journal-bookmark"></i></div>
+                            <% } %>
+                              <% if (course.level) { %><span class="badge-gold course-card-level">
+                                  <%= course.level %>
+                                </span>
+                                <% } %>
+                      </div>
+                      <div class="card-body">
+                        <h5>
+                          <%= lang==='en' && course.title_en ? course.title_en : course.title %>
+                        </h5>
+                        <ul class="course-meta-list">
+                          <% if (course.duration) { %>
+                            <li><i class="bi bi-stars"></i>
+                              <%= course.duration %>
+                            </li>
+                            <% } %>
+                              <% if (course.fee) { %>
+                                <li><i class="bi bi-stars"></i>
+                                  <%= course.fee %>
+                                </li>
+                                <% } %>
+                        </ul>
+                        <a href="/khoa-hoc/<%= course.slug %>" class="btn-navy btn btn-sm w-100">
+                          <%= t.courses.detail %> <i class="bi bi-arrow-right"></i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <% }) %>
+              </div>
+              <% } %>
+        </div>
       </div>
+    </div>
+  </section>
 
-      <div class="featured-courses-showcase">
-        <% if (courses.length === 0) { %>
-          <div class="empty-state"><i class="bi bi-journal-x"></i><%= t.courses.empty %></div>
-        <% } else { %>
-          <div class="courses-scroll featured-courses-scroll" data-courses-track>
-            <% courses.forEach(course => { %>
-              <div class="snap-card">
-                <div class="card-custom featured-course-card h-100">
-                  <div class="course-card-thumb">
-                    <% if (course.thumbnail) { %>
-                      <img src="<%= course.thumbnail %>" alt="<%= course.title %>">
-                    <% } else { %>
-                      <div class="placeholder-img"><i class="bi bi-journal-bookmark"></i></div>
-                    <% } %>
-                    <% if (course.level) { %><span class="badge-gold course-card-level"><%= course.level %></span><% } %>
-                  </div>
-                  <div class="card-body">
-                    <h5><%= lang === 'en' && course.title_en ? course.title_en : course.title %></h5>
-                    <ul class="course-meta-list">
-                      <% if (course.duration) { %><li><i class="bi bi-stars"></i> <%= course.duration %></li><% } %>
-                      <% if (course.fee) { %><li><i class="bi bi-stars"></i> <%= course.fee %></li><% } %>
-                    </ul>
-                    <a href="/khoa-hoc/<%= course.slug %>" class="btn-navy btn btn-sm w-100"><%= t.courses.detail %> <i class="bi bi-arrow-right"></i></a>
-                  </div>
+
+  <!-- video giới thiệu về ABest IELTS -->
+  <section class="section" id="video-intro">
+    <div class="container">
+      <% const videoTitle=t.home.video_title || (lang==='en' ? 'Introduction Video' : 'Welcome ABest IELTS' ); %>
+        <% const rawVideoUrl=t.home.video_url || 'https://www.youtube.com/embed/fcTHHfNHWJA?si=kRbVMss_27vQTZlz' ; %>
+          <% const youtubeWatchMatch=rawVideoUrl.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&?/]+)/); %>
+            <% const videoEmbedUrl=rawVideoUrl.includes('youtube.com/embed/') ? rawVideoUrl : (youtubeWatchMatch ?
+              `https://www.youtube.com/embed/${youtubeWatchMatch[1]}` : rawVideoUrl); %>
+              <div class="video-intro-layout">
+                <div class="video-intro-content">
+                  <h2 class="section-title">
+                    <%= videoTitle %>
+                  </h2>
+                  <!-- <p class="section-subtitle"><%= t.home.video_subtitle %></p> -->
+                </div>
+                <div class="video-intro-player">
+                  <iframe src="<%= videoEmbedUrl %>" title="<%= videoTitle %>" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
               </div>
-            <% }) %>
-            </div>
-        <% } %>
-      </div>
     </div>
-  </div>
-</section>
+  </section>
 
 
-<!-- video giới thiệu về ABest IELTS -->
-<section class="section" id="video-intro">
-  <div class="container">
-    <% const videoTitle = t.home.video_title || (lang === 'en' ? 'Introduction Video' : 'Welcome ABest IELTS'); %>
-    <% const rawVideoUrl = t.home.video_url || 'https://www.youtube.com/embed/fcTHHfNHWJA?si=kRbVMss_27vQTZlz'; %>
-    <% const youtubeWatchMatch = rawVideoUrl.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&?/]+)/); %>
-    <% const videoEmbedUrl = rawVideoUrl.includes('youtube.com/embed/') ? rawVideoUrl : (youtubeWatchMatch ? `https://www.youtube.com/embed/${youtubeWatchMatch[1]}` : rawVideoUrl); %>
-    <div class="video-intro-layout">
-      <div class="video-intro-content">
-        <h2 class="section-title"><%= videoTitle %></h2>
-        <!-- <p class="section-subtitle"><%= t.home.video_subtitle %></p> -->
+  <!-- teachers -->
+  <section class="section" id="teachers">
+    <div class="container">
+      <div class="teachers-heading">
+        <h2 class="section-title">
+          <%= t.home.teachers_title %>
+        </h2>
+        <p class="section-subtitle">
+          <%= t.home.teachers_subtitle %>
+        </p>
       </div>
-      <div class="video-intro-player">
-        <iframe src="<%= videoEmbedUrl %>" title="<%= videoTitle %>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-      </div>
-    </div>
-  </div>
-</section>  
-
-
-<!-- teachers -->
-<section class="section" id="teachers">
-  <div class="container">
-    <div class="teachers-heading">
-      <h2 class="section-title"><%= t.home.teachers_title %></h2>
-      <p class="section-subtitle"><%= t.home.teachers_subtitle %></p>
-    </div>
-    <% if (teachers.length === 0) { %>
-      <div class="empty-state"><i class="bi bi-person-x"></i><%= t.teachers.empty %></div>
-    <% } else { %>
-      <% const teacherFallbackPhotos = [
-        '/uploads/images/1782055790592-73d228a677d6ea54.jpg',
-        '/uploads/images/1782055859434-e5e77a19622a2c69.jpg',
-        '/uploads/images/1782055808057-c17d71b1d60c0b5a.jpg',
-        '/uploads/images/1782055745224-43fdd910a88a7c76.jpg'
-      ]; %>
-      <div class="teachers-grid">
-        <% teachers.forEach((teacher, index) => { %>
-          <% const teacherRole = lang === 'en' && teacher.qualification_en ? teacher.qualification_en : teacher.qualification; %>
-          <% const teacherBio = lang === 'en' && teacher.bio_en ? teacher.bio_en : teacher.bio; %>
-          <% const teacherPhoto = teacher.photo || teacherFallbackPhotos[index % teacherFallbackPhotos.length]; %>
-          <article class="teacher-feature-card">
-            <div class="teacher-card-content">
-              <h3><%= teacher.name %></h3>
-              <% if (teacherRole) { %><p class="teacher-role"><%= teacherRole %></p><% } %>
-              <ul class="teacher-highlights">
-                <% if (teacher.experience) { %><li><i class="bi bi-check-circle"></i><span><%= teacher.experience %></span></li><% } %>
-                <% if (teacherBio) { %><li><i class="bi bi-check-circle"></i><span><%= teacherBio %></span></li><% } %>
-              </ul>
-            </div>
-            <div class="teacher-card-photo">
-              <% if (teacherPhoto) { %>
-                <img src="<%= teacherPhoto %>" alt="<%= teacher.name %>">
-              <% } else { %>
-                <div class="placeholder-img"><i class="bi bi-person"></i></div>
-              <% } %>
-            </div>
-            <div class="teacher-card-actions">
-              <a href="/giao-vien" class="teacher-profile-btn">
-                <%= lang === 'en' ? 'View profile' : 'Xem profile' %> <i class="bi bi-box-arrow-up-right"></i>
-              </a>
-              <span class="teacher-status-pill"><%= lang === 'en' ? 'Teaching at ABest' : 'Đang giảng dạy tại ABest' %></span>
-            </div>
-          </article>
-        <% }) %>
-      </div>
-    <% } %>
-    <div class="teachers-more">
-      <a href="/giao-vien" class="btn-outline-navy btn">
-        <%= t.home.teachers_view_all %> <i class="bi bi-arrow-down"></i>
-      </a>
-    </div>
-  </div>
-</section>
-
-<section class="section"  style="background-image:url('/images/abest_bg_2.png');" >
-  <div class="container">
-    <h2 class="section-title"><%= t.home.products_title %></h2>
-    <p class="section-subtitle"><%= t.home.products_subtitle %></p>
-    <div class="row g-4">
-      <div class="col-md-6 col-lg-4">
-        <div class="student-product-card">
-          <div class="product-icon"><i class="bi bi-mic-fill"></i></div>
-          <span class="badge-pink"><%= lang === 'en' ? 'Speaking' : 'Speaking' %></span>
-          <h5><%= lang === 'en' ? 'Speaking Advanced Document Set' : 'Bộ Tài Liệu Speaking Advanced' %></h5>
-          <p class="product-student"><%= lang === 'en' ? 'Hoang Minh Anh – Band 8.0' : 'Hoàng Minh Anh - Band 8.0' %></p>
-          <p class="text-muted small"><%= lang === 'en' ? 'A collection of Speaking part 1, 2, 3 topics with transcripts and detailed analysis for band 7.5+.' : 'Tuyển tập các chủ đề Speaking part 1, 2, 3 với transcript và phân tích chi tiết dành cho band 7.5+.' %></p>
+      <% if (teachers.length===0) { %>
+        <div class="empty-state"><i class="bi bi-person-x"></i>
+          <%= t.teachers.empty %>
         </div>
-      </div>
-      <div class="col-md-6 col-lg-4">
-        <div class="student-product-card">
-          <div class="product-icon"><i class="bi bi-pencil-fill"></i></div>
-          <span class="badge-pink">Writing</span>
-          <h5><%= lang === 'en' ? 'Writing Task 1 & 2 Collection' : 'Writing Task 1 & 2 Collection' %></h5>
-          <p class="product-student"><%= lang === 'en' ? 'Nguyen Thao – Band 7.5' : 'Nguyễn Thảo - Band 7.5' %></p>
-          <p class="text-muted small"><%= lang === 'en' ? 'A collection of essays, letters and diagrams scored 8.5/9.0 with detailed teacher feedback.' : 'Bộ sưu tập các bài essays, letters, diagrams được chấm 8.5/9.0 với nhận xét chi tiết từ giáo viên.' %></p>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4">
-        <div class="student-product-card">
-          <div class="product-icon"><i class="bi bi-volume-up-fill"></i></div>
-          <span class="badge-pink">Listening</span>
-          <h5><%= lang === 'en' ? 'IELTS Listening Podcast' : 'Podcast Luyện Nghe IELTS' %></h5>
-          <p class="product-student"><%= lang === 'en' ? 'Le Quang Hai – Band 8.5' : 'Lê Quang Hải - Band 8.5' %></p>
-          <p class="text-muted small"><%= lang === 'en' ? 'A 50-episode podcast series with different accents and varied topics for realistic exam practice.' : 'Series podcast 50 tập với các accent khác nhau, chủ đề đa dạng phù hợp luyện thi thực tế.' %></p>
-        </div>
-      </div>
-    </div>
-    <div class="text-center mt-4"><a href="/posts" class="btn-outline-navy btn"><%= t.home.products_cta %></a></div>
-  </div>
-</section>
-
-<% if (testimonials.length > 0) { %>
-<section class="section">
-  <div class="container">
-    <h2 class="section-title"><%= t.home.testimonials_title %></h2>
-    <div class="row g-4">
-      <% testimonials.forEach(tm => { %>
-        <div class="col-md-6 col-lg-4">
-          <div class="testimonial-card">
-            <div class="quote-mark">&rdquo;</div>
-            <p class="quote">&ldquo;<%= lang === 'en' && tm.content_en ? tm.content_en : tm.content %>&rdquo;</p>
-            <div class="testimonial-author">
-              <% if (tm.avatar) { %>
-                <img src="<%= tm.avatar %>" alt="<%= tm.student_name %>">
-              <% } else { %>
-                <div class="placeholder-img placeholder-round" style="width:48px;height:48px;font-size:1.2rem;"><i class="bi bi-person"></i></div>
-              <% } %>
-              <div>
-                <div class="student-name"><%= tm.student_name %></div>
-                <% if (tm.course_name) { %><small class="student-course"><%= tm.course_name %></small><% } %>
+        <% } else { %>
+          <% const teacherFallbackPhotos=[ '/uploads/images/1782055790592-73d228a677d6ea54.jpg'
+            , '/uploads/images/1782055859434-e5e77a19622a2c69.jpg'
+            , '/uploads/images/1782055808057-c17d71b1d60c0b5a.jpg'
+            , '/uploads/images/1782055745224-43fdd910a88a7c76.jpg' ]; %>
+            <div class="teachers-grid">
+              <% teachers.forEach((teacher, index)=> { %>
+                <% const teacherRole=lang==='en' && teacher.qualification_en ? teacher.qualification_en :
+                  teacher.qualification; %>
+                  <% const teacherBio=lang==='en' && teacher.bio_en ? teacher.bio_en : teacher.bio; %>
+                    <% const teacherPhoto=teacher.photo || teacherFallbackPhotos[index % teacherFallbackPhotos.length];
+                      %>
+                      <article class="teacher-feature-card">
+                        <div class="teacher-card-content">
+                          <h3>
+                            <%= teacher.name %>
+                          </h3>
+                          <% if (teacherRole) { %>
+                            <p class="teacher-role">
+                              <%= teacherRole %>
+                            </p>
+                            <% } %>
+                              <ul class="teacher-highlights">
+                                <% if (teacher.experience) { %>
+                                  <li><i class="bi bi-check-circle"></i><span>
+                                      <%= teacher.experience %>
+                                    </span></li>
+                                  <% } %>
+                                    <% if (teacherBio) { %>
+                                      <li><i class="bi bi-check-circle"></i><span>
+                                          <%= teacherBio %>
+                                        </span></li>
+                                      <% } %>
+                              </ul>
+                        </div>
+                        <div class="teacher-card-photo">
+                          <% if (teacherPhoto) { %>
+                            <img src="<%= teacherPhoto %>" alt="<%= teacher.name %>">
+                            <% } else { %>
+                              <div class="placeholder-img"><i class="bi bi-person"></i></div>
+                              <% } %>
+                        </div>
+                        <div class="teacher-card-actions">
+                          <a href="/giao-vien" class="teacher-profile-btn">
+                            <%= lang==='en' ? 'View profile' : 'Xem profile' %> <i class="bi bi-box-arrow-up-right"></i>
+                          </a>
+                          <span class="teacher-status-pill">
+                            <%= lang==='en' ? 'Teaching at ABest' : 'Đang giảng dạy tại ABest' %>
+                          </span>
+                        </div>
+                      </article>
+                      <% }) %>
+            </div>
+            <% } %>
+              <div class="teachers-more">
+                <a href="/giao-vien" class="btn-outline-navy btn">
+                  <%= t.home.teachers_view_all %> <i class="bi bi-arrow-down"></i>
+                </a>
               </div>
-            </div>
-          </div>
-        </div>
-      <% }) %>
     </div>
-  </div>
-</section>
-<% } %>
+  </section>
 
-<section class="section bg-alt">
-  <div class="container">
-    <h2 class="section-title"><%= t.home.posts_title %></h2>
-    <% if (posts.length === 0) { %>
-      <div class="empty-state"><i class="bi bi-newspaper"></i><%= t.posts.empty %></div>
-    <% } else { %>
+  <section class="section" style="background-image:url('/images/abest_bg_2.png');">
+    <div class="container">
+      <h2 class="section-title">
+        <%= t.home.products_title %>
+      </h2>
+      <p class="section-subtitle">
+        <%= t.home.products_subtitle %>
+      </p>
       <div class="row g-4">
-        <% posts.forEach(post => { %>
-          <div class="col-md-4">
-            <div class="card-custom">
-              <% if (post.thumbnail) { %>
-                <img src="<%= post.thumbnail %>" alt="<%= post.title %>" class="post-card-thumb" style="width:100%;object-fit:cover;">
-              <% } else { %>
-                <div class="placeholder-img post-card-thumb"><i class="bi bi-newspaper"></i></div>
+        <div class="col-md-6 col-lg-4">
+          <div class="student-product-card">
+            <div class="product-icon"><i class="bi bi-mic-fill"></i></div>
+            <span class="badge-pink">
+              <%= lang==='en' ? 'Speaking' : 'Speaking' %>
+            </span>
+            <h5>
+              <%= lang==='en' ? 'Speaking Advanced Document Set' : 'Bộ Tài Liệu Speaking Advanced' %>
+            </h5>
+            <p class="product-student">
+              <%= lang==='en' ? 'Hoang Minh Anh – Band 8.0' : 'Hoàng Minh Anh - Band 8.0' %>
+            </p>
+            <p class="text-muted small">
+              <%= lang==='en'
+                ? 'A collection of Speaking part 1, 2, 3 topics with transcripts and detailed analysis for band 7.5+.'
+                : 'Tuyển tập các chủ đề Speaking part 1, 2, 3 với transcript và phân tích chi tiết dành cho band 7.5+.'
+                %>
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="student-product-card">
+            <div class="product-icon"><i class="bi bi-pencil-fill"></i></div>
+            <span class="badge-pink">Writing</span>
+            <h5>
+              <%= lang==='en' ? 'Writing Task 1 & 2 Collection' : 'Writing Task 1 & 2 Collection' %>
+            </h5>
+            <p class="product-student">
+              <%= lang==='en' ? 'Nguyen Thao – Band 7.5' : 'Nguyễn Thảo - Band 7.5' %>
+            </p>
+            <p class="text-muted small">
+              <%= lang==='en'
+                ? 'A collection of essays, letters and diagrams scored 8.5/9.0 with detailed teacher feedback.'
+                : 'Bộ sưu tập các bài essays, letters, diagrams được chấm 8.5/9.0 với nhận xét chi tiết từ giáo viên.'
+                %>
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="student-product-card">
+            <div class="product-icon"><i class="bi bi-volume-up-fill"></i></div>
+            <span class="badge-pink">Listening</span>
+            <h5>
+              <%= lang==='en' ? 'IELTS Listening Podcast' : 'Podcast Luyện Nghe IELTS' %>
+            </h5>
+            <p class="product-student">
+              <%= lang==='en' ? 'Le Quang Hai – Band 8.5' : 'Lê Quang Hải - Band 8.5' %>
+            </p>
+            <p class="text-muted small">
+              <%= lang==='en'
+                ? 'A 50-episode podcast series with different accents and varied topics for realistic exam practice.'
+                : 'Series podcast 50 tập với các accent khác nhau, chủ đề đa dạng phù hợp luyện thi thực tế.' %>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-4"><a href="/posts" class="btn-outline-navy btn">
+          <%= t.home.products_cta %>
+        </a></div>
+    </div>
+  </section>
+
+  <% if (testimonials.length> 0) { %>
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">
+          <%= t.home.testimonials_title %>
+        </h2>
+        <div class="row g-4">
+          <% testimonials.forEach(tm=> { %>
+            <div class="col-md-6 col-lg-4">
+              <div class="testimonial-card">
+                <div class="quote-mark">&rdquo;</div>
+                <p class="quote">&ldquo;<%= lang==='en' && tm.content_en ? tm.content_en : tm.content %>&rdquo;</p>
+                <div class="testimonial-author">
+                  <% if (tm.avatar) { %>
+                    <img src="<%= tm.avatar %>" alt="<%= tm.student_name %>">
+                    <% } else { %>
+                      <div class="placeholder-img placeholder-round" style="width:48px;height:48px;font-size:1.2rem;"><i
+                          class="bi bi-person"></i></div>
+                      <% } %>
+                        <div>
+                          <div class="student-name">
+                            <%= tm.student_name %>
+                          </div>
+                          <% if (tm.course_name) { %><small class="student-course">
+                              <%= tm.course_name %>
+                            </small>
+                            <% } %>
+                        </div>
+                </div>
+              </div>
+            </div>
+            <% }) %>
+        </div>
+      </div>
+    </section>
+    <% } %>
+
+      <section class="section bg-alt">
+        <div class="container">
+          <h2 class="section-title">
+            <%= t.home.posts_title %>
+          </h2>
+          <% if (posts.length===0) { %>
+            <div class="empty-state"><i class="bi bi-newspaper"></i>
+              <%= t.posts.empty %>
+            </div>
+            <% } else { %>
+              <div class="row g-4">
+                <% posts.forEach(post=> { %>
+                  <div class="col-md-4">
+                    <div class="card-custom">
+                      <% if (post.thumbnail) { %>
+                        <img src="<%= post.thumbnail %>" alt="<%= post.title %>" class="post-card-thumb"
+                          style="width:100%;object-fit:cover;">
+                        <% } else { %>
+                          <div class="placeholder-img post-card-thumb"><i class="bi bi-newspaper"></i></div>
+                          <% } %>
+                            <div class="card-body">
+                              <h5>
+                                <%= lang==='en' && post.title_en ? post.title_en : post.title %>
+                              </h5>
+                              <p class="text-muted small">
+                                <%= lang==='en' && post.excerpt_en ? post.excerpt_en : post.excerpt %>
+                              </p>
+                              <a href="/posts/<%= post.slug %>" class="btn-outline-navy btn btn-sm">
+                                <%= t.posts.read_more %>
+                              </a>
+                            </div>
+                    </div>
+                  </div>
+                  <% }) %>
+              </div>
               <% } %>
-              <div class="card-body">
-                <h5><%= lang === 'en' && post.title_en ? post.title_en : post.title %></h5>
-                <p class="text-muted small"><%= lang === 'en' && post.excerpt_en ? post.excerpt_en : post.excerpt %></p>
-                <a href="/posts/<%= post.slug %>" class="btn-outline-navy btn btn-sm"><%= t.posts.read_more %></a>
+                <div class="text-center mt-4"><a href="/posts" class="btn-navy btn">
+                    <%= t.home.posts_view_all %>
+                  </a></div>
+        </div>
+      </section>
+
+      <section class="section" id="registerTest" hidden>
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-7">
+              <div class="register-card">
+                <h2>
+                  <%= t.home.register_title %>
+                </h2>
+                <p class="text-muted">
+                  <%= t.home.register_subtitle %>
+                </p>
+                <form action="/dang-ky" method="POST">
+                  <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                  <input type="hidden" name="redirect_to" value="/#registerTest">
+                  <div class="mb-3">
+                    <label class="form-label">
+                      <%= t.schedule.full_name %> *
+                    </label>
+                    <input type="text" name="full_name" class="form-control" required>
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">
+                      <%= t.schedule.email %>
+                    </label>
+                    <input type="email" name="email" class="form-control">
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">
+                      <%= t.schedule.phone %> *
+                    </label>
+                    <input type="text" name="phone" class="form-control" required>
+                  </div>
+                  <button type="submit" class="btn-pink btn w-100 btn-lg">
+                    <%= t.home.register_submit %>
+                  </button>
+                </form>
               </div>
             </div>
           </div>
-        <% }) %>
-      </div>
-    <% } %>
-    <div class="text-center mt-4"><a href="/posts" class="btn-navy btn"><%= t.home.posts_view_all %></a></div>
-  </div>
-</section>
-
-<section class="section" id="registerTest" hidden >
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-7">
-        <div class="register-card">
-          <h2><%= t.home.register_title %></h2>
-          <p class="text-muted"><%= t.home.register_subtitle %></p>
-          <form action="/dang-ky" method="POST">
-            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
-            <input type="hidden" name="redirect_to" value="/#registerTest">
-            <div class="mb-3">
-              <label class="form-label"><%= t.schedule.full_name %> *</label>
-              <input type="text" name="full_name" class="form-control" required>
-            </div>
-            <div class="mb-3">
-              <label class="form-label"><%= t.schedule.email %></label>
-              <input type="email" name="email" class="form-control">
-            </div>
-            <div class="mb-3">
-              <label class="form-label"><%= t.schedule.phone %> *</label>
-              <input type="text" name="phone" class="form-control" required>
-            </div>
-            <button type="submit" class="btn-pink btn w-100 btn-lg"><%= t.home.register_submit %></button>
-          </form>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
 
-<%- include('../partials/footer') %>
+      <%- include('../partials/footer') %>

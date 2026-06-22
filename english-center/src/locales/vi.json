@@ -1,6 +1,8 @@
 {
   "site": {
-    "name": "Best IELTS"
+    "name": "Best - English Center",
+    "description": "Trung tâm Anh ngữ uy tín, đồng hành cùng học viên chinh phục tiếng Anh.",
+    "keywords": "ABest, IELTS, luyện thi IELTS, học tiếng Anh, trung tâm Anh ngữ, học IELTS, luyện thi IELTS online, khóa học IELTS, giáo viên IELTS"
   },
   "nav": {
     "home": "Trang chủ",
@@ -15,7 +17,7 @@
   },
   "home": {
     "hero_title1": "CHÀO CÁC BẠN , CHÚNG TÔI LÀ",
-    "hero_title2": "ABest IELTS",
+    "hero_title2": "IELTS ABest",
     "hero_subtitle": "Chúng tôi chuyên luyện thi IELTS với lộ trình cá nhân hóa, xây dựng theo mục tiêu band điểm của bạn cùng đội ngũ giảng viên giàu kinh nghiệm và công cụ ôn luyện chuyên sâu.",
     "hero_cta": "Thi thử miễn phí nhé",
     "hero_cta2": "Xem lộ trình IELTS",
@@ -37,7 +39,7 @@
     "register_title": "Đăng Ký Test Năng Lực",
     "register_subtitle": "Hãy để lại thông tin để được tư vấn và làm bài test năng lực hoàn toàn miễn phí.",
     "register_submit": "Gửi Thông Tin Đăng Ký",
-    "video_title": "Cùng khám phá ABest IELTS nhé.",
+    "video_title": "Cùng khám phá ABest IELTS nhé",
     "video_subtitle": "Khám phá ABest IELTS qua video giới thiệu",
     "video_url": "https://www.youtube.com/embed/fcTHHfNHWJA?si=kRbVMss_27vQTZlz"
   },

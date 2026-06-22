@@ -49,9 +49,34 @@
     opacity: 0;
     transform: translateY(24px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+.gold-shine {
+  font-size: 120px;
+  background: linear-gradient(90deg,
+      #B87518 0%,
+      #E9A928 25%,
+      #FFF2A8 50%,
+      #FFD84D 70%,
+      #B87518 100%);
+  background-size: 250% auto;
+  color: transparent;
+  background-clip: text;
+  animation: goldShine 10s linear infinite;
+}
+
+@keyframes goldShine {
+  0% {
+    background-position: 0% center;
+  }
+
+  100% {
+    background-position: 250% center;
   }
 }
 
@@ -63,14 +88,25 @@
   animation: heroFadeUp 0.7s ease forwards;
 }
 
-.hero-inner h1 { animation-delay: 0.1s; }
-.hero-inner h2 { animation-delay: 0.25s; }
-.hero-inner p { animation-delay: 0.4s; }
-.hero-inner .hero-actions { animation-delay: 0.55s; }
+.hero-inner h1 {
+  animation-delay: 0.1s;
+}
+
+.hero-inner h2 {
+  animation-delay: 0.25s;
+}
+
+.hero-inner p {
+  animation-delay: 0.4s;
+}
+
+.hero-inner .hero-actions {
+  animation-delay: 0.55s;
+}
 
 .hero h1 {
-  color: #F06292;
-  font-size: 64px;
+  color: #ffffff;
+  font-size: 46px;
   margin-bottom: 1rem;
 }
 
@@ -80,19 +116,18 @@
   display: inline-block;
   padding: 0.5rem 2rem;
   border: 1px solid #ffffff;
-   background:
+  background:
     linear-gradient(to right, #fff 10px, transparent 10px) top left / 10px 10px no-repeat,
     linear-gradient(to bottom, #fff 10px, transparent 10px) top left / 10px 10px no-repeat,
     linear-gradient(to left, #fff 10px, transparent 10px) top right / 10px 10px no-repeat,
     linear-gradient(to bottom, #fff 10px, transparent 10px) top right / 10px 10px no-repeat,
     linear-gradient(to right, #fff 10px, transparent 10px) bottom left / 10px 10px no-repeat,
     linear-gradient(to top, #fff 10px, transparent 10px) bottom left / 10px 10px no-repeat,
-    linear-gradient(to left, #fff 10px , transparent 10px) bottom right / 10px 10px no-repeat,
+    linear-gradient(to left, #fff 10px, transparent 10px) bottom right / 10px 10px no-repeat,
     linear-gradient(to top, #fff 10px, transparent 10px) bottom right / 10px 10px no-repeat;
 }
 
 .hero p {
-  color: rgba(255, 255, 255, 0.85);
   font-size: 20px;
   margin-bottom: 2rem;
   width: 100%;
@@ -455,7 +490,7 @@
     margin: 0.75rem 0.75rem 0;
   }
 
-#courses .featured-course-card h5 {
+  #courses .featured-course-card h5 {
     font-size: 1.28rem;
   }
 }
@@ -791,6 +826,7 @@
 }
 
 @media (max-width: 991.98px) {
+
   #teachers .teachers-heading,
   #teachers .teachers-grid {
     grid-template-columns: 1fr;
