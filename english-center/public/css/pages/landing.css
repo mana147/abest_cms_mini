@@ -60,9 +60,15 @@
   font-size: 120px;
   background: linear-gradient(90deg,
       #B87518 0%,
-      #E9A928 25%,
+      #fff2a8 10%,
+      #E9A928 20%,
+      #FFF2A8 30%,
+      #E9A928 40%,
       #FFF2A8 50%,
+      #E9A928 60%,
       #FFD84D 70%,
+      #FFF2A8 80%,
+      #E9A928 90%,
       #B87518 100%);
   background-size: 250% auto;
   color: transparent;
