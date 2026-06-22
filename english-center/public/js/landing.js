@@ -3,7 +3,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const mobileToggle = document.getElementById('mobileToggle');
   const navMenu = document.getElementById('navMenu');
   if (mobileToggle && navMenu) {
-    mobileToggle.addEventListener('click', () => navMenu.classList.toggle('open'));
+    mobileToggle.addEventListener('click', () => {
+      const isOpen = navMenu.classList.toggle('open');
+      mobileToggle.classList.toggle('open', isOpen);
+      const icon = mobileToggle.querySelector('i');
+      if (icon) {
+        icon.classList.toggle('bi-list', !isOpen);
+        icon.classList.toggle('bi-x-lg', isOpen);
+      }
+    });
   }
 
   // Transparent header → solid background after scrolling past the top
