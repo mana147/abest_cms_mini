@@ -36,7 +36,10 @@
     "posts_view_all": "Xem tất cả tin tức",
     "register_title": "Đăng Ký Test Năng Lực",
     "register_subtitle": "Hãy để lại thông tin để được tư vấn và làm bài test năng lực hoàn toàn miễn phí.",
-    "register_submit": "Gửi Thông Tin Đăng Ký"
+    "register_submit": "Gửi Thông Tin Đăng Ký",
+    "video_title": "Cùng khám phá ABest IELTS nhé.",
+    "video_subtitle": "Khám phá ABest IELTS qua video giới thiệu",
+    "video_url": "https://www.youtube.com/embed/fcTHHfNHWJA?si=kRbVMss_27vQTZlz"
   },
   "header": {
     "cta": "Đăng ký tư vấn"

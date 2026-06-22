@@ -1,8 +1,8 @@
 <%- include('../partials/header', { pageCss: 'landing' }) %>
 
+<!-- hero -->
 <section class="hero">
     <div class="hero-inner">
-      <!-- <img src="/images/logo.png" alt="ABest IELTS" class="hero-logo"> -->
       <h1><%= t.home.hero_title1 %></h1> 
       <h2><%= t.home.hero_title2 %></h2>
       <p><%= t.home.hero_subtitle %></p>
@@ -14,20 +14,7 @@
       
 </section>
 
-<!-- <section class="section" style="background-image:url('/images/abest_bg_2.png');"   >
-  <div class="container">
-    <div class="hero-inner">
-      <h1><%= t.home.hero_title %></h1> 
-      <h2><%= t.home.hero_title2 %></h2>
-      <p><%= t.home.hero_subtitle %></p>
-    <div class="hero-actions">
-      <a href="/lich-khai-giang" class="btn-gold btn btn-lg"><%= t.home.hero_cta %></a>
-      <a href="#roadmap" class="btn-glass btn btn-lg"><%= t.home.hero_cta2 %> <i class="bi bi-arrow-right"></i></a>
-    </div>
-    </div>
-  </div>
-</section> -->
-
+<!-- roadmap -->
 <section class="section method-section" id="roadmap">
   <div class="container">
     <div class="row align-items-center g-5 method-layout">
@@ -43,6 +30,7 @@
   </div>
 </section>
 
+<!-- courses -->
 <section class="section bg-alt" id="courses">
   <div class="container">
     <div class="featured-courses-layout">
@@ -96,6 +84,28 @@
   </div>
 </section>
 
+
+<!-- video giới thiệu về ABest IELTS -->
+<section class="section" id="video-intro">
+  <div class="container">
+    <% const videoTitle = t.home.video_title || (lang === 'en' ? 'Introduction Video' : 'Welcome ABest IELTS'); %>
+    <% const rawVideoUrl = t.home.video_url || 'https://www.youtube.com/embed/fcTHHfNHWJA?si=kRbVMss_27vQTZlz'; %>
+    <% const youtubeWatchMatch = rawVideoUrl.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&?/]+)/); %>
+    <% const videoEmbedUrl = rawVideoUrl.includes('youtube.com/embed/') ? rawVideoUrl : (youtubeWatchMatch ? `https://www.youtube.com/embed/${youtubeWatchMatch[1]}` : rawVideoUrl); %>
+    <div class="video-intro-layout">
+      <div class="video-intro-content">
+        <h2 class="section-title"><%= videoTitle %></h2>
+        <!-- <p class="section-subtitle"><%= t.home.video_subtitle %></p> -->
+      </div>
+      <div class="video-intro-player">
+        <iframe src="<%= videoEmbedUrl %>" title="<%= videoTitle %>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</section>  
+
+
+<!-- teachers -->
 <section class="section" id="teachers">
   <div class="container">
     <div class="teachers-heading">
