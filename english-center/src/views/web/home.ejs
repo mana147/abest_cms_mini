@@ -1,4 +1,69 @@
-<%- include('../partials/header', { pageCss: 'landing' }) %>
+<%
+  const homeSeo = lang === 'en'
+    ? {
+        title: 'ABest IELTS - Personalized IELTS Preparation in Hanoi',
+        description: 'ABest IELTS provides personalized IELTS preparation in Hanoi with the D.E.C.O.D.E method, experienced teachers, featured IELTS courses, free mock tests and learning resources.',
+        keywords: 'ABest IELTS, IELTS preparation Hanoi, IELTS course, English center Hanoi, free IELTS mock test, IELTS teachers',
+        canonical: 'https://abest.edu.vn/',
+        image: 'https://abest.edu.vn/images/abest_hero_bg.jpg',
+        imageAlt: 'ABest IELTS English center and IELTS preparation courses',
+        locale: 'en_US'
+      }
+    : {
+        title: 'ABest IELTS - Trung tâm luyện thi IELTS tại Hà Nội',
+        description: 'ABest IELTS cung cấp lộ trình luyện thi IELTS cá nhân hóa tại Hà Nội với phương pháp D.E.C.O.D.E, giáo viên giàu kinh nghiệm, khóa học IELTS nổi bật và thi thử miễn phí.',
+        keywords: 'ABest IELTS, luyện thi IELTS Hà Nội, trung tâm IELTS, khóa học IELTS, thi thử IELTS miễn phí, giáo viên IELTS',
+        canonical: 'https://abest.edu.vn/',
+        image: 'https://abest.edu.vn/images/abest_hero_bg.jpg',
+        imageAlt: 'ABest IELTS - trung tâm luyện thi IELTS tại Hà Nội',
+        locale: 'vi_VN'
+      };
+
+  const homeStructuredData = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'EducationalOrganization',
+      name: 'ABest IELTS',
+      alternateName: 'ABest English Center',
+      url: homeSeo.canonical,
+      logo: 'https://abest.edu.vn/images/logo.png',
+      image: homeSeo.image,
+      description: homeSeo.description,
+      telephone: '+84965928996',
+      email: 'info@abest.edu.vn',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: '164 Hoàng Ngân, Phường Yên Hòa',
+        addressLocality: 'Hà Nội',
+        addressCountry: 'VN'
+      },
+      sameAs: [
+        'https://lms.abest.edu.vn/'
+      ]
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      name: 'ABest IELTS',
+      url: homeSeo.canonical,
+      inLanguage: lang === 'en' ? 'en-US' : 'vi-VN',
+      description: homeSeo.description
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'ItemList',
+      name: lang === 'en' ? 'Featured IELTS courses' : 'Khóa học IELTS nổi bật',
+      itemListElement: courses.slice(0, 5).map((course, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        url: `https://abest.edu.vn/khoa-hoc/${course.slug}`,
+        name: lang === 'en' && course.title_en ? course.title_en : course.title
+      }))
+    }
+  ];
+%>
+
+<%- include('../partials/header', { pageCss: 'landing', seo: homeSeo, structuredData: homeStructuredData }) %>
 
   <!-- hero -->
   <section class="hero">
@@ -40,7 +105,9 @@
           </a>
         </div>
         <div class="col-lg-6">
-          <img src="/images/Abest_DECODE_01.png" alt="D.E.C.O.D.E framework" class="method-image">
+          <img src="/images/Abest_DECODE_01.png"
+            alt="<%= lang==='en' ? 'ABest IELTS D.E.C.O.D.E learning roadmap' : 'Lộ trình học IELTS D.E.C.O.D.E tại ABest IELTS' %>"
+            class="method-image" loading="lazy">
         </div>
       </div>
     </div>
@@ -84,7 +151,9 @@
                     <div class="card-custom featured-course-card h-100">
                       <div class="course-card-thumb">
                         <% if (course.thumbnail) { %>
-                          <img src="<%= course.thumbnail %>" alt="<%= course.title %>">
+                          <img src="<%= course.thumbnail %>"
+                            alt="<%= lang==='en' && course.title_en ? course.title_en : course.title %> - ABest IELTS"
+                            loading="lazy">
                           <% } else { %>
                             <div class="placeholder-img"><i class="bi bi-journal-bookmark"></i></div>
                             <% } %>
@@ -142,7 +211,7 @@
                 <div class="video-intro-player">
                   <iframe src="<%= videoEmbedUrl %>" title="<%= videoTitle %>" frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    referrerpolicy="strict-origin-when-cross-origin" loading="lazy" allowfullscreen></iframe>
                 </div>
               </div>
     </div>
@@ -201,7 +270,8 @@
                         </div>
                         <div class="teacher-card-photo">
                           <% if (teacherPhoto) { %>
-                            <img src="<%= teacherPhoto %>" alt="<%= teacher.name %>">
+                            <img src="<%= teacherPhoto %>" alt="<%= teacher.name %> - giáo viên ABest IELTS"
+                              loading="lazy">
                             <% } else { %>
                               <div class="placeholder-img"><i class="bi bi-person"></i></div>
                               <% } %>
@@ -349,8 +419,9 @@
                   <div class="col-md-4">
                     <div class="card-custom">
                       <% if (post.thumbnail) { %>
-                        <img src="<%= post.thumbnail %>" alt="<%= post.title %>" class="post-card-thumb"
-                          style="width:100%;object-fit:cover;">
+                        <img src="<%= post.thumbnail %>"
+                          alt="<%= lang==='en' && post.title_en ? post.title_en : post.title %> - ABest IELTS"
+                          class="post-card-thumb" style="width:100%;object-fit:cover;" loading="lazy">
                         <% } else { %>
                           <div class="placeholder-img post-card-thumb"><i class="bi bi-newspaper"></i></div>
                           <% } %>

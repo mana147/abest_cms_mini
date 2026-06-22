@@ -2,11 +2,48 @@
 <html lang="<%= lang %>">
 
 <head>
+  <%
+    const metaTitle = typeof seo !== 'undefined' && seo.title ? seo.title : `${title} - ${t.site.name}`;
+    const metaDescription = typeof seo !== 'undefined' && seo.description
+      ? seo.description
+      : (t.site && t.site.description ? t.site.description : `${t.site.name} English Center`);
+    const metaKeywords = typeof seo !== 'undefined' && seo.keywords
+      ? seo.keywords
+      : (t.site && t.site.keywords ? t.site.keywords : '');
+    const canonicalUrl = typeof seo !== 'undefined' && seo.canonical ? seo.canonical : '';
+    const ogImage = typeof seo !== 'undefined' && seo.image ? seo.image : '/images/logo.png';
+    const ogImageAlt = typeof seo !== 'undefined' && seo.imageAlt ? seo.imageAlt : t.site.name;
+    const ogType = typeof seo !== 'undefined' && seo.type ? seo.type : 'website';
+    const ogLocale = typeof seo !== 'undefined' && seo.locale ? seo.locale : (lang === 'en' ? 'en_US' : 'vi_VN');
+    const robots = typeof seo !== 'undefined' && seo.robots ? seo.robots : 'index, follow';
+    const nonceAttribute = typeof cspNonce !== 'undefined' && cspNonce ? ` nonce="${cspNonce}"` : '';
+  %>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>
-    <%= title %> - <%= t.site.name %>
-  </title>
+  <title><%= metaTitle %></title>
+  <meta name="description" content="<%= metaDescription %>">
+  <% if (metaKeywords) { %>
+    <meta name="keywords" content="<%= metaKeywords %>">
+    <% } %>
+      <meta name="robots" content="<%= robots %>">
+      <meta name="author" content="<%= t.site.name %>">
+      <% if (canonicalUrl) { %>
+        <link rel="canonical" href="<%= canonicalUrl %>">
+        <% } %>
+          <meta property="og:site_name" content="<%= t.site.name %>">
+          <meta property="og:type" content="<%= ogType %>">
+          <meta property="og:locale" content="<%= ogLocale %>">
+          <meta property="og:title" content="<%= metaTitle %>">
+          <meta property="og:description" content="<%= metaDescription %>">
+          <% if (canonicalUrl) { %>
+            <meta property="og:url" content="<%= canonicalUrl %>">
+            <% } %>
+              <meta property="og:image" content="<%= ogImage %>">
+              <meta property="og:image:alt" content="<%= ogImageAlt %>">
+              <meta name="twitter:card" content="summary_large_image">
+              <meta name="twitter:title" content="<%= metaTitle %>">
+              <meta name="twitter:description" content="<%= metaDescription %>">
+              <meta name="twitter:image" content="<%= ogImage %>">
   <link rel="icon" type="image/png" href="/images/logo.png">
   <link rel="shortcut icon" type="image/png" href="/images/logo.png">
   <link rel="apple-touch-icon" href="/images/logo.png">
@@ -19,6 +56,12 @@
   <% if (typeof pageCss !=='undefined' && pageCss) { %>
     <link rel="stylesheet" href="/css/pages/<%= pageCss %>.css">
     <% } %>
+      <% if (typeof structuredData !== 'undefined' && structuredData) { %>
+        <% const structuredDataItems = Array.isArray(structuredData) ? structuredData : [structuredData]; %>
+          <% structuredDataItems.forEach((item)=> { %>
+            <script type="application/ld+json"<%- nonceAttribute %>><%- JSON.stringify(item) %></script>
+            <% }) %>
+              <% } %>
 </head>
 
 <body>
