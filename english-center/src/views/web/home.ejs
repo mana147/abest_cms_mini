@@ -290,79 +290,8 @@
     </div>
   </section>
 
-  <section class="section" style="background-image:url('/images/abest_bg_2.png');">
-    <div class="container">
-      <h2 class="section-title">
-        <%= t.home.products_title %>
-      </h2>
-      <p class="section-subtitle">
-        <%= t.home.products_subtitle %>
-      </p>
-      <div class="row g-4">
-        <div class="col-md-6 col-lg-4">
-          <div class="student-product-card">
-            <div class="product-icon"><i class="bi bi-mic-fill"></i></div>
-            <span class="badge-pink">
-              <%= lang==='en' ? 'Speaking' : 'Speaking' %>
-            </span>
-            <h5>
-              <%= lang==='en' ? 'Speaking Advanced Document Set' : 'Bộ Tài Liệu Speaking Advanced' %>
-            </h5>
-            <p class="product-student">
-              <%= lang==='en' ? 'Hoang Minh Anh – Band 8.0' : 'Hoàng Minh Anh - Band 8.0' %>
-            </p>
-            <p class="text-muted small">
-              <%= lang==='en'
-                ? 'A collection of Speaking part 1, 2, 3 topics with transcripts and detailed analysis for band 7.5+.'
-                : 'Tuyển tập các chủ đề Speaking part 1, 2, 3 với transcript và phân tích chi tiết dành cho band 7.5+.'
-                %>
-            </p>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4">
-          <div class="student-product-card">
-            <div class="product-icon"><i class="bi bi-pencil-fill"></i></div>
-            <span class="badge-pink">Writing</span>
-            <h5>
-              <%= lang==='en' ? 'Writing Task 1 & 2 Collection' : 'Writing Task 1 & 2 Collection' %>
-            </h5>
-            <p class="product-student">
-              <%= lang==='en' ? 'Nguyen Thao – Band 7.5' : 'Nguyễn Thảo - Band 7.5' %>
-            </p>
-            <p class="text-muted small">
-              <%= lang==='en'
-                ? 'A collection of essays, letters and diagrams scored 8.5/9.0 with detailed teacher feedback.'
-                : 'Bộ sưu tập các bài essays, letters, diagrams được chấm 8.5/9.0 với nhận xét chi tiết từ giáo viên.'
-                %>
-            </p>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4">
-          <div class="student-product-card">
-            <div class="product-icon"><i class="bi bi-volume-up-fill"></i></div>
-            <span class="badge-pink">Listening</span>
-            <h5>
-              <%= lang==='en' ? 'IELTS Listening Podcast' : 'Podcast Luyện Nghe IELTS' %>
-            </h5>
-            <p class="product-student">
-              <%= lang==='en' ? 'Le Quang Hai – Band 8.5' : 'Lê Quang Hải - Band 8.5' %>
-            </p>
-            <p class="text-muted small">
-              <%= lang==='en'
-                ? 'A 50-episode podcast series with different accents and varied topics for realistic exam practice.'
-                : 'Series podcast 50 tập với các accent khác nhau, chủ đề đa dạng phù hợp luyện thi thực tế.' %>
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="text-center mt-4"><a href="/posts" class="btn-outline-navy btn">
-          <%= t.home.products_cta %>
-        </a></div>
-    </div>
-  </section>
-
   <% if (testimonials.length> 0) { %>
-    <section class="section">
+    <section class="section" style="background-image:url('/images/abest_bg_2.png');" id="testimonials">
       <div class="container">
         <h2 class="section-title">
           <%= t.home.testimonials_title %>
